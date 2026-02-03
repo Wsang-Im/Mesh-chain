@@ -1,23 +1,4 @@
-/**
- * L2 Anchor Watcher
- *
- * 목적: 여러 시뮬레이션(integrated, rural)의 L1 앵커를 수집하여 L2 앵커 생성
- *
- * 기능:
- * 1. /tmp/meshchain_l1 디렉토리 감시
- * 2. L1 앵커 JSON 파일 파싱
- * 3. 여러 RSU의 L1 Merkle Root를 묶어서 L2 Merkle Tree 생성
- * 4. L2 앵커 블록 생성 및 출력
- *
- * 사용법:
- *   ./l2_anchor_watcher --period 120 --threshold 5
- *
- * 파라미터:
- *   --period <sec>     L2 생성 주기 (기본: 120초)
- *   --threshold <n>    최소 L1 앵커 개수 (기본: 3)
- *   --watch-dir <path> L1 앵커 디렉토리 (기본: /tmp/meshchain_l1)
- *   --output-dir <path> L2 앵커 출력 디렉토리 (기본: /tmp/meshchain_l2)
- */
+
 
 #include "common/types.h"
 #include "common/merkle_tree.h"
