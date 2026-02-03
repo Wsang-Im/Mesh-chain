@@ -1,0 +1,8 @@
+#!/bin/bash
+# Auto-generated launcher for @EXECUTABLE_NAME@
+# Executes from project root for correct config/sumo paths
+
+PROJECT_ROOT="@CMAKE_SOURCE_DIR@"
+cd "$PROJECT_ROOT"
+
+exec "@CMAKE_BINARY_DIR@/@EXECUTABLE_NAME@" "$@"
