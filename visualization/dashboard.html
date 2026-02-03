@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesh-Chain 실시간 대시보드</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+            overflow: hidden;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            grid-template-rows: 60px 1fr 200px;
+            height: 100vh;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .header {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .header h1 {
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #00ff00;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .highway-view {
+            background: #16213e;
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .highway {
+            width: 100%;
+            height: 100%;
+            background: #2a2a3e;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lane {
+            position: absolute;
+            width: 100%;
+            height: 45%;
+            border-bottom: 2px dashed #555;
+        }
+
+        .lane:first-child {
+            top: 5%;
+        }
+
+        .lane:last-child {
+            top: 50%;
+        }
+
+        .vehicle {
+            position: absolute;
+            width: 40px;
+            height: 25px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .vehicle.creating-block {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            animation: creating 1s infinite;
+        }
+
+        .vehicle.normal {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .vehicle.witness {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        @keyframes creating {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .wave-circle {
+            position: absolute;
+            border: 2px solid rgba(67, 233, 123, 0.3);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: wave-expand 2s ease-out infinite;
+        }
+
+        @keyframes wave-expand {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 1;
+            }
+            100% {
+                width: 300px;
+                height: 300px;
+                opacity: 0;
+            }
+        }
+
+        .sidebar {
+            background: #16213e;
+            border-radius: 10px;
+            padding: 20px;
+            overflow-y: auto;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .stat-card {
+            background: #0f3460;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .stat-card h3 {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 8px;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: bold;
+            color: #00d9ff;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        .log-panel {
+            grid-column: 1 / -1;
+            background: #16213e;
+            border-radius: 10px;
+            padding: 20px;
+            overflow-y: auto;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .log-entry {
+            padding: 8px 12px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            background: #0f3460;
+            font-size: 13px;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            gap: 10px;
+        }
+
+        .log-time {
+            color: #888;
+        }
+
+        .log-success {
+            color: #43e97b;
+        }
+
+        .log-fail {
+            color: #f5576c;
+        }
+
+        .log-info {
+            color: #00d9ff;
+        }
+
+        .chart {
+            width: 100%;
+            height: 80px;
+            margin-top: 10px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #0f3460;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>
+                🚗 Mesh-Chain 실시간 시뮬레이션
+            </h1>
+            <div class="status">
+                <div class="status-item">
+                    <div class="status-dot"></div>
+                    <span>시뮬레이션 실행 중</span>
+                </div>
+                <div class="status-item">
+                    <span id="sim-time">시간: 0.0s</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="highway-view">
+            <h2 style="margin-bottom: 15px;">고속도로 뷰 (WAVE 범위: 300m)</h2>
+            <div class="highway" id="highway">
+                <div class="lane"></div>
+                <div class="lane"></div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="stat-card">
+                <h3>활성 차량</h3>
+                <div class="stat-value" id="active-vehicles">0</div>
+                <div class="stat-label">총 차량 수</div>
+            </div>
+
+            <div class="stat-card">
+                <h3>생성된 블록</h3>
+                <div class="stat-value" id="blocks-created">0</div>
+                <div class="stat-label">성공 / 실패: <span id="block-ratio">0/0</span></div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="success-rate" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <h3>WAVE 통신</h3>
+                <div class="stat-value" id="wave-messages">0</div>
+                <div class="stat-label">전송: <span id="wave-sent">0</span> / 수신: <span id="wave-received">0</span></div>
+            </div>
+
+            <div class="stat-card">
+                <h3>libp2p 연결</h3>
+                <div class="stat-value" id="p2p-peers">0</div>
+                <div class="stat-label">DHT, GossipSub, Bitswap</div>
+            </div>
+
+            <div class="stat-card">
+                <h3>평균 지연시간</h3>
+                <div class="stat-value" id="avg-latency">0.0ms</div>
+                <div class="stat-label">목표: ≤100ms</div>
+            </div>
+        </div>
+
+        <div class="log-panel">
+            <h3 style="margin-bottom: 15px;">📋 이벤트 로그</h3>
+            <div id="log-container"></div>
+        </div>
+    </div>
+
+    <script>
+        // 시뮬레이션 데이터
+        let vehicles = [];
+        let logs = [];
+        let stats = {
+            time: 0,
+            blocksCreated: 0,
+            blocksFailed: 0,
+            waveMessages: 0,
+            waveSent: 0,
+            waveReceived: 0,
+            p2pPeers: 0,
+            avgLatency: 0
+        };
+
+        // Mock 데이터 생성
+        function initVehicles() {
+            const numVehicles = 50;
+            const highwayLength = 1000;
+
+            vehicles = [];
+            for (let i = 0; i < numVehicles; i++) {
+                vehicles.push({
+                    id: `V${i}`,
+                    x: (i * highwayLength / numVehicles) % highwayLength,
+                    lane: i % 2,
+                    speed: 20 + (i % 5) * 2,
+                    status: 'normal', // normal, creating-block, witness
+                    neighbors: []
+                });
+            }
+        }
+
+        // 차량 업데이트
+        function updateVehicles() {
+            const highway = document.getElementById('highway');
+            const highwayWidth = highway.clientWidth;
+            const highwayLength = 1000;
+
+            vehicles.forEach((vehicle, idx) => {
+                // 위치 업데이트
+                vehicle.x += vehicle.speed * 0.1;
+                if (vehicle.x > highwayLength) {
+                    vehicle.x -= highwayLength;
+                }
+
+                // DOM 요소 생성/업데이트
+                let elem = document.getElementById(`vehicle-${vehicle.id}`);
+                if (!elem) {
+                    elem = document.createElement('div');
+                    elem.id = `vehicle-${vehicle.id}`;
+                    elem.className = 'vehicle';
+                    elem.textContent = vehicle.id;
+                    elem.onclick = () => selectVehicle(vehicle.id);
+                    highway.appendChild(elem);
+                }
+
+                // 위치 설정
+                const xPos = (vehicle.x / highwayLength) * highwayWidth;
+                const yPos = vehicle.lane === 0 ? '15%' : '60%';
+                elem.style.left = `${xPos}px`;
+                elem.style.top = yPos;
+                elem.className = `vehicle ${vehicle.status}`;
+
+                // 랜덤 블록 생성 시뮬레이션
+                if (Math.random() < 0.001) {
+                    createBlock(vehicle.id);
+                }
+            });
+        }
+
+        // 블록 생성 시뮬레이션
+        function createBlock(vehicleId) {
+            const vehicle = vehicles.find(v => v.id === vehicleId);
+            if (!vehicle) return;
+
+            vehicle.status = 'creating-block';
+
+            // WAVE 범위 표시
+            showWaveCircle(vehicle);
+
+            // Witness 선택
+            const neighbors = findNeighbors(vehicle, 300);
+            vehicle.neighbors = neighbors;
+
+            setTimeout(() => {
+                const success = Math.random() < 0.85;
+
+                if (success) {
+                    stats.blocksCreated++;
+                    addLog('success', `${vehicleId} 블록 생성 성공 (witnesses: ${neighbors.length})`);
+                } else {
+                    stats.blocksFailed++;
+                    addLog('fail', `${vehicleId} 블록 생성 실패 (ToF 검증 부족)`);
+                }
+
+                vehicle.status = 'normal';
+                neighbors.forEach(nId => {
+                    const n = vehicles.find(v => v.id === nId);
+                    if (n) n.status = 'normal';
+                });
+
+                updateStats();
+            }, 1000);
+
+            // Witness 강조
+            neighbors.forEach(nId => {
+                const n = vehicles.find(v => v.id === nId);
+                if (n) n.status = 'witness';
+            });
+        }
+
+        // 이웃 차량 찾기
+        function findNeighbors(vehicle, range) {
+            const neighbors = [];
+            vehicles.forEach(v => {
+                if (v.id === vehicle.id) return;
+
+                let distance = Math.abs(v.x - vehicle.x);
+                if (distance > 500) distance = 1000 - distance;
+
+                if (distance <= range) {
+                    neighbors.push(v.id);
+                }
+            });
+            return neighbors;
+        }
+
+        // WAVE 원 표시
+        function showWaveCircle(vehicle) {
+            const highway = document.getElementById('highway');
+            const circle = document.createElement('div');
+            circle.className = 'wave-circle';
+
+            const highwayWidth = highway.clientWidth;
+            const xPos = (vehicle.x / 1000) * highwayWidth;
+            const yPos = vehicle.lane === 0 ? '20%' : '65%';
+
+            circle.style.left = `${xPos}px`;
+            circle.style.top = yPos;
+            circle.style.transform = 'translate(-50%, -50%)';
+
+            highway.appendChild(circle);
+
+            setTimeout(() => circle.remove(), 2000);
+        }
+
+        // 로그 추가
+        function addLog(type, message) {
+            const container = document.getElementById('log-container');
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+
+            const time = new Date().toLocaleTimeString();
+            const icon = type === 'success' ? '✅' : type === 'fail' ? '❌' : 'ℹ️';
+
+            entry.innerHTML = `
+                <span class="log-time">[${time}]</span>
+                <span class="log-${type}">${icon} ${message}</span>
+            `;
+
+            container.insertBefore(entry, container.firstChild);
+
+            // 최대 50개 로그만 유지
+            while (container.children.length > 50) {
+                container.removeChild(container.lastChild);
+            }
+        }
+
+        // 통계 업데이트
+        function updateStats() {
+            stats.time += 0.1;
+            stats.waveMessages = stats.waveSent + stats.waveReceived;
+            stats.waveSent += Math.floor(Math.random() * 5);
+            stats.waveReceived += Math.floor(Math.random() * 15);
+            stats.p2pPeers = vehicles.length;
+            stats.avgLatency = 0.5 + Math.random() * 0.5;
+
+            document.getElementById('sim-time').textContent = `시간: ${stats.time.toFixed(1)}s`;
+            document.getElementById('active-vehicles').textContent = vehicles.length;
+            document.getElementById('blocks-created').textContent = stats.blocksCreated;
+            document.getElementById('block-ratio').textContent =
+                `${stats.blocksCreated}/${stats.blocksFailed}`;
+
+            const successRate = stats.blocksCreated + stats.blocksFailed > 0 ?
+                (stats.blocksCreated / (stats.blocksCreated + stats.blocksFailed) * 100) : 0;
+            document.getElementById('success-rate').style.width = `${successRate}%`;
+
+            document.getElementById('wave-messages').textContent = stats.waveMessages;
+            document.getElementById('wave-sent').textContent = stats.waveSent;
+            document.getElementById('wave-received').textContent = stats.waveReceived;
+            document.getElementById('p2p-peers').textContent = stats.p2pPeers;
+            document.getElementById('avg-latency').textContent = `${stats.avgLatency.toFixed(1)}ms`;
+        }
+
+        // 차량 선택
+        function selectVehicle(vehicleId) {
+            addLog('info', `${vehicleId} 선택됨 - Neighbors: ${findNeighbors(vehicles.find(v => v.id === vehicleId), 300).length}대`);
+        }
+
+        // 초기화 및 시작
+        initVehicles();
+        addLog('info', '시뮬레이션 시작 - 50대 차량, 1km 고속도로');
+
+        // 애니메이션 루프
+        setInterval(updateVehicles, 100);
+        setInterval(updateStats, 100);
+    </script>
+</body>
+</html>
