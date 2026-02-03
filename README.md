@@ -28,7 +28,7 @@ MeshChain is a distributed blockchain system designed for Vehicle-to-Everything 
 - Off-chain storage with Shamir secret sharing
 - Local finality under 100ms
 
-### Attack Resistance directly
+### Attack Resistance Directly
 - Defense against witness collusion (T1)
 - Protection from replay attacks (T2)
 - Mitigation of Sybil attacks (T3)
