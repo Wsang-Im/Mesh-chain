@@ -387,60 +387,105 @@ public:
         // NEW: Use attestquorum protocol (MAC-based voting)
         // Collect MACs instead of full FALCON signatures for block size reduction
         std::cout << "[PHASE E] Using TEE attestquorum protocol (MAC-based voting)\n";
+        auto mac_start = std::chrono::high_resolution_clock::now();
 
         // Compute header hash for witness voting
         Hash256 header_hash = header.computeHeaderHash();
 
-        // Collect witness vote MACs and IDs
+        // Launch parallel MAC requests with network delays
+        std::vector<std::future<std::optional<WitnessSignature>>> mac_futures;
+        for (size_t i = 0; i < requests.size(); ++i) {
+            auto mac_future = std::async(std::launch::async,
+                [this, req = requests[i], header_hash]() -> std::optional<WitnessSignature> {
+                    const auto& witness = req.witness;
+
+                    // Check if witness has compute_vote_mac function
+                    if (!witness.compute_vote_mac) {
+                        return std::nullopt;
+                    }
+
+                    try {
+                        // Simulate TLS 1.3 handshake delay (even for attestquorum)
+                        // Each witness requires a TLS session for secure MAC transmission
+                        double distance_m = witness.distance_m;
+                        size_t num_active_nodes = 50;  // Typical scenario
+
+                        // Step 1: ClientHello transmission delay
+                        double handshake_delay_ms = network_delay_.calculateKEMDelay(distance_m, num_active_nodes);
+                        integration::NetworkDelayModel::simulateDelay(handshake_delay_ms);
+
+                        // Step 2: ServerHello reception delay
+                        integration::NetworkDelayModel::simulateDelay(handshake_delay_ms);
+
+                        // Step 3: MAC request/response over established TLS channel
+                        double request_delay_ms = network_delay_.calculateSigRequestDelay(distance_m, num_active_nodes);
+                        double response_delay_ms = network_delay_.calculateSigResponseDelay(distance_m, num_active_nodes);
+                        double total_network_delay_ms = request_delay_ms + response_delay_ms;
+
+                        // Simulate the MAC request/response delay
+                        integration::NetworkDelayModel::simulateDelay(total_network_delay_ms);
+
+                        // Request MAC from witness (computed locally for simulation)
+                        auto mac = witness.compute_vote_mac(header_hash, config_.vehicle_id);
+
+                        if (mac.size() == 32) {  // HMAC-SHA256 = 32 bytes
+                            WitnessSignature mac_sig;
+                            mac_sig.witness_id = witness.id;
+                            mac_sig.signature = mac;
+                            mac_sig.received_at = std::chrono::system_clock::now();
+                            return mac_sig;
+                        }
+                    } catch (const std::exception&) {
+                        return std::nullopt;
+                    }
+
+                    return std::nullopt;
+                }
+            );
+            mac_futures.push_back(std::move(mac_future));
+        }
+
+        // Collect MACs with timeout
         std::vector<std::vector<uint8_t>> witness_vote_macs;
         std::vector<VehicleID> witness_ids;
-        std::vector<WitnessSignature> valid_sigs;  // For consistency with rest of code
+        std::vector<WitnessSignature> valid_sigs;
 
-        for (size_t i = 0; i < selected.size() && i < requests.size(); ++i) {
-            const auto& witness = requests[i].witness;
-
-            // Check if witness has compute_vote_mac function
-            if (!witness.compute_vote_mac) {
-                std::cout << "[PHASE E] ⚠ Witness " << witness.id
-                          << " has no compute_vote_mac function, skipping\n";
-                if (config_.update_witness_reputation) {
-                    config_.update_witness_reputation(witness.id, false);
+        for (size_t i = 0; i < mac_futures.size(); ++i) {
+            if (elapsedMs(mac_start) > SIG_COLLECTION_MAX_MS) {
+                std::cout << "[PHASE E] ⚠ Timeout reached, stopping MAC collection\n";
+                if (config_.update_witness_reputation && i < requests.size()) {
+                    config_.update_witness_reputation(requests[i].witness.id, false);
                 }
-                continue;
+                break;
             }
 
-            try {
-                // Request MAC from witness (simulated locally for now)
-                auto mac = witness.compute_vote_mac(header_hash, config_.vehicle_id);
+            auto remaining_ms = SIG_COLLECTION_MAX_MS - elapsedMs(mac_start);
+            auto status = mac_futures[i].wait_for(
+                std::chrono::milliseconds(static_cast<int64_t>(remaining_ms))
+            );
 
-                if (mac.size() == 32) {  // HMAC-SHA256 = 32 bytes
-                    witness_vote_macs.push_back(mac);
-                    witness_ids.push_back(witness.id);
-
-                    // Track as "signature" for reputation system
-                    WitnessSignature mac_sig;
-                    mac_sig.witness_id = witness.id;
-                    mac_sig.signature = mac;  // Store MAC as signature
-                    mac_sig.received_at = std::chrono::system_clock::now();
-                    valid_sigs.push_back(mac_sig);
-
+            if (status == std::future_status::ready) {
+                auto result = mac_futures[i].get();
+                if (result.has_value()) {
+                    valid_sigs.push_back(result.value());
+                    witness_vote_macs.push_back(result.value().signature);
+                    witness_ids.push_back(result.value().witness_id);
                     header.witness_bitmap.set(i);
 
                     // REPUTATION: Witness MAC SUCCESS
                     if (config_.update_witness_reputation) {
-                        config_.update_witness_reputation(witness.id, true);
+                        config_.update_witness_reputation(result.value().witness_id, true);
                     }
                 } else {
-                    std::cout << "[PHASE E] ⚠ Invalid MAC size from " << witness.id << "\n";
+                    // REPUTATION: Witness MAC FAILED
                     if (config_.update_witness_reputation) {
-                        config_.update_witness_reputation(witness.id, false);
+                        config_.update_witness_reputation(requests[i].witness.id, false);
                     }
                 }
-            } catch (const std::exception& e) {
-                std::cout << "[PHASE E] ⚠ Exception getting MAC from " << witness.id
-                          << ": " << e.what() << "\n";
+            } else {
+                // REPUTATION: Witness MAC TIMEOUT
                 if (config_.update_witness_reputation) {
-                    config_.update_witness_reputation(witness.id, false);
+                    config_.update_witness_reputation(requests[i].witness.id, false);
                 }
             }
         }
@@ -473,8 +518,8 @@ public:
                     auto rsu_sig = config_.request_rsu_super_witness(header);
                     if (rsu_sig.has_value()) {
                         valid_sigs.push_back(rsu_sig.value());
-                        // NOTE: RSU signature NOT added to witness_sigs (legacy protocol removed)
-                        // RSU participation tracked via rsu_super_witness_flag only
+                        // Note: With attestquorum, MACs are not stored in header individually
+                        witness_vote_macs.push_back(rsu_sig.value().signature);
                         header.rsu_super_witness_flag = true;
                         rsu_used = true;
                         std::cout << "[PHASE E] ✓ RSU super-witness signature obtained\n";
@@ -508,15 +553,13 @@ public:
                   << (rsu_used ? " (RSU SUPER-WITNESS USED)" : "") << "\n";
 
         // Phase E.5: TEE Attestquorum Generation (≤10ms)
-        // Generate attestquorum from witness bitmap (MACs are temporary, NOT stored)
-        std::cout << "[PHASE E.5] Starting TEE attestquorum generation (bitmap-based)\n";
+        // Generate attestquorum from witness vote MACs
+        std::cout << "[PHASE E.5] Starting TEE attestquorum generation\n";
 
-        // IMPORTANT: witness_vote_macs are DISCARDED after validation
-        // Only witness_bitmap and attestquorum are stored in block
-        // This implements: attestquorum ← SignTEE_ECDSA(Hash(Header)||bitmap)
+        // Generate attestquorum using TEE aggregator
         auto attestquorum_result = tee_aggregator_.generateAttestquorum(
             header,
-            header.witness_bitmap,  // Use bitmap, NOT MACs
+            header.witness_bitmap,
             witness_ids,
             config_.signer
         );
@@ -528,22 +571,20 @@ public:
         }
 
         // Store attestquorum in header (NEW PROTOCOL)
-        // NOTE: witness_vote_macs are NOT stored - only bitmap + attestquorum
         header.use_attestquorum = true;
+        // Note: witness_vote_macs are NOT stored in header (only bitmap and attestquorum)
         header.attestquorum = attestquorum_result.attestquorum;
         header.witness_merkle_root = attestquorum_result.witness_merkle_root;
 
         std::cout << "[PHASE E.5] ✓ Attestquorum generated in "
                   << attestquorum_result.generation_time_ms << "ms\n";
-        std::cout << "[PHASE E.5]   ECDSA signature size: "
-                  << attestquorum_result.attestquorum.size() << " bytes (expected ~70B)\n";
+        std::cout << "[PHASE E.5]   Attestquorum size: "
+                  << attestquorum_result.attestquorum.size() << " bytes\n";
         std::cout << "[PHASE E.5]   Witness count: "
                   << attestquorum_result.witness_count << "\n";
         std::cout << "[PHASE E.5]   Block size reduction: ~"
                   << (witness_vote_macs.size() * 690 - attestquorum_result.attestquorum.size())
-                  << " bytes saved (vs FALCON-512 witness sigs)\n";
-        std::cout << "[PHASE E.5]   NOTE: " << witness_vote_macs.size()
-                  << " Vote MACs were validated but NOT stored in block\n";
+                  << " bytes saved\n";
 
         // Phase F: Assemble block
         Block block;
