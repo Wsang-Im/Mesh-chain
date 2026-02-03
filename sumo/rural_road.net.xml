@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-11-11 15:34:21 by Eclipse SUMO netconvert Version 1.15.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <node-files value="rural_road_simple.nod.xml"/>
+        <edge-files value="rural_road_simple.edg.xml"/>
+        <type-files value="rural_road.typ.xml"/>
+    </input>
+
+    <output>
+        <output-file value="rural_road.net.xml"/>
+    </output>
+
+    <processing>
+        <geometry.remove value="true"/>
+    </processing>
+
+    <junctions>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.0"/>
+    </junctions>
+
+</configuration>
+-->
+
+<net version="1.9" junctionCornerDetail="5" limitTurnSpeed="5.00" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,100.00" convBoundary="0.00,0.00,2000.00,130.00" origBoundary="0.00,-100.00,2000.00,30.00" projParameter="!"/>
+
+    <type id="farm_road" priority="5" numLanes="1" speed="11.11" oneway="1"/>
+    <type id="rural_road" priority="7" numLanes="1" speed="16.67" oneway="0"/>
+
+    <edge id=":east_0" function="internal">
+        <lane id=":east_0_0" index="0" speed="3.48" length="4.67" shape="1999.94,98.40 2001.17,99.15 2001.60,99.94 2001.23,100.75 2000.06,101.60"/>
+    </edge>
+    <edge id=":farm_0" function="internal">
+        <lane id=":farm_0_0" index="0" speed="3.48" length="4.67" shape="998.40,0.00 999.20,-1.20 1000.00,-1.60 1000.80,-1.20 1001.60,0.00"/>
+    </edge>
+    <edge id=":junction_0" function="internal">
+        <lane id=":junction_0_0" index="0" speed="16.67" length="14.78" shape="1007.48,131.15 992.70,131.45"/>
+    </edge>
+    <edge id=":junction_1" function="internal">
+        <lane id=":junction_1_0" index="0" speed="7.53" length="4.43" shape="1007.48,131.15 1003.51,130.82 1003.12,130.61"/>
+    </edge>
+    <edge id=":junction_2" function="internal">
+        <lane id=":junction_2_0" index="0" speed="3.48" length="1.44" shape="1007.48,131.15 1006.23,130.43"/>
+    </edge>
+    <edge id=":junction_9" function="internal">
+        <lane id=":junction_9_0" index="0" speed="7.53" length="10.00" shape="1003.12,130.61 1000.67,129.29 998.97,126.55 998.40,122.60"/>
+    </edge>
+    <edge id=":junction_10" function="internal">
+        <lane id=":junction_10_0" index="0" speed="3.48" length="3.23" shape="1006.23,130.43 1005.79,129.65 1006.14,128.83 1007.29,127.96"/>
+    </edge>
+    <edge id=":junction_3" function="internal">
+        <lane id=":junction_3_0" index="0" speed="6.08" length="9.04" shape="1001.60,122.60 1001.96,125.07 1003.02,126.79 1004.80,127.75 1007.29,127.96"/>
+    </edge>
+    <edge id=":junction_4" function="internal">
+        <lane id=":junction_4_0" index="0" speed="7.62" length="14.38" shape="1001.60,122.60 1001.04,126.54 999.38,129.33 996.60,130.97 992.70,131.45"/>
+    </edge>
+    <edge id=":junction_5" function="internal">
+        <lane id=":junction_5_0" index="0" speed="3.48" length="4.67" shape="1001.60,122.60 1000.80,123.80 1000.00,124.20 999.20,123.80 998.40,122.60"/>
+    </edge>
+    <edge id=":junction_6" function="internal">
+        <lane id=":junction_6_0" index="0" speed="6.20" length="9.14" shape="992.77,128.26 995.23,127.94 996.99,126.90 998.05,125.12 998.40,122.60"/>
+    </edge>
+    <edge id=":junction_7" function="internal">
+        <lane id=":junction_7_0" index="0" speed="16.67" length="14.52" shape="992.77,128.26 1007.29,127.96"/>
+    </edge>
+    <edge id=":junction_8" function="internal">
+        <lane id=":junction_8_0" index="0" speed="3.48" length="1.44" shape="992.77,128.26 993.95,129.08"/>
+    </edge>
+    <edge id=":junction_11" function="internal">
+        <lane id=":junction_11_0" index="0" speed="3.48" length="3.23" shape="993.95,129.08 994.34,129.89 993.92,130.68 992.70,131.45"/>
+    </edge>
+    <edge id=":west_0" function="internal">
+        <lane id=":west_0_0" index="0" speed="3.48" length="4.67" shape="-0.13,101.59 -1.26,100.70 -1.59,99.87 -1.13,99.11 0.13,98.41"/>
+    </edge>
+
+    <edge id="-farm_road" from="farm" to="junction" priority="5">
+        <lane id="-farm_road_0" index="0" speed="11.11" length="122.60" shape="1001.60,0.00 1001.60,122.60"/>
+    </edge>
+    <edge id="-rural_east_main" from="east" to="junction" priority="7" type="rural_road" shape="2000.00,100.00 1750.00,110.00 1500.00,95.00 1250.00,115.00 1000.00,130.00">
+        <lane id="-rural_east_main_0" index="0" speed="16.67" length="994.47" shape="2000.06,101.60 1749.98,111.60 1500.02,96.60 1250.11,116.60 1007.48,131.15"/>
+    </edge>
+    <edge id="-rural_west_east" from="junction" to="west" priority="7" type="rural_road" shape="1000.00,130.00 750.00,125.00 500.00,90.00 250.00,120.00 0.00,100.00">
+        <lane id="-rural_west_east_0" index="0" speed="16.67" length="997.91" shape="992.70,131.45 749.87,126.60 499.98,91.61 250.03,121.61 -0.13,101.59"/>
+    </edge>
+    <edge id="farm_road" from="junction" to="farm" priority="5">
+        <lane id="farm_road_0" index="0" speed="11.11" length="122.60" shape="998.40,122.60 998.40,0.00"/>
+    </edge>
+    <edge id="rural_east_main" from="junction" to="east" priority="7" type="rural_road" shape="1000.00,130.00 1250.00,115.00 1500.00,95.00 1750.00,110.00 2000.00,100.00">
+        <lane id="rural_east_main_0" index="0" speed="16.67" length="994.53" shape="1007.29,127.96 1249.89,113.40 1499.98,93.40 1750.02,108.40 1999.94,98.40"/>
+    </edge>
+    <edge id="rural_west_east" from="west" to="junction" priority="7" type="rural_road" shape="0.00,100.00 250.00,120.00 500.00,90.00 750.00,125.00 1000.00,130.00">
+        <lane id="rural_west_east_0" index="0" speed="16.67" length="997.72" shape="0.13,98.41 249.97,118.39 500.02,88.39 750.13,123.40 992.77,128.26"/>
+    </edge>
+
+    <junction id="east" type="priority" x="2000.00" y="100.00" incLanes="rural_east_main_0" intLanes=":east_0_0" shape="2000.00,100.00 1999.87,96.80 2000.00,100.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="farm" type="priority" x="1000.00" y="0.00" incLanes="farm_road_0" intLanes=":farm_0_0" shape="1000.00,0.00 996.80,0.00 1000.00,0.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="junction" type="priority" x="1000.00" y="130.00" incLanes="-rural_east_main_0 -farm_road_0 rural_west_east_0" intLanes=":junction_0_0 :junction_9_0 :junction_10_0 :junction_3_0 :junction_4_0 :junction_5_0 :junction_6_0 :junction_7_0 :junction_11_0" shape="1007.58,132.75 1007.19,126.36 1004.97,126.05 1004.20,125.54 1003.64,124.80 1003.31,123.82 1003.20,122.60 996.80,122.60 996.36,124.89 995.80,125.68 995.02,126.24 994.02,126.57 992.80,126.66 992.67,133.05">
+        <request index="0" response="000000000" foes="100010000" cont="0"/>
+        <request index="1" response="011000000" foes="011110000" cont="1"/>
+        <request index="2" response="010001000" foes="010001000" cont="1"/>
+        <request index="3" response="010000000" foes="010000100" cont="0"/>
+        <request index="4" response="010000011" foes="110000011" cont="0"/>
+        <request index="5" response="001000010" foes="001000010" cont="0"/>
+        <request index="6" response="000000000" foes="000100010" cont="0"/>
+        <request index="7" response="000000000" foes="000011110" cont="0"/>
+        <request index="8" response="000010001" foes="000010001" cont="1"/>
+    </junction>
+    <junction id="west" type="priority" x="0.00" y="100.00" incLanes="-rural_west_east_0" intLanes=":west_0_0" shape="-0.00,100.00 -0.26,103.19 0.00,100.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+
+    <junction id=":junction_9_0" type="internal" x="1003.12" y="130.61" incLanes=":junction_1_0 rural_west_east_0" intLanes=":junction_4_0 :junction_5_0 :junction_6_0 :junction_7_0"/>
+    <junction id=":junction_10_0" type="internal" x="1006.23" y="130.43" incLanes=":junction_2_0 -farm_road_0 rural_west_east_0" intLanes=":junction_3_0 :junction_7_0"/>
+    <junction id=":junction_11_0" type="internal" x="993.95" y="129.08" incLanes=":junction_8_0 -farm_road_0 -rural_east_main_0" intLanes=":junction_0_0 :junction_4_0"/>
+
+    <connection from="-farm_road" to="rural_east_main" fromLane="0" toLane="0" via=":junction_3_0" dir="r" state="m"/>
+    <connection from="-farm_road" to="-rural_west_east" fromLane="0" toLane="0" via=":junction_4_0" dir="l" state="m"/>
+    <connection from="-farm_road" to="farm_road" fromLane="0" toLane="0" via=":junction_5_0" dir="t" state="m"/>
+    <connection from="-rural_east_main" to="-rural_west_east" fromLane="0" toLane="0" via=":junction_0_0" dir="s" state="M"/>
+    <connection from="-rural_east_main" to="farm_road" fromLane="0" toLane="0" via=":junction_1_0" dir="l" state="m"/>
+    <connection from="-rural_east_main" to="rural_east_main" fromLane="0" toLane="0" via=":junction_2_0" dir="t" state="m"/>
+    <connection from="-rural_west_east" to="rural_west_east" fromLane="0" toLane="0" via=":west_0_0" dir="t" state="M"/>
+    <connection from="farm_road" to="-farm_road" fromLane="0" toLane="0" via=":farm_0_0" dir="t" state="M"/>
+    <connection from="rural_east_main" to="-rural_east_main" fromLane="0" toLane="0" via=":east_0_0" dir="t" state="M"/>
+    <connection from="rural_west_east" to="farm_road" fromLane="0" toLane="0" via=":junction_6_0" dir="r" state="M"/>
+    <connection from="rural_west_east" to="rural_east_main" fromLane="0" toLane="0" via=":junction_7_0" dir="s" state="M"/>
+    <connection from="rural_west_east" to="-rural_west_east" fromLane="0" toLane="0" via=":junction_8_0" dir="t" state="m"/>
+
+    <connection from=":east_0" to="-rural_east_main" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":farm_0" to="-farm_road" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":junction_0" to="-rural_west_east" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":junction_1" to="farm_road" fromLane="0" toLane="0" via=":junction_9_0" dir="l" state="m"/>
+    <connection from=":junction_9" to="farm_road" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":junction_2" to="rural_east_main" fromLane="0" toLane="0" via=":junction_10_0" dir="t" state="m"/>
+    <connection from=":junction_10" to="rural_east_main" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":junction_3" to="rural_east_main" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":junction_4" to="-rural_west_east" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":junction_5" to="farm_road" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":junction_6" to="farm_road" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":junction_7" to="rural_east_main" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":junction_8" to="-rural_west_east" fromLane="0" toLane="0" via=":junction_11_0" dir="t" state="m"/>
+    <connection from=":junction_11" to="-rural_west_east" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":west_0" to="rural_west_east" fromLane="0" toLane="0" dir="t" state="M"/>
+
+</net>

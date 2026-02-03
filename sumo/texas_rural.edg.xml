@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Texas 시골 마을 도로 연결 -->
+<edges xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/edges_file.xsd">
+
+    <!-- ==================== FM Road (동서 메인 도로) - 양방향 ==================== -->
+    <!-- 서→동 -->
+    <edge id="fm_w_to_1st" from="fm_west" to="fm_1st" type="fm_road"/>
+    <edge id="fm_1st_to_main" from="fm_1st" to="fm_main" type="fm_road"/>
+    <edge id="fm_main_to_2nd" from="fm_main" to="fm_2nd" type="fm_road"/>
+    <edge id="fm_2nd_to_east" from="fm_2nd" to="fm_east" type="fm_road"/>
+
+    <!-- 동→서 (역방향) -->
+    <edge id="fm_1st_to_w" from="fm_1st" to="fm_west" type="fm_road"/>
+    <edge id="fm_main_to_1st" from="fm_main" to="fm_1st" type="fm_road"/>
+    <edge id="fm_2nd_to_main" from="fm_2nd" to="fm_main" type="fm_road"/>
+    <edge id="fm_east_to_2nd" from="fm_east" to="fm_2nd" type="fm_road"/>
+
+    <!-- ==================== Main Street (남북 중심축) - 양방향 ==================== -->
+    <!-- 남→북 -->
+    <edge id="main_s_to_school" from="main_south" to="main_school" type="main_street"/>
+    <edge id="main_school_to_fm" from="main_school" to="fm_main" type="main_street"/>
+    <edge id="main_fm_to_church" from="fm_main" to="main_church" type="main_street"/>
+    <edge id="main_church_to_n" from="main_church" to="main_north" type="main_street"/>
+
+    <!-- 북→남 (역방향) -->
+    <edge id="main_school_to_s" from="main_school" to="main_south" type="main_street"/>
+    <edge id="main_fm_to_school" from="fm_main" to="main_school" type="main_street"/>
+    <edge id="main_church_to_fm" from="main_church" to="fm_main" type="main_street"/>
+    <edge id="main_n_to_church" from="main_north" to="main_church" type="main_street"/>
+
+    <!-- ==================== 1st Street (서쪽 남북) ==================== -->
+    <edge id="1st_s_to_park" from="1st_south" to="1st_park" type="town_street"/>
+    <edge id="1st_park_to_fm" from="1st_park" to="fm_1st" type="town_street"/>
+    <edge id="1st_fm_to_n" from="fm_1st" to="1st_north" type="town_street"/>
+
+    <!-- ==================== 2nd Street (동쪽 남북) ==================== -->
+    <edge id="2nd_s_to_store" from="2nd_south" to="2nd_store" type="town_street"/>
+    <edge id="2nd_store_to_fm" from="2nd_store" to="fm_2nd" type="town_street"/>
+    <edge id="2nd_fm_to_n" from="fm_2nd" to="2nd_north" type="town_street"/>
+
+    <!-- ==================== County Road (남쪽 동서 도로) ==================== -->
+    <edge id="county_w_to_1st" from="county_west" to="1st_park" type="county_road"/>
+    <edge id="county_1st_to_main" from="1st_park" to="main_school" type="county_road"/>
+    <edge id="county_main_to_2nd" from="main_school" to="2nd_store" type="county_road"/>
+    <edge id="county_2nd_to_e" from="2nd_store" to="county_east" type="county_road"/>
+
+    <!-- ==================== Church Road (북쪽 동서 도로) ==================== -->
+    <edge id="church_w_to_1st" from="church_west" to="1st_north" type="town_street"/>
+    <edge id="church_1st_to_main" from="1st_north" to="main_church" type="town_street"/>
+    <edge id="church_main_to_2nd" from="main_church" to="2nd_north" type="town_street"/>
+    <edge id="church_2nd_to_e" from="2nd_north" to="church_east" type="town_street"/>
+
+    <!-- ==================== 농장 진입로 (남쪽) ==================== -->
+    <edge id="farm_1st_to_farm1" from="1st_south" to="farm_south1" type="farm_access"/>
+    <edge id="farm_farm1_to_main" from="farm_south1" to="main_south" type="farm_access"/>
+    <edge id="farm_main_to_farm2" from="main_south" to="farm_south2" type="farm_access"/>
+    <edge id="farm_farm2_to_2nd" from="farm_south2" to="2nd_south" type="farm_access"/>
+
+    <!-- ==================== 목장 연결로 (동쪽) ==================== -->
+    <edge id="ranch_county_to_r1" from="county_east" to="ranch_east1" type="farm_access"/>
+    <edge id="ranch_r1_to_2nd" from="ranch_east1" to="fm_2nd" type="farm_access"/>
+    <edge id="ranch_2nd_to_r2" from="fm_2nd" to="ranch_east2" type="farm_access"/>
+    <edge id="ranch_r2_to_church" from="ranch_east2" to="church_east" type="farm_access"/>
+
+</edges>

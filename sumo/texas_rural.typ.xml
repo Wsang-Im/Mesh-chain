@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Texas 시골 도로 타입 정의 -->
+<types xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/types_file.xsd">
+
+    <!-- FM Road: Farm-to-Market Road (주요 2차선 도로, 55-60mph) -->
+    <type id="fm_road" priority="8" numLanes="1" speed="24.59" width="3.6" oneway="false"/>
+
+    <!-- Main Street: 마을 중심 도로 (35-45mph) -->
+    <type id="main_street" priority="7" numLanes="1" speed="17.88" width="3.6" oneway="false"/>
+
+    <!-- Town Street: 마을 내 일반 도로 (30-35mph) -->
+    <type id="town_street" priority="6" numLanes="1" speed="15.65" width="3.3" oneway="false"/>
+
+    <!-- County Road: 카운티 도로 (40-50mph) -->
+    <type id="county_road" priority="7" numLanes="1" speed="20.12" width="3.3" oneway="false"/>
+
+    <!-- Farm Access: 농장 진입로 (25-30mph) -->
+    <type id="farm_access" priority="4" numLanes="1" speed="13.41" width="3.0" oneway="false"/>
+
+</types>

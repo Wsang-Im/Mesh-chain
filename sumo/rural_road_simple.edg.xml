@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 간단한 시골 도로 - 엣지 정의 -->
+<edges xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/edges_file.xsd">
+    <!-- 메인 도로: 양방향 2차선 (각 방향 1차선) -->
+    <!-- 서쪽 → 교차로 (1km, 구불구불) -->
+    <edge id="rural_west_east" from="west" to="junction" type="rural_road"
+          shape="0.0,0.0 250.0,20.0 500.0,-10.0 750.0,25.0 1000.0,30.0"/>
+
+    <!-- 교차로 → 동쪽 (1km, 구불구불) -->
+    <edge id="rural_east_main" from="junction" to="east" type="rural_road"
+          shape="1000.0,30.0 1250.0,15.0 1500.0,-5.0 1750.0,10.0 2000.0,0.0"/>
+
+    <!-- 농로: 교차로에서 남쪽으로 -->
+    <edge id="farm_road" from="junction" to="farm"
+          priority="5" numLanes="1" speed="11.11"
+          shape="1000.0,30.0 1000.0,-100.0"/>
+
+    <!-- 역방향 엣지들 (명시적 정의) -->
+    <edge id="-rural_west_east" from="junction" to="west" type="rural_road"
+          shape="1000.0,30.0 750.0,25.0 500.0,-10.0 250.0,20.0 0.0,0.0"/>
+
+    <edge id="-rural_east_main" from="east" to="junction" type="rural_road"
+          shape="2000.0,0.0 1750.0,10.0 1500.0,-5.0 1250.0,15.0 1000.0,30.0"/>
+
+    <edge id="-farm_road" from="farm" to="junction"
+          priority="5" numLanes="1" speed="11.11"
+          shape="1000.0,-100.0 1000.0,30.0"/>
+</edges>

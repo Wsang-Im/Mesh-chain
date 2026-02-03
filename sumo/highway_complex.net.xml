@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-11-10 13:49:55 by Eclipse SUMO netconvert Version 1.15.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <node-files value="highway_complex.nod.xml"/>
+        <edge-files value="highway_complex.edg.xml"/>
+    </input>
+
+    <output>
+        <output-file value="highway_complex.net.xml"/>
+    </output>
+
+    <building_defaults>
+        <default.lanewidth value="3.2"/>
+    </building_defaults>
+
+</configuration>
+-->
+
+<net version="1.9" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,200.00" convBoundary="0.00,0.00,5000.00,400.00" origBoundary="0.00,-200.00,5000.00,200.00" projParameter="!"/>
+
+    <edge id=":highway_east_0" function="internal">
+        <lane id=":highway_east_0_0" index="0" speed="3.65" length="4.67" width="3.20" shape="5000.00,198.40 5001.20,199.20 5001.60,200.00 5001.20,200.80 5000.00,201.60"/>
+    </edge>
+    <edge id=":highway_west_0" function="internal">
+        <lane id=":highway_west_0_0" index="0" speed="3.65" length="4.67" width="3.20" shape="-0.00,201.60 -1.20,200.80 -1.60,200.00 -1.20,199.20 -0.00,198.40"/>
+    </edge>
+    <edge id=":interchange1_0" function="internal">
+        <lane id=":interchange1_0_0" index="0" speed="33.33" length="31.73" width="3.20" shape="1515.86,208.00 1484.14,208.00"/>
+        <lane id=":interchange1_0_1" index="1" speed="33.33" length="31.73" width="3.20" shape="1515.86,204.80 1484.14,204.80"/>
+        <lane id=":interchange1_0_2" index="2" speed="33.33" length="31.73" width="3.20" shape="1515.86,201.60 1484.14,201.60"/>
+    </edge>
+    <edge id=":interchange1_3" function="internal">
+        <lane id=":interchange1_3_0" index="0" speed="7.58" length="2.46" width="3.20" shape="1515.86,201.60 1513.52,200.86"/>
+    </edge>
+    <edge id=":interchange1_4" function="internal">
+        <lane id=":interchange1_4_0" index="0" speed="3.65" length="1.44" width="3.20" shape="1515.86,201.60 1514.66,200.80"/>
+    </edge>
+    <edge id=":interchange1_14" function="internal">
+        <lane id=":interchange1_14_0" index="0" speed="7.58" length="17.76" width="3.20" shape="1513.52,200.86 1511.06,200.08 1509.26,196.28 1510.18,191.35 1513.56,186.44"/>
+    </edge>
+    <edge id=":interchange1_15" function="internal">
+        <lane id=":interchange1_15_0" index="0" speed="3.65" length="3.23" width="3.20" shape="1514.66,200.80 1514.26,200.00 1514.66,199.20 1515.86,198.40"/>
+    </edge>
+    <edge id=":interchange1_5" function="internal">
+        <lane id=":interchange1_5_0" index="0" speed="11.59" length="30.93" width="3.20" shape="1486.44,186.44 1493.22,191.53 1500.00,193.22 1506.78,191.53 1513.56,186.44"/>
+    </edge>
+    <edge id=":interchange1_6" function="internal">
+        <lane id=":interchange1_6_0" index="0" speed="17.99" length="30.38" width="3.20" shape="1486.44,186.44 1490.42,188.80 1496.86,190.55 1505.45,191.63 1515.86,192.00"/>
+    </edge>
+    <edge id=":interchange1_7" function="internal">
+        <lane id=":interchange1_7_0" index="0" speed="8.27" length="24.39" width="3.20" shape="1486.44,186.44 1490.59,192.38 1491.87,198.35 1489.86,202.95 1484.14,204.80"/>
+        <lane id=":interchange1_7_1" index="1" speed="7.58" length="20.22" width="3.20" shape="1486.44,186.44 1489.82,191.35 1490.74,196.28 1488.94,200.08 1484.14,201.60"/>
+    </edge>
+    <edge id=":interchange1_9" function="internal">
+        <lane id=":interchange1_9_0" index="0" speed="18.00" length="30.42" width="3.20" shape="1484.14,192.00 1494.92,191.65 1503.42,190.61 1509.64,188.87 1513.56,186.44"/>
+    </edge>
+    <edge id=":interchange1_10" function="internal">
+        <lane id=":interchange1_10_0" index="0" speed="33.33" length="31.73" width="3.20" shape="1484.14,192.00 1515.86,192.00"/>
+        <lane id=":interchange1_10_1" index="1" speed="33.33" length="31.73" width="3.20" shape="1484.14,195.20 1515.86,195.20"/>
+        <lane id=":interchange1_10_2" index="2" speed="33.33" length="31.73" width="3.20" shape="1484.14,198.40 1515.86,198.40"/>
+    </edge>
+    <edge id=":interchange1_13" function="internal">
+        <lane id=":interchange1_13_0" index="0" speed="3.65" length="1.44" width="3.20" shape="1484.14,198.40 1485.34,199.20"/>
+    </edge>
+    <edge id=":interchange1_16" function="internal">
+        <lane id=":interchange1_16_0" index="0" speed="3.65" length="3.23" width="3.20" shape="1485.34,199.20 1485.74,200.00 1485.34,200.80 1484.14,201.60"/>
+    </edge>
+    <edge id=":interchange2_0" function="internal">
+        <lane id=":interchange2_0_0" index="0" speed="5.47" length="9.74" width="3.20" shape="3515.86,208.00 3512.77,208.35 3511.36,209.39 3511.62,211.13 3513.56,213.56"/>
+    </edge>
+    <edge id=":interchange2_1" function="internal">
+        <lane id=":interchange2_1_0" index="0" speed="33.33" length="31.73" width="3.20" shape="3515.86,208.00 3484.14,208.00"/>
+        <lane id=":interchange2_1_1" index="1" speed="33.33" length="31.73" width="3.20" shape="3515.86,204.80 3484.14,204.80"/>
+        <lane id=":interchange2_1_2" index="2" speed="33.33" length="31.73" width="3.20" shape="3515.86,201.60 3484.14,201.60"/>
+    </edge>
+    <edge id=":interchange2_4" function="internal">
+        <lane id=":interchange2_4_0" index="0" speed="3.65" length="1.44" width="3.20" shape="3515.86,201.60 3514.66,200.80"/>
+    </edge>
+    <edge id=":interchange2_14" function="internal">
+        <lane id=":interchange2_14_0" index="0" speed="3.65" length="3.23" width="3.20" shape="3514.66,200.80 3514.26,200.00 3514.66,199.20 3515.86,198.40"/>
+    </edge>
+    <edge id=":interchange2_5" function="internal">
+        <lane id=":interchange2_5_0" index="0" speed="33.33" length="31.73" width="3.20" shape="3484.14,192.00 3515.86,192.00"/>
+        <lane id=":interchange2_5_1" index="1" speed="33.33" length="31.73" width="3.20" shape="3484.14,195.20 3515.86,195.20"/>
+        <lane id=":interchange2_5_2" index="2" speed="33.33" length="31.73" width="3.20" shape="3484.14,198.40 3515.86,198.40"/>
+    </edge>
+    <edge id=":interchange2_8" function="internal">
+        <lane id=":interchange2_8_0" index="0" speed="19.00" length="4.04" width="3.20" shape="3484.14,198.40 3488.12,199.11"/>
+    </edge>
+    <edge id=":interchange2_9" function="internal">
+        <lane id=":interchange2_9_0" index="0" speed="3.65" length="1.44" width="3.20" shape="3484.14,198.40 3485.34,199.20"/>
+    </edge>
+    <edge id=":interchange2_15" function="internal">
+        <lane id=":interchange2_15_0" index="0" speed="19.00" length="29.91" width="3.20" shape="3488.12,199.11 3494.57,200.27 3503.15,204.65 3509.58,209.70 3513.56,213.56"/>
+    </edge>
+    <edge id=":interchange2_16" function="internal">
+        <lane id=":interchange2_16_0" index="0" speed="3.65" length="3.23" width="3.20" shape="3485.34,199.20 3485.74,200.00 3485.34,200.80 3484.14,201.60"/>
+    </edge>
+    <edge id=":interchange2_10" function="internal">
+        <lane id=":interchange2_10_0" index="0" speed="5.47" length="9.74" width="3.20" shape="3486.44,213.56 3488.38,211.13 3488.64,209.39 3487.23,208.35 3484.14,208.00"/>
+    </edge>
+    <edge id=":interchange2_11" function="internal">
+        <lane id=":interchange2_11_0" index="0" speed="19.47" length="35.68" width="3.20" shape="3486.44,213.56 3490.42,209.20 3496.85,203.05 3505.43,197.57 3515.86,195.20"/>
+        <lane id=":interchange2_11_1" index="1" speed="19.00" length="33.95" width="3.20" shape="3486.44,213.56 3490.42,209.70 3496.85,204.65 3505.43,200.27 3515.86,198.40"/>
+    </edge>
+    <edge id=":interchange2_13" function="internal">
+        <lane id=":interchange2_13_0" index="0" speed="11.59" length="30.93" width="3.20" shape="3486.44,213.56 3493.22,208.47 3500.00,206.78 3506.78,208.47 3513.56,213.56"/>
+    </edge>
+
+    <edge id="highway_main_eb1" from="highway_east" to="interchange2" priority="13" spreadType="center" shape="5000.00,204.80 3499.98,204.80">
+        <lane id="highway_main_eb1_0" index="0" speed="33.33" length="1484.14" width="3.20" shape="5000.00,208.00 3515.86,208.00"/>
+        <lane id="highway_main_eb1_1" index="1" speed="33.33" length="1484.14" width="3.20" shape="5000.00,204.80 3515.86,204.80"/>
+        <lane id="highway_main_eb1_2" index="2" speed="33.33" length="1484.14" width="3.20" shape="5000.00,201.60 3515.86,201.60"/>
+    </edge>
+    <edge id="highway_main_eb2" from="interchange2" to="interchange1" priority="13" spreadType="center" shape="3500.01,204.80 1500.00,204.80">
+        <lane id="highway_main_eb2_0" index="0" speed="33.33" length="1968.27" width="3.20" shape="3484.14,208.00 1515.86,208.00"/>
+        <lane id="highway_main_eb2_1" index="1" speed="33.33" length="1968.27" width="3.20" shape="3484.14,204.80 1515.86,204.80"/>
+        <lane id="highway_main_eb2_2" index="2" speed="33.33" length="1968.27" width="3.20" shape="3484.14,201.60 1515.86,201.60"/>
+    </edge>
+    <edge id="highway_main_eb3" from="interchange1" to="highway_west" priority="13" spreadType="center" shape="1500.02,204.80 0.00,204.80">
+        <lane id="highway_main_eb3_0" index="0" speed="33.33" length="1484.14" width="3.20" shape="1484.14,208.00 0.00,208.00"/>
+        <lane id="highway_main_eb3_1" index="1" speed="33.33" length="1484.14" width="3.20" shape="1484.14,204.80 -0.00,204.80"/>
+        <lane id="highway_main_eb3_2" index="2" speed="33.33" length="1484.14" width="3.20" shape="1484.14,201.60 -0.00,201.60"/>
+    </edge>
+    <edge id="highway_main_wb1" from="highway_west" to="interchange1" priority="13" spreadType="center" shape="0.00,195.20 1500.02,195.20">
+        <lane id="highway_main_wb1_0" index="0" speed="33.33" length="1484.14" width="3.20" shape="0.00,192.00 1484.14,192.00"/>
+        <lane id="highway_main_wb1_1" index="1" speed="33.33" length="1484.14" width="3.20" shape="-0.00,195.20 1484.14,195.20"/>
+        <lane id="highway_main_wb1_2" index="2" speed="33.33" length="1484.14" width="3.20" shape="-0.00,198.40 1484.14,198.40"/>
+    </edge>
+    <edge id="highway_main_wb2" from="interchange1" to="interchange2" priority="13" spreadType="center" shape="1500.00,195.20 3500.01,195.20">
+        <lane id="highway_main_wb2_0" index="0" speed="33.33" length="1968.27" width="3.20" shape="1515.86,192.00 3484.14,192.00"/>
+        <lane id="highway_main_wb2_1" index="1" speed="33.33" length="1968.27" width="3.20" shape="1515.86,195.20 3484.14,195.20"/>
+        <lane id="highway_main_wb2_2" index="2" speed="33.33" length="1968.27" width="3.20" shape="1515.86,198.40 3484.14,198.40"/>
+    </edge>
+    <edge id="highway_main_wb3" from="interchange2" to="highway_east" priority="13" spreadType="center" shape="3499.98,195.20 5000.00,195.20">
+        <lane id="highway_main_wb3_0" index="0" speed="33.33" length="1484.14" width="3.20" shape="3515.86,192.00 5000.00,192.00"/>
+        <lane id="highway_main_wb3_1" index="1" speed="33.33" length="1484.14" width="3.20" shape="3515.86,195.20 5000.00,195.20"/>
+        <lane id="highway_main_wb3_2" index="2" speed="33.33" length="1484.14" width="3.20" shape="3515.86,198.40 5000.00,198.40"/>
+    </edge>
+    <edge id="ramp1_off" from="interchange1" to="ramp1_off_end" priority="9" spreadType="center">
+        <lane id="ramp1_off_0" index="0" speed="22.22" length="263.67" width="3.20" shape="1513.56,186.44 1700.00,0.00"/>
+    </edge>
+    <edge id="ramp1_on" from="ramp1_on_start" to="interchange1" priority="9" spreadType="center">
+        <lane id="ramp1_on_0" index="0" speed="22.22" length="263.67" width="3.20" shape="1300.00,-0.00 1486.44,186.44"/>
+    </edge>
+    <edge id="ramp2_off" from="interchange2" to="ramp2_off_end" priority="9" spreadType="center">
+        <lane id="ramp2_off_0" index="0" speed="22.22" length="263.67" width="3.20" shape="3513.56,213.56 3700.00,400.00"/>
+    </edge>
+    <edge id="ramp2_on" from="ramp2_on_start" to="interchange2" priority="9" spreadType="center">
+        <lane id="ramp2_on_0" index="0" speed="22.22" length="263.67" width="3.20" shape="3300.00,400.00 3486.44,213.56"/>
+    </edge>
+
+    <junction id="highway_east" type="priority" x="5000.00" y="200.00" incLanes="highway_main_wb3_0 highway_main_wb3_1 highway_main_wb3_2" intLanes=":highway_east_0_0" shape="5000.00,200.00 5000.00,190.40 5000.00,200.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="highway_west" type="priority" x="0.00" y="200.00" incLanes="highway_main_eb3_0 highway_main_eb3_1 highway_main_eb3_2" intLanes=":highway_west_0_0" shape="-0.00,200.00 0.00,209.60 -0.00,200.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="interchange1" type="priority" x="1500.00" y="200.00" incLanes="highway_main_eb2_0 highway_main_eb2_1 highway_main_eb2_2 ramp1_on_0 highway_main_wb1_0 highway_main_wb1_1 highway_main_wb1_2" intLanes=":interchange1_0_0 :interchange1_0_1 :interchange1_0_2 :interchange1_14_0 :interchange1_15_0 :interchange1_5_0 :interchange1_6_0 :interchange1_7_0 :interchange1_7_1 :interchange1_9_0 :interchange1_10_0 :interchange1_10_1 :interchange1_10_2 :interchange1_16_0" shape="1515.86,209.60 1515.86,190.40 1513.95,190.09 1513.57,189.69 1513.56,189.14 1513.94,188.44 1514.69,187.57 1512.43,185.31 1508.29,188.76 1504.14,190.83 1500.00,191.52 1495.86,190.83 1491.71,188.76 1487.57,185.31 1485.31,187.57 1486.44,189.14 1486.43,189.69 1486.05,190.09 1485.28,190.32 1484.14,190.40 1484.14,209.60">
+        <request index="0"  response="00000000000000" foes="10000110000000" cont="0"/>
+        <request index="1"  response="00000000000000" foes="10000110000000" cont="0"/>
+        <request index="2"  response="00000000000000" foes="10000110000000" cont="0"/>
+        <request index="3"  response="01111000000000" foes="01111001100000" cont="1"/>
+        <request index="4"  response="01110000000000" foes="01110000000000" cont="1"/>
+        <request index="5"  response="00001000001000" foes="00001000001000" cont="0"/>
+        <request index="6"  response="01111000001000" foes="01111000001000" cont="0"/>
+        <request index="7"  response="01111000000111" foes="11111000000111" cont="0"/>
+        <request index="8"  response="01111000000111" foes="11111000000111" cont="0"/>
+        <request index="9"  response="00000000000000" foes="00000111101000" cont="0"/>
+        <request index="10" response="00000000000000" foes="00000111011000" cont="0"/>
+        <request index="11" response="00000000000000" foes="00000111011000" cont="0"/>
+        <request index="12" response="00000000000000" foes="00000111011000" cont="0"/>
+        <request index="13" response="00000110000111" foes="00000110000111" cont="1"/>
+    </junction>
+    <junction id="interchange2" type="priority" x="3500.00" y="200.00" incLanes="highway_main_eb1_0 highway_main_eb1_1 highway_main_eb1_2 highway_main_wb2_0 highway_main_wb2_1 highway_main_wb2_2 ramp2_on_0" intLanes=":interchange2_0_0 :interchange2_1_0 :interchange2_1_1 :interchange2_1_2 :interchange2_14_0 :interchange2_5_0 :interchange2_5_1 :interchange2_5_2 :interchange2_15_0 :interchange2_16_0 :interchange2_10_0 :interchange2_11_0 :interchange2_11_1 :interchange2_13_0" shape="3512.43,214.69 3514.69,212.43 3513.56,210.86 3513.57,210.31 3513.95,209.91 3514.72,209.68 3515.86,209.60 3515.86,190.40 3484.14,190.40 3484.14,209.60 3486.05,209.91 3486.43,210.31 3486.44,210.86 3486.06,211.56 3485.31,212.43 3487.57,214.69 3491.71,211.24 3495.86,209.17 3500.00,208.48 3504.14,209.17 3508.29,211.24">
+        <request index="0"  response="00000000000000" foes="10000100000000" cont="0"/>
+        <request index="1"  response="00000000000000" foes="01111100000000" cont="0"/>
+        <request index="2"  response="00000000000000" foes="01111100000000" cont="0"/>
+        <request index="3"  response="00000000000000" foes="01111100000000" cont="0"/>
+        <request index="4"  response="01100011100000" foes="01100011100000" cont="1"/>
+        <request index="5"  response="00000000000000" foes="01100000010000" cont="0"/>
+        <request index="6"  response="00000000000000" foes="01100000010000" cont="0"/>
+        <request index="7"  response="00000000000000" foes="01100000010000" cont="0"/>
+        <request index="8"  response="00000000001111" foes="11100000001111" cont="1"/>
+        <request index="9"  response="00000000001110" foes="00000000001110" cont="1"/>
+        <request index="10" response="00000000001110" foes="00000000001110" cont="0"/>
+        <request index="11" response="00000111101110" foes="00000111111110" cont="0"/>
+        <request index="12" response="00000111101110" foes="00000111111110" cont="0"/>
+        <request index="13" response="00000100000001" foes="00000100000001" cont="0"/>
+    </junction>
+    <junction id="ramp1_off_end" type="dead_end" x="1700.00" y="0.00" incLanes="ramp1_off_0" intLanes="" shape="1698.87,-1.13 1701.13,1.13"/>
+    <junction id="ramp1_on_start" type="dead_end" x="1300.00" y="0.00" incLanes="" intLanes="" shape="1298.87,1.13 1301.13,-1.13"/>
+    <junction id="ramp2_off_end" type="dead_end" x="3700.00" y="400.00" incLanes="ramp2_off_0" intLanes="" shape="3701.13,398.87 3698.87,401.13"/>
+    <junction id="ramp2_on_start" type="dead_end" x="3300.00" y="400.00" incLanes="" intLanes="" shape="3301.13,401.13 3298.87,398.87"/>
+
+    <junction id=":interchange1_14_0" type="internal" x="1513.52" y="200.86" incLanes=":interchange1_3_0 highway_main_wb1_0 highway_main_wb1_1 highway_main_wb1_2" intLanes=":interchange1_5_0 :interchange1_6_0 :interchange1_9_0 :interchange1_10_0 :interchange1_10_1 :interchange1_10_2"/>
+    <junction id=":interchange1_15_0" type="internal" x="1514.66" y="200.80" incLanes=":interchange1_4_0 highway_main_wb1_0 highway_main_wb1_1 highway_main_wb1_2 ramp1_on_0" intLanes=":interchange1_6_0 :interchange1_10_0 :interchange1_10_1 :interchange1_10_2"/>
+    <junction id=":interchange1_16_0" type="internal" x="1485.34" y="199.20" incLanes=":interchange1_13_0 highway_main_eb2_0 highway_main_eb2_1 highway_main_eb2_2 ramp1_on_0" intLanes=":interchange1_0_0 :interchange1_0_1 :interchange1_0_2 :interchange1_7_0 :interchange1_7_1"/>
+    <junction id=":interchange2_14_0" type="internal" x="3514.66" y="200.80" incLanes=":interchange2_4_0 highway_main_wb2_0 highway_main_wb2_1 highway_main_wb2_2 ramp2_on_0" intLanes=":interchange2_5_0 :interchange2_5_1 :interchange2_5_2 :interchange2_11_0 :interchange2_11_1"/>
+    <junction id=":interchange2_15_0" type="internal" x="3488.12" y="199.11" incLanes=":interchange2_8_0 highway_main_eb1_0 highway_main_eb1_1 highway_main_eb1_2" intLanes=":interchange2_0_0 :interchange2_1_0 :interchange2_1_1 :interchange2_1_2 :interchange2_11_0 :interchange2_11_1 :interchange2_13_0"/>
+    <junction id=":interchange2_16_0" type="internal" x="3485.34" y="199.20" incLanes=":interchange2_9_0 highway_main_eb1_0 highway_main_eb1_1 highway_main_eb1_2 ramp2_on_0" intLanes=":interchange2_1_0 :interchange2_1_1 :interchange2_1_2 :interchange2_10_0"/>
+
+    <connection from="highway_main_eb1" to="ramp2_off" fromLane="0" toLane="0" via=":interchange2_0_0" dir="r" state="M"/>
+    <connection from="highway_main_eb1" to="highway_main_eb2" fromLane="0" toLane="0" via=":interchange2_1_0" dir="s" state="M"/>
+    <connection from="highway_main_eb1" to="highway_main_eb2" fromLane="1" toLane="1" via=":interchange2_1_1" dir="s" state="M"/>
+    <connection from="highway_main_eb1" to="highway_main_eb2" fromLane="2" toLane="2" via=":interchange2_1_2" dir="s" state="M"/>
+    <connection from="highway_main_eb1" to="highway_main_wb3" fromLane="2" toLane="2" via=":interchange2_4_0" dir="t" state="m"/>
+    <connection from="highway_main_eb2" to="highway_main_eb3" fromLane="0" toLane="0" via=":interchange1_0_0" dir="s" state="M"/>
+    <connection from="highway_main_eb2" to="highway_main_eb3" fromLane="1" toLane="1" via=":interchange1_0_1" dir="s" state="M"/>
+    <connection from="highway_main_eb2" to="highway_main_eb3" fromLane="2" toLane="2" via=":interchange1_0_2" dir="s" state="M"/>
+    <connection from="highway_main_eb2" to="ramp1_off" fromLane="2" toLane="0" via=":interchange1_3_0" dir="l" state="m"/>
+    <connection from="highway_main_eb2" to="highway_main_wb2" fromLane="2" toLane="2" via=":interchange1_4_0" dir="t" state="m"/>
+    <connection from="highway_main_eb3" to="highway_main_wb1" fromLane="2" toLane="2" via=":highway_west_0_0" dir="t" state="M"/>
+    <connection from="highway_main_wb1" to="ramp1_off" fromLane="0" toLane="0" via=":interchange1_9_0" dir="r" state="M"/>
+    <connection from="highway_main_wb1" to="highway_main_wb2" fromLane="0" toLane="0" via=":interchange1_10_0" dir="s" state="M"/>
+    <connection from="highway_main_wb1" to="highway_main_wb2" fromLane="1" toLane="1" via=":interchange1_10_1" dir="s" state="M"/>
+    <connection from="highway_main_wb1" to="highway_main_wb2" fromLane="2" toLane="2" via=":interchange1_10_2" dir="s" state="M"/>
+    <connection from="highway_main_wb1" to="highway_main_eb3" fromLane="2" toLane="2" via=":interchange1_13_0" dir="t" state="m"/>
+    <connection from="highway_main_wb2" to="highway_main_wb3" fromLane="0" toLane="0" via=":interchange2_5_0" dir="s" state="M"/>
+    <connection from="highway_main_wb2" to="highway_main_wb3" fromLane="1" toLane="1" via=":interchange2_5_1" dir="s" state="M"/>
+    <connection from="highway_main_wb2" to="highway_main_wb3" fromLane="2" toLane="2" via=":interchange2_5_2" dir="s" state="M"/>
+    <connection from="highway_main_wb2" to="ramp2_off" fromLane="2" toLane="0" via=":interchange2_8_0" dir="l" state="m"/>
+    <connection from="highway_main_wb2" to="highway_main_eb2" fromLane="2" toLane="2" via=":interchange2_9_0" dir="t" state="m"/>
+    <connection from="highway_main_wb3" to="highway_main_eb1" fromLane="2" toLane="2" via=":highway_east_0_0" dir="t" state="M"/>
+    <connection from="ramp1_on" to="ramp1_off" fromLane="0" toLane="0" via=":interchange1_5_0" dir="r" state="m"/>
+    <connection from="ramp1_on" to="highway_main_wb2" fromLane="0" toLane="0" via=":interchange1_6_0" dir="R" state="m"/>
+    <connection from="ramp1_on" to="highway_main_eb3" fromLane="0" toLane="1" via=":interchange1_7_0" dir="l" state="m"/>
+    <connection from="ramp1_on" to="highway_main_eb3" fromLane="0" toLane="2" via=":interchange1_7_1" dir="l" state="m"/>
+    <connection from="ramp2_on" to="highway_main_eb2" fromLane="0" toLane="0" via=":interchange2_10_0" dir="r" state="m"/>
+    <connection from="ramp2_on" to="highway_main_wb3" fromLane="0" toLane="1" via=":interchange2_11_0" dir="L" state="m"/>
+    <connection from="ramp2_on" to="highway_main_wb3" fromLane="0" toLane="2" via=":interchange2_11_1" dir="L" state="m"/>
+    <connection from="ramp2_on" to="ramp2_off" fromLane="0" toLane="0" via=":interchange2_13_0" dir="l" state="m"/>
+
+    <connection from=":highway_east_0" to="highway_main_eb1" fromLane="0" toLane="2" dir="t" state="M"/>
+    <connection from=":highway_west_0" to="highway_main_wb1" fromLane="0" toLane="2" dir="t" state="M"/>
+    <connection from=":interchange1_0" to="highway_main_eb3" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":interchange1_0" to="highway_main_eb3" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":interchange1_0" to="highway_main_eb3" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":interchange1_3" to="ramp1_off" fromLane="0" toLane="0" via=":interchange1_14_0" dir="l" state="m"/>
+    <connection from=":interchange1_14" to="ramp1_off" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":interchange1_4" to="highway_main_wb2" fromLane="0" toLane="2" via=":interchange1_15_0" dir="t" state="m"/>
+    <connection from=":interchange1_15" to="highway_main_wb2" fromLane="0" toLane="2" dir="t" state="M"/>
+    <connection from=":interchange1_5" to="ramp1_off" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":interchange1_6" to="highway_main_wb2" fromLane="0" toLane="0" dir="R" state="M"/>
+    <connection from=":interchange1_7" to="highway_main_eb3" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":interchange1_7" to="highway_main_eb3" fromLane="1" toLane="2" dir="l" state="M"/>
+    <connection from=":interchange1_9" to="ramp1_off" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":interchange1_10" to="highway_main_wb2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":interchange1_10" to="highway_main_wb2" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":interchange1_10" to="highway_main_wb2" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":interchange1_13" to="highway_main_eb3" fromLane="0" toLane="2" via=":interchange1_16_0" dir="t" state="m"/>
+    <connection from=":interchange1_16" to="highway_main_eb3" fromLane="0" toLane="2" dir="t" state="M"/>
+    <connection from=":interchange2_0" to="ramp2_off" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":interchange2_1" to="highway_main_eb2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":interchange2_1" to="highway_main_eb2" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":interchange2_1" to="highway_main_eb2" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":interchange2_4" to="highway_main_wb3" fromLane="0" toLane="2" via=":interchange2_14_0" dir="t" state="m"/>
+    <connection from=":interchange2_14" to="highway_main_wb3" fromLane="0" toLane="2" dir="t" state="M"/>
+    <connection from=":interchange2_5" to="highway_main_wb3" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":interchange2_5" to="highway_main_wb3" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":interchange2_5" to="highway_main_wb3" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":interchange2_8" to="ramp2_off" fromLane="0" toLane="0" via=":interchange2_15_0" dir="l" state="m"/>
+    <connection from=":interchange2_15" to="ramp2_off" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":interchange2_9" to="highway_main_eb2" fromLane="0" toLane="2" via=":interchange2_16_0" dir="t" state="m"/>
+    <connection from=":interchange2_16" to="highway_main_eb2" fromLane="0" toLane="2" dir="t" state="M"/>
+    <connection from=":interchange2_10" to="highway_main_eb2" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":interchange2_11" to="highway_main_wb3" fromLane="0" toLane="1" dir="L" state="M"/>
+    <connection from=":interchange2_11" to="highway_main_wb3" fromLane="1" toLane="2" dir="L" state="M"/>
+    <connection from=":interchange2_13" to="ramp2_off" fromLane="0" toLane="0" dir="l" state="M"/>
+
+</net>

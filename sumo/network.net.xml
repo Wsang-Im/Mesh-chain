@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<net version="1.16" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaSchema="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,0.00" convBoundary="0.00,0.00,1000.00,1000.00" origBoundary="0.00,0.00,1000.00,1000.00" projParameter="!"/>
+
+    <edge id=":n0_0" function="internal">
+        <lane id=":n0_0_0" index="0" speed="13.89" length="0.10" shape="0.00,1.60 0.00,1.60"/>
+    </edge>
+
+    <edge id="e1" from="n0" to="n1">
+        <lane id="e1_0" index="0" speed="13.89" length="996.80" shape="0.00,1.60 996.80,1.60"/>
+    </edge>
+
+    <edge id="e2" from="n1" to="n2">
+        <lane id="e2_0" index="0" speed="13.89" length="996.80" shape="1000.00,1.60 1000.00,998.40"/>
+    </edge>
+
+    <edge id="e3" from="n2" to="n3">
+        <lane id="e3_0" index="0" speed="13.89" length="996.80" shape="998.40,1000.00 1.60,1000.00"/>
+    </edge>
+
+    <edge id="e4" from="n3" to="n0">
+        <lane id="e4_0" index="0" speed="13.89" length="996.80" shape="0.00,998.40 0.00,1.60"/>
+    </edge>
+
+    <junction id="n0" type="priority" x="0.00" y="0.00" incLanes="e4_0" intLanes=":n0_0_0" shape="0.00,0.00 3.20,0.00 0.00,0.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+
+    <junction id="n1" type="priority" x="1000.00" y="0.00" incLanes="e1_0" intLanes="" shape="1000.00,0.00 1000.00,3.20 1000.00,0.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+
+    <junction id="n2" type="priority" x="1000.00" y="1000.00" incLanes="e2_0" intLanes="" shape="1000.00,1000.00 996.80,1000.00 1000.00,1000.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+
+    <junction id="n3" type="priority" x="0.00" y="1000.00" incLanes="e3_0" intLanes="" shape="0.00,1000.00 0.00,996.80 0.00,1000.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+
+</net>

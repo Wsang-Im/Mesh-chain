@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-11-11 16:06:26 by Eclipse SUMO netconvert Version 1.15.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <node-files value="rural_complex.nod.xml"/>
+        <edge-files value="rural_complex.edg.xml"/>
+        <type-files value="rural_complex.typ.xml"/>
+    </input>
+
+    <output>
+        <output-file value="rural_complex.net.xml"/>
+    </output>
+
+    <processing>
+        <opposites.guess value="true"/>
+        <edges.join value="true"/>
+    </processing>
+
+    <building_defaults>
+        <default.spreadtype value="center"/>
+    </building_defaults>
+
+    <junctions>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.0"/>
+    </junctions>
+
+</configuration>
+-->
+
+<net version="1.9" spreadType="center" junctionCornerDetail="5" limitTurnSpeed="5.00" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,-50.00" convBoundary="0.00,0.00,1600.00,950.00" origBoundary="0.00,50.00,1600.00,1000.00" projParameter="!"/>
+
+    <type id="alley" priority="3" numLanes="1" speed="5.56" oneway="0" width="2.00"/>
+    <type id="farm_road" priority="2" numLanes="1" speed="6.94" oneway="1" width="2.50"/>
+    <type id="main_road" priority="7" numLanes="1" speed="16.67" oneway="0" width="3.50"/>
+    <type id="narrow_road" priority="4" numLanes="1" speed="8.33" oneway="0" width="2.50"/>
+    <type id="village_road" priority="5" numLanes="1" speed="11.11" oneway="0" width="3.00"/>
+
+    <edge id=":church_junction_0" function="internal">
+        <lane id=":church_junction_0_0" index="0" speed="7.48" length="5.53" width="2.50" shape="801.25,847.31 801.41,848.42 801.89,849.58 802.70,850.79 803.82,852.06"/>
+    </edge>
+    <edge id=":church_junction_1" function="internal">
+        <lane id=":church_junction_1_0" index="0" speed="7.21" length="5.11" width="2.50" shape="801.25,847.31 801.15,848.81 800.87,850.10 800.39,851.18 799.71,852.06"/>
+    </edge>
+    <edge id=":community_center_0" function="internal">
+        <lane id=":community_center_0_0" index="0" speed="8.33" length="0.65" width="2.50" shape="850.82,548.85 850.91,549.02 850.99,549.13 851.09,549.22 851.25,549.33"/>
+    </edge>
+    <edge id=":east_fork_0" function="internal">
+        <lane id=":east_fork_0_0" index="0" speed="7.48" length="7.43" width="3.00" shape="1396.59,448.25 1397.98,447.98 1399.40,447.16 1400.83,445.80 1402.27,443.89"/>
+    </edge>
+    <edge id=":east_fork_1" function="internal">
+        <lane id=":east_fork_1_0" index="0" speed="16.67" length="9.16" width="3.50" shape="1396.59,448.25 1405.75,448.25"/>
+    </edge>
+    <edge id=":east_fork_2" function="internal">
+        <lane id=":east_fork_2_0" index="0" speed="7.98" length="8.56" width="3.00" shape="1396.59,448.25 1398.54,448.52 1400.35,449.34 1402.02,450.70 1403.54,452.61"/>
+    </edge>
+    <edge id=":farm_junction_0" function="internal">
+        <lane id=":farm_junction_0_0" index="0" speed="7.09" length="10.03" width="2.50" shape="798.75,55.08 798.30,53.17 796.94,51.55 794.68,50.21 791.51,49.17"/>
+    </edge>
+    <edge id=":farm_junction_1" function="internal">
+        <lane id=":farm_junction_1_0" index="0" speed="6.65" length="8.75" width="2.50" shape="798.75,55.08 799.00,52.37 799.74,50.29 800.99,48.84 802.73,48.03"/>
+    </edge>
+    <edge id=":house_cluster_0" function="internal">
+        <lane id=":house_cluster_0_0" index="0" speed="5.56" length="5.47" width="2.00" shape="203.13,452.68 201.70,451.91 200.69,451.39 199.62,451.09 198.03,451.00"/>
+    </edge>
+    <edge id=":house_cluster_1" function="internal">
+        <lane id=":house_cluster_1_0" index="0" speed="5.56" length="5.39" width="2.00" shape="203.13,449.55 201.71,450.28 200.68,450.72 199.61,450.94 198.03,451.00"/>
+    </edge>
+    <edge id=":main_west_0" function="internal">
+        <lane id=":main_west_0_0" index="0" speed="3.08" length="4.02" width="3.50" shape="0.00,451.00 -1.03,450.31 -1.38,449.62 -1.03,448.94 0.00,448.25"/>
+    </edge>
+    <edge id=":north_curve1_0" function="internal">
+        <lane id=":north_curve1_0_0" index="0" speed="11.11" length="0.48" width="3.00" shape="600.72,648.60 600.82,648.70 600.89,648.76 600.98,648.81 601.11,648.88"/>
+    </edge>
+    <edge id=":north_curve2_0" function="internal">
+        <lane id=":north_curve2_0_0" index="0" speed="6.35" length="8.26" width="3.00" shape="995.09,645.22 997.26,646.36 999.25,646.74 1001.04,646.37 1002.64,645.24"/>
+    </edge>
+    <edge id=":north_curve2_1" function="internal">
+        <lane id=":north_curve2_1_0" index="0" speed="11.11" length="9.69" width="3.00" shape="994.86,650.89 997.41,649.58 999.09,648.54 1000.59,647.26 1002.64,645.24"/>
+    </edge>
+    <edge id=":north_top_0" function="internal">
+        <lane id=":north_top_0_0" index="0" speed="5.39" length="8.96" width="3.00" shape="801.50,741.15 801.86,743.78 802.94,745.25 804.73,745.55 807.25,744.70"/>
+    </edge>
+    <edge id=":north_top_1" function="internal">
+        <lane id=":north_top_1_0" index="0" speed="9.72" length="12.86" width="2.50" shape="801.50,741.15 801.25,754.00"/>
+    </edge>
+    <edge id=":north_top_2" function="internal">
+        <lane id=":north_top_2_0" index="0" speed="9.68" length="11.98" width="3.00" shape="795.75,746.20 798.06,746.90 800.75,746.89 803.81,746.15 807.25,744.70"/>
+    </edge>
+    <edge id=":north_top_3" function="internal">
+        <lane id=":north_top_3_0" index="0" speed="7.96" length="4.95" width="2.50" shape="795.75,746.20 798.16,747.72 799.61,749.24"/>
+    </edge>
+    <edge id=":north_top_4" function="internal">
+        <lane id=":north_top_4_0" index="0" speed="7.96" length="5.13" width="2.50" shape="799.61,749.24 799.88,749.52 800.91,751.62 801.25,754.00"/>
+    </edge>
+    <edge id=":south_bottom_0" function="internal">
+        <lane id=":south_bottom_0_0" index="0" speed="9.72" length="9.80" width="2.50" shape="798.50,153.97 798.75,144.17"/>
+    </edge>
+    <edge id=":south_bottom_1" function="internal">
+        <lane id=":south_bottom_1_0" index="0" speed="5.11" length="2.54" width="3.00" shape="798.50,153.97 798.76,151.44"/>
+    </edge>
+    <edge id=":south_bottom_4" function="internal">
+        <lane id=":south_bottom_4_0" index="0" speed="5.11" length="5.38" width="3.00" shape="798.76,151.44 798.77,151.31 799.60,149.72 800.96,149.21 802.88,149.76"/>
+    </edge>
+    <edge id=":south_bottom_2" function="internal">
+        <lane id=":south_bottom_2_0" index="0" speed="7.53" length="8.95" width="2.50" shape="794.12,151.26 796.14,149.95 797.59,148.33 798.46,146.41 798.75,144.17"/>
+    </edge>
+    <edge id=":south_bottom_3" function="internal">
+        <lane id=":south_bottom_3_0" index="0" speed="8.52" length="9.16" width="3.00" shape="794.12,151.26 796.87,150.07 799.25,149.42 801.25,149.32 802.88,149.76"/>
+    </edge>
+    <edge id=":south_curve1_0" function="internal">
+        <lane id=":south_curve1_0_0" index="0" speed="5.19" length="8.71" width="3.00" shape="602.63,253.26 600.64,251.52 600.02,249.87 600.78,248.32 602.91,246.87"/>
+    </edge>
+    <edge id=":south_curve1_1" function="internal">
+        <lane id=":south_curve1_1_0" index="0" speed="11.11" length="10.98" width="3.00" shape="594.31,253.57 596.51,251.35 598.26,249.73 600.17,248.36 602.91,246.87"/>
+    </edge>
+    <edge id=":south_curve2_0" function="internal">
+        <lane id=":south_curve2_0_0" index="0" speed="11.11" length="0.48" width="3.00" shape="1000.67,248.66 1000.80,248.72 1000.88,248.78 1000.96,248.84 1001.06,248.94"/>
+    </edge>
+    <edge id=":supermarket_0" function="internal">
+        <lane id=":supermarket_0_0" index="0" speed="8.33" length="0.65" width="2.50" shape="749.18,351.15 749.09,350.98 749.01,350.87 748.91,350.78 748.75,350.67"/>
+    </edge>
+    <edge id=":village_center_0" function="internal">
+        <lane id=":village_center_0_0" index="0" speed="5.73" length="10.10" width="2.50" shape="791.45,448.25 793.97,447.80 795.25,446.43 795.29,444.16 794.09,440.98"/>
+    </edge>
+    <edge id=":village_center_1" function="internal">
+        <lane id=":village_center_1_0" index="0" speed="7.18" length="12.35" width="3.00" shape="791.45,448.25 794.54,447.73 796.74,446.19 798.06,443.61 798.50,440.00"/>
+    </edge>
+    <edge id=":village_center_2" function="internal">
+        <lane id=":village_center_2_0" index="0" speed="16.67" length="15.34" width="3.50" shape="791.45,448.25 806.80,448.25"/>
+    </edge>
+    <edge id=":village_center_3" function="internal">
+        <lane id=":village_center_3_0" index="0" speed="10.81" length="19.01" width="2.50" shape="791.45,448.25 795.76,448.92 799.60,450.94 802.98,454.31 805.91,459.02"/>
+    </edge>
+    <edge id=":village_center_4" function="internal">
+        <lane id=":village_center_4_0" index="0" speed="8.46" length="17.60" width="3.00" shape="791.45,448.25 795.85,448.98 798.99,451.19 800.87,454.86 801.50,460.00"/>
+    </edge>
+    <edge id=":village_entrance_0" function="internal">
+        <lane id=":village_entrance_0_0" index="0" speed="5.17" length="10.81" width="2.00" shape="384.53,448.25 388.23,447.97 389.61,447.14 388.67,445.76 385.40,443.82"/>
+    </edge>
+    <edge id=":village_entrance_1" function="internal">
+        <lane id=":village_entrance_1_0" index="0" speed="13.89" length="21.77" width="3.00" shape="384.53,448.25 389.38,447.87 395.45,446.76 401.24,444.98 405.27,442.61"/>
+    </edge>
+    <edge id=":village_entrance_2" function="internal">
+        <lane id=":village_entrance_2_0" index="0" speed="16.67" length="23.71" width="3.50" shape="384.53,448.25 408.24,448.25"/>
+    </edge>
+    <edge id=":village_entrance_3" function="internal">
+        <lane id=":village_entrance_3_0" index="0" speed="13.89" length="22.69" width="3.00" shape="384.53,448.25 391.81,448.60 397.82,449.66 402.55,451.42 406.01,453.89"/>
+    </edge>
+    <edge id=":village_entrance_4" function="internal">
+        <lane id=":village_entrance_4_0" index="0" speed="6.34" length="17.33" width="2.00" shape="384.53,448.25 390.45,448.48 395.87,449.24 398.71,450.62 396.87,452.68"/>
+    </edge>
+    <edge id=":village_exit_0" function="internal">
+        <lane id=":village_exit_0_0" index="0" speed="8.59" length="7.33" width="3.50" shape="1196.39,444.27 1198.26,446.01 1199.88,447.25 1201.26,448.00 1202.40,448.25"/>
+    </edge>
+    <edge id=":village_exit_1" function="internal">
+        <lane id=":village_exit_1_0" index="0" speed="16.67" length="8.30" width="3.50" shape="1194.10,448.25 1202.40,448.25"/>
+    </edge>
+    <edge id=":village_exit_2" function="internal">
+        <lane id=":village_exit_2_0" index="0" speed="8.96" length="8.01" width="3.50" shape="1195.65,452.23 1197.56,450.49 1199.33,449.25 1200.94,448.50 1202.40,448.25"/>
+    </edge>
+    <edge id=":west_alley1_0" function="internal">
+        <lane id=":west_alley1_0_0" index="0" speed="5.56" length="0.93" width="2.00" shape="300.45,500.89 300.22,500.98 300.00,501.01 299.78,500.98 299.55,500.89"/>
+    </edge>
+    <edge id=":west_alley2_0" function="internal">
+        <lane id=":west_alley2_0_0" index="0" speed="5.56" length="0.93" width="2.00" shape="300.45,401.34 300.22,401.26 300.00,401.23 299.78,401.26 299.55,401.34"/>
+    </edge>
+
+    <edge id="alley_back_main" from="house_cluster" to="main_west" priority="3" type="alley">
+        <lane id="alley_back_main_0" index="0" speed="5.56" length="198.03" width="2.00" shape="198.03,451.00 0.00,451.00"/>
+    </edge>
+    <edge id="alley_connect_north" from="west_alley1" to="house_cluster" priority="3" type="alley">
+        <lane id="alley_connect_north_0" index="0" speed="5.56" length="107.80" width="2.00" shape="299.55,500.89 203.13,452.68"/>
+    </edge>
+    <edge id="alley_connect_south" from="west_alley2" to="house_cluster" priority="3" type="alley">
+        <lane id="alley_connect_south_0" index="0" speed="5.56" length="107.80" width="2.00" shape="299.55,401.34 203.13,449.55"/>
+    </edge>
+    <edge id="alley_north" from="village_entrance" to="west_alley1" priority="3" type="alley">
+        <lane id="alley_north_0" index="0" speed="5.56" length="107.80" width="2.00" shape="396.87,452.68 300.45,500.89"/>
+    </edge>
+    <edge id="alley_south" from="village_entrance" to="west_alley2" priority="3" type="alley">
+        <lane id="alley_south_0" index="0" speed="5.56" length="94.98" width="2.00" shape="385.40,443.82 300.45,401.34"/>
+    </edge>
+    <edge id="center_to_north" from="village_center" to="north_top" priority="5" type="village_road">
+        <lane id="center_to_north_0" index="0" speed="11.11" length="281.15" width="3.00" shape="801.50,460.00 801.50,741.15"/>
+    </edge>
+    <edge id="center_to_south" from="village_center" to="south_bottom" priority="5" type="village_road">
+        <lane id="center_to_south_0" index="0" speed="11.11" length="286.03" width="3.00" shape="798.50,440.00 798.50,153.97"/>
+    </edge>
+    <edge id="church_fork_left" from="church_junction" to="church" priority="4" type="narrow_road">
+        <lane id="church_fork_left_0" index="0" speed="8.33" length="139.76" width="2.50" shape="799.71,852.06 700.88,950.88"/>
+    </edge>
+    <edge id="church_fork_right" from="church_junction" to="school" priority="4" type="narrow_road">
+        <lane id="church_fork_right_0" index="0" speed="8.33" length="137.26" width="2.50" shape="803.82,852.06 900.88,949.12"/>
+    </edge>
+    <edge id="community_to_north" from="community_center" to="north_curve2" priority="4" type="narrow_road">
+        <lane id="community_to_north_0" index="0" speed="8.33" length="172.88" width="2.50" shape="851.25,549.33 995.09,645.22"/>
+    </edge>
+    <edge id="farm_fork_left" from="farm_junction" to="farm_west" priority="2" type="farm_road">
+        <lane id="farm_fork_left_0" index="0" speed="6.94" length="197.72" width="2.50" shape="791.51,49.17 599.70,1.21"/>
+    </edge>
+    <edge id="farm_fork_right" from="farm_junction" to="farm_east" priority="2" type="farm_road">
+        <lane id="farm_fork_right_0" index="0" speed="6.94" length="203.03" width="2.50" shape="802.73,48.03 999.70,-1.21"/>
+    </edge>
+    <edge id="fork_to_mountain" from="east_fork" to="mountain_road" priority="5" type="village_road">
+        <lane id="fork_to_mountain_0" index="0" speed="11.11" length="176.14" width="3.00" shape="1403.54,452.61 1501.25,599.17"/>
+    </edge>
+    <edge id="fork_to_riverside" from="east_fork" to="riverside_road" priority="5" type="village_road">
+        <lane id="fork_to_riverside_0" index="0" speed="11.11" length="173.93" width="3.00" shape="1402.27,443.89 1498.75,299.17"/>
+    </edge>
+    <edge id="main_seg1" from="main_west" to="village_entrance" priority="7" type="main_road">
+        <lane id="main_seg1_0" index="0" speed="16.67" length="384.53" width="3.50" shape="0.00,448.25 384.53,448.25"/>
+    </edge>
+    <edge id="main_seg2" from="village_entrance" to="village_center" priority="7" type="main_road">
+        <lane id="main_seg2_0" index="0" speed="16.67" length="383.21" width="3.50" shape="408.24,448.25 791.45,448.25"/>
+    </edge>
+    <edge id="main_seg3" from="village_center" to="village_exit" priority="7" type="main_road">
+        <lane id="main_seg3_0" index="0" speed="16.67" length="387.31" width="3.50" shape="806.80,448.25 1194.10,448.25"/>
+    </edge>
+    <edge id="main_seg4" from="village_exit" to="east_fork" priority="7" type="main_road">
+        <lane id="main_seg4_0" index="0" speed="16.67" length="194.19" width="3.50" shape="1202.40,448.25 1396.59,448.25"/>
+    </edge>
+    <edge id="main_seg5" from="east_fork" to="main_east" priority="7" type="main_road">
+        <lane id="main_seg5_0" index="0" speed="16.67" length="194.25" width="3.50" shape="1405.75,448.25 1600.00,448.25"/>
+    </edge>
+    <edge id="north_loop1" from="village_entrance" to="north_curve1" priority="5" type="village_road">
+        <lane id="north_loop1_0" index="0" speed="11.11" length="275.36" width="3.00" shape="406.01,453.89 600.72,648.60"/>
+    </edge>
+    <edge id="north_loop2" from="north_curve1" to="north_top" priority="5" type="village_road">
+        <lane id="north_loop2_0" index="0" speed="11.11" length="217.62" width="3.00" shape="601.11,648.88 795.75,746.20"/>
+    </edge>
+    <edge id="north_loop3" from="north_top" to="north_curve2" priority="5" type="village_road">
+        <lane id="north_loop3_0" index="0" speed="11.11" length="209.76" width="3.00" shape="807.25,744.70 994.86,650.89"/>
+    </edge>
+    <edge id="north_loop4" from="north_curve2" to="village_exit" priority="5" type="village_road">
+        <lane id="north_loop4_0" index="0" speed="11.11" length="272.96" width="3.00" shape="1002.64,645.24 1195.65,452.23"/>
+    </edge>
+    <edge id="south_loop1" from="village_entrance" to="south_curve1" priority="5" type="village_road">
+        <lane id="south_loop1_0" index="0" speed="11.11" length="267.34" width="3.00" shape="405.27,442.61 594.31,253.57"/>
+    </edge>
+    <edge id="south_loop2" from="south_curve1" to="south_bottom" priority="5" type="village_road">
+        <lane id="south_loop2_0" index="0" speed="11.11" length="213.78" width="3.00" shape="602.91,246.87 794.12,151.26"/>
+    </edge>
+    <edge id="south_loop3" from="south_bottom" to="south_curve2" priority="5" type="village_road">
+        <lane id="south_loop3_0" index="0" speed="11.11" length="221.13" width="3.00" shape="802.88,149.76 1000.67,248.66"/>
+    </edge>
+    <edge id="south_loop4" from="south_curve2" to="village_exit" priority="5" type="village_road">
+        <lane id="south_loop4_0" index="0" speed="11.11" length="276.24" width="3.00" shape="1001.06,248.94 1196.39,444.27"/>
+    </edge>
+    <edge id="supermarket_to_south" from="supermarket" to="south_curve1" priority="4" type="narrow_road">
+        <lane id="supermarket_to_south_0" index="0" speed="8.33" length="175.61" width="2.50" shape="748.75,350.67 602.63,253.26"/>
+    </edge>
+    <edge id="to_church_junction" from="north_top" to="church_junction" priority="4" type="narrow_road">
+        <lane id="to_church_junction_0" index="0" speed="8.33" length="93.31" width="2.50" shape="801.25,754.00 801.25,847.31"/>
+    </edge>
+    <edge id="to_community" from="village_center" to="community_center" priority="4" type="narrow_road">
+        <lane id="to_community_0" index="0" speed="8.33" length="100.43" width="2.50" shape="805.91,459.02 850.82,548.85"/>
+    </edge>
+    <edge id="to_farm_junction" from="south_bottom" to="farm_junction" priority="4" type="narrow_road">
+        <lane id="to_farm_junction_0" index="0" speed="8.33" length="89.10" width="2.50" shape="798.75,144.17 798.75,55.08"/>
+    </edge>
+    <edge id="to_supermarket" from="village_center" to="supermarket" priority="4" type="narrow_road">
+        <lane id="to_supermarket_0" index="0" speed="8.33" length="100.43" width="2.50" shape="794.09,440.98 749.18,351.15"/>
+    </edge>
+
+    <tlLogic id="village_center" type="static" programID="0" offset="0">
+        <phase duration="81" state="GGGGG"/>
+        <phase duration="4"  state="yyyyy"/>
+        <phase duration="5"  state="rrrrr"/>
+    </tlLogic>
+
+    <junction id="church" type="dead_end" x="700.00" y="950.00" incLanes="church_fork_left_0" intLanes="" shape="701.77,951.77 700.00,950.00"/>
+    <junction id="church_junction" type="priority" x="800.00" y="850.00" incLanes="to_church_junction_0" intLanes=":church_junction_0_0 :church_junction_1_0" shape="802.94,852.94 804.71,851.17 803.48,849.76 803.05,849.10 802.75,848.47 802.56,847.88 802.50,847.31 800.00,847.31 799.87,848.93 799.71,849.62 799.48,850.22 799.19,850.74 798.83,851.17 800.60,852.94 801.38,852.42 801.77,852.35 802.16,852.42 802.55,852.61">
+        <request index="0" response="00" foes="00" cont="0"/>
+        <request index="1" response="00" foes="00" cont="0"/>
+    </junction>
+    <junction id="community_center" type="priority" x="850.00" y="550.00" incLanes="to_community_0" intLanes=":community_center_0_0" shape="850.55,550.37 851.94,548.29 849.70,549.41 849.93,549.83 850.04,549.97 850.16,550.09 850.32,550.21">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="east_fork" type="priority" x="1400.00" y="450.00" incLanes="main_seg4_0" intLanes=":east_fork_0_0 :east_fork_1_0 :east_fork_2_0" shape="1402.30,453.45 1404.79,451.78 1404.37,450.79 1404.44,450.45 1404.69,450.20 1405.13,450.05 1405.75,450.00 1405.75,446.50 1403.98,446.30 1403.48,446.05 1403.24,445.71 1403.25,445.26 1403.52,444.72 1401.02,443.05 1399.51,444.97 1398.77,445.64 1398.03,446.12 1397.30,446.40 1396.59,446.50 1396.59,450.00 1398.74,450.38 1399.72,450.86 1400.64,451.53 1401.50,452.39">
+        <request index="0" response="000" foes="000" cont="0"/>
+        <request index="1" response="000" foes="000" cont="0"/>
+        <request index="2" response="000" foes="000" cont="0"/>
+    </junction>
+    <junction id="farm_east" type="dead_end" x="1000.00" y="0.00" incLanes="farm_fork_right_0" intLanes="" shape="999.39,-2.43 1000.00,0.00"/>
+    <junction id="farm_junction" type="priority" x="800.00" y="50.00" incLanes="to_farm_junction_0" intLanes=":farm_junction_0_0 :farm_junction_1_0" shape="797.50,55.08 800.00,55.08 800.34,52.17 800.76,51.08 801.35,50.23 802.10,49.61 803.03,49.24 802.42,46.82 800.20,47.44 798.52,47.97 797.12,48.36 795.72,48.52 794.04,48.41 791.82,47.95 791.21,50.38 793.13,50.95 794.70,51.60 795.93,52.34 796.80,53.17 797.33,54.08">
+        <request index="0" response="00" foes="00" cont="0"/>
+        <request index="1" response="00" foes="00" cont="0"/>
+    </junction>
+    <junction id="farm_west" type="dead_end" x="600.00" y="0.00" incLanes="farm_fork_left_0" intLanes="" shape="599.39,2.43 600.00,0.00"/>
+    <junction id="house_cluster" type="priority" x="200.00" y="450.00" incLanes="alley_connect_north_0 alley_connect_south_0" intLanes=":house_cluster_0_0 :house_cluster_1_0" shape="202.68,453.58 203.58,451.79 202.98,451.34 202.91,451.12 202.98,450.89 203.21,450.67 203.58,450.45 202.68,448.66 201.05,449.49 200.45,449.74 199.83,449.89 199.06,449.98 198.03,450.00 198.03,452.00 199.84,452.16 200.45,452.38 201.05,452.68 201.75,453.08">
+        <request index="0" response="00" foes="10" cont="0"/>
+        <request index="1" response="01" foes="01" cont="0"/>
+    </junction>
+    <junction id="main_east" type="dead_end" x="1600.00" y="450.00" incLanes="main_seg5_0" intLanes="" shape="1600.00,446.50 1600.00,450.00"/>
+    <junction id="main_west" type="priority" x="0.00" y="450.00" incLanes="alley_back_main_0" intLanes=":main_west_0_0" shape="0.00,450.00 0.00,452.00 0.00,450.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="mountain_road" type="dead_end" x="1500.00" y="600.00" incLanes="fork_to_mountain_0" intLanes="" shape="1502.50,598.34 1500.00,600.00"/>
+    <junction id="north_curve1" type="priority" x="600.00" y="650.00" incLanes="north_loop1_0" intLanes=":north_curve1_0_0" shape="600.44,650.22 601.78,647.53 599.66,649.66 599.91,649.90 600.01,649.98 600.12,650.05 600.25,650.13">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="north_curve2" type="priority" x="1000.00" y="650.00" incLanes="community_to_north_0 north_loop3_0" intLanes=":north_curve2_0_0 :north_curve2_1_0" shape="1003.70,646.30 1001.58,644.18 999.90,645.21 998.97,645.34 997.97,645.21 996.91,644.83 995.78,644.18 994.40,646.26 995.59,647.44 995.71,648.00 995.52,648.53 995.01,649.05 994.19,649.55 995.53,652.23 997.46,651.26 998.86,650.49 999.97,649.76 1001.00,648.92 1002.17,647.82">
+        <request index="0" response="10" foes="10" cont="0"/>
+        <request index="1" response="00" foes="01" cont="0"/>
+    </junction>
+    <junction id="north_top" type="priority" x="800.00" y="750.00" incLanes="center_to_north_0 north_loop2_0" intLanes=":north_top_0_0 :north_top_1_0 :north_top_2_0 :north_top_4_0" shape="800.00,754.00 802.50,754.00 803.10,750.78 803.85,749.39 804.91,748.13 806.26,747.01 807.92,746.04 806.58,743.36 804.59,743.91 803.89,743.70 803.40,743.17 803.10,742.32 803.00,741.15 800.00,741.15 799.60,744.00 799.11,744.82 798.41,745.24 797.52,745.25 796.42,744.86 795.08,747.54 797.81,749.35 798.77,750.39 799.45,751.50 799.86,752.71">
+        <request index="0" response="0000" foes="0100" cont="0"/>
+        <request index="1" response="0000" foes="1100" cont="0"/>
+        <request index="2" response="0011" foes="0011" cont="0"/>
+        <request index="3" response="0010" foes="0010" cont="1"/>
+    </junction>
+    <junction id="riverside_road" type="dead_end" x="1500.00" y="300.00" incLanes="fork_to_riverside_0" intLanes="" shape="1497.50,298.34 1500.00,300.00"/>
+    <junction id="school" type="dead_end" x="900.00" y="950.00" incLanes="church_fork_right_0" intLanes="" shape="901.77,948.23 900.00,950.00"/>
+    <junction id="south_bottom" type="priority" x="800.00" y="150.00" incLanes="center_to_south_0 south_loop2_0" intLanes=":south_bottom_0_0 :south_bottom_4_0 :south_bottom_2_0 :south_bottom_3_0" shape="797.00,153.97 800.00,153.97 800.25,151.89 800.55,151.27 800.98,150.93 801.54,150.88 802.21,151.11 803.55,148.42 801.58,147.16 800.89,146.47 800.39,145.74 800.10,144.98 800.00,144.17 797.50,144.17 797.05,146.47 796.49,147.47 795.70,148.38 794.69,149.20 793.45,149.92 794.79,152.61 796.02,152.27 796.45,152.39 796.75,152.72 796.94,153.25">
+        <request index="0" response="1100" foes="1100" cont="0"/>
+        <request index="1" response="1000" foes="1000" cont="1"/>
+        <request index="2" response="0000" foes="0001" cont="0"/>
+        <request index="3" response="0000" foes="0011" cont="0"/>
+    </junction>
+    <junction id="south_curve1" type="priority" x="600.00" y="250.00" incLanes="supermarket_to_south_0 south_loop1_0" intLanes=":south_curve1_0_0 :south_curve1_1_0" shape="601.94,254.30 603.33,252.22 601.88,250.79 601.73,250.11 601.96,249.45 602.58,248.82 603.58,248.21 602.24,245.53 600.08,246.65 598.54,247.57 597.34,248.46 596.24,249.48 594.96,250.77 593.25,252.51 595.37,254.63 597.36,253.34 598.43,253.13 599.55,253.23 600.72,253.61">
+        <request index="0" response="10" foes="10" cont="0"/>
+        <request index="1" response="00" foes="01" cont="0"/>
+    </junction>
+    <junction id="south_curve2" type="priority" x="1000.00" y="250.00" incLanes="south_loop3_0" intLanes=":south_curve2_0_0" shape="1000.00,250.00 1002.12,247.88 1001.86,247.63 1001.77,247.55 1001.66,247.48 1001.53,247.41 1001.34,247.32">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="supermarket" type="priority" x="750.00" y="350.00" incLanes="to_supermarket_0" intLanes=":supermarket_0_0" shape="748.06,351.71 750.30,350.59 750.07,350.17 749.96,350.03 749.84,349.91 749.68,349.79 749.45,349.63">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="village_center" type="traffic_light" x="800.00" y="450.00" incLanes="main_seg2_0" intLanes=":village_center_0_0 :village_center_1_0 :village_center_2_0 :village_center_3_0 :village_center_4_0" shape="800.00,460.00 803.00,460.00 804.79,459.58 807.02,458.46 805.84,455.87 805.12,453.76 804.85,452.11 805.04,450.94 805.69,450.23 806.80,450.00 806.80,446.50 804.72,446.32 803.02,445.78 801.70,444.88 800.76,443.61 800.19,441.99 800.00,440.00 797.00,440.00 795.21,440.42 792.98,441.54 793.91,444.30 793.83,445.26 793.40,445.95 792.61,446.36 791.45,446.50 791.45,450.00 794.07,450.28 796.20,451.11 797.86,452.50 799.05,454.44 799.76,456.94">
+        <request index="0" response="00000" foes="00000" cont="0"/>
+        <request index="1" response="00000" foes="00000" cont="0"/>
+        <request index="2" response="00000" foes="00000" cont="0"/>
+        <request index="3" response="00000" foes="00000" cont="0"/>
+        <request index="4" response="00000" foes="00000" cont="0"/>
+    </junction>
+    <junction id="village_entrance" type="priority" x="400.00" y="450.00" incLanes="main_seg1_0" intLanes=":village_entrance_0_0 :village_entrance_1_0 :village_entrance_2_0 :village_entrance_3_0 :village_entrance_4_0" shape="404.95,454.95 407.07,452.83 405.94,451.26 405.95,450.71 406.33,450.31 407.10,450.08 408.24,450.00 408.24,446.50 405.92,446.19 405.39,445.79 405.28,445.24 405.60,444.54 406.33,443.67 404.21,441.55 401.74,443.54 399.04,444.83 396.10,445.41 392.92,445.29 389.50,444.46 385.84,442.92 384.95,444.71 384.53,446.50 384.53,450.00 389.16,450.05 392.73,450.20 395.24,450.45 396.69,450.80 397.09,451.24 396.42,451.79 397.32,453.58 400.02,452.80 401.31,452.88 402.56,453.26 403.78,453.95">
+        <request index="0" response="00000" foes="00000" cont="0"/>
+        <request index="1" response="00000" foes="00000" cont="0"/>
+        <request index="2" response="00000" foes="00000" cont="0"/>
+        <request index="3" response="00000" foes="00000" cont="0"/>
+        <request index="4" response="00000" foes="00000" cont="0"/>
+    </junction>
+    <junction id="village_exit" type="priority" x="1200.00" y="450.00" incLanes="south_loop4_0 main_seg3_0 north_loop4_0" intLanes=":village_exit_0_0 :village_exit_1_0 :village_exit_2_0" shape="1202.40,450.00 1202.40,446.50 1201.11,446.13 1200.33,445.68 1199.46,445.04 1198.50,444.21 1197.45,443.21 1195.33,445.33 1195.71,445.98 1195.61,446.21 1195.30,446.37 1194.80,446.47 1194.10,446.50 1194.10,450.00 1194.89,450.13 1195.05,450.29 1195.05,450.52 1194.90,450.81 1194.59,451.17 1196.71,453.29 1198.80,451.46 1199.78,450.82 1200.70,450.37 1201.57,450.09">
+        <request index="0" response="010" foes="110" cont="0"/>
+        <request index="1" response="000" foes="101" cont="0"/>
+        <request index="2" response="011" foes="011" cont="0"/>
+    </junction>
+    <junction id="west_alley1" type="priority" x="300.00" y="500.00" incLanes="alley_north_0" intLanes=":west_alley1_0_0" shape="300.89,501.79 300.00,500.00 299.11,501.79 299.70,501.99 300.00,502.01 300.30,501.99 300.60,501.91">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="west_alley2" type="priority" x="300.00" y="400.00" incLanes="alley_south_0" intLanes=":west_alley2_0_0" shape="300.00,402.24 300.89,400.45 300.30,400.25 300.00,400.22 299.70,400.25 299.40,400.32 299.11,400.45">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+
+    <junction id=":north_top_4_0" type="internal" x="799.61" y="749.24" incLanes=":north_top_3_0 center_to_north_0" intLanes=":north_top_1_0"/>
+    <junction id=":south_bottom_4_0" type="internal" x="798.76" y="151.44" incLanes=":south_bottom_1_0 south_loop2_0" intLanes=":south_bottom_3_0"/>
+
+    <connection from="alley_back_main" to="main_seg1" fromLane="0" toLane="0" via=":main_west_0_0" dir="t" state="M"/>
+    <connection from="alley_connect_north" to="alley_back_main" fromLane="0" toLane="0" via=":house_cluster_0_0" dir="s" state="M"/>
+    <connection from="alley_connect_south" to="alley_back_main" fromLane="0" toLane="0" via=":house_cluster_1_0" dir="s" state="m"/>
+    <connection from="alley_north" to="alley_connect_north" fromLane="0" toLane="0" via=":west_alley1_0_0" dir="l" state="M"/>
+    <connection from="alley_south" to="alley_connect_south" fromLane="0" toLane="0" via=":west_alley2_0_0" dir="r" state="M"/>
+    <connection from="center_to_north" to="north_loop3" fromLane="0" toLane="0" via=":north_top_0_0" dir="r" state="M"/>
+    <connection from="center_to_north" to="to_church_junction" fromLane="0" toLane="0" via=":north_top_1_0" dir="s" state="M"/>
+    <connection from="center_to_south" to="to_farm_junction" fromLane="0" toLane="0" via=":south_bottom_0_0" dir="s" state="m"/>
+    <connection from="center_to_south" to="south_loop3" fromLane="0" toLane="0" via=":south_bottom_1_0" dir="l" state="m"/>
+    <connection from="community_to_north" to="north_loop4" fromLane="0" toLane="0" via=":north_curve2_0_0" dir="r" state="m"/>
+    <connection from="main_seg1" to="alley_south" fromLane="0" toLane="0" via=":village_entrance_0_0" dir="r" state="M"/>
+    <connection from="main_seg1" to="south_loop1" fromLane="0" toLane="0" via=":village_entrance_1_0" dir="R" state="M"/>
+    <connection from="main_seg1" to="main_seg2" fromLane="0" toLane="0" via=":village_entrance_2_0" dir="s" state="M"/>
+    <connection from="main_seg1" to="north_loop1" fromLane="0" toLane="0" via=":village_entrance_3_0" dir="L" state="M"/>
+    <connection from="main_seg1" to="alley_north" fromLane="0" toLane="0" via=":village_entrance_4_0" dir="l" state="M"/>
+    <connection from="main_seg2" to="to_supermarket" fromLane="0" toLane="0" via=":village_center_0_0" tl="village_center" linkIndex="0" dir="r" state="O"/>
+    <connection from="main_seg2" to="center_to_south" fromLane="0" toLane="0" via=":village_center_1_0" tl="village_center" linkIndex="1" dir="R" state="O"/>
+    <connection from="main_seg2" to="main_seg3" fromLane="0" toLane="0" via=":village_center_2_0" tl="village_center" linkIndex="2" dir="s" state="O"/>
+    <connection from="main_seg2" to="to_community" fromLane="0" toLane="0" via=":village_center_3_0" tl="village_center" linkIndex="3" dir="L" state="O"/>
+    <connection from="main_seg2" to="center_to_north" fromLane="0" toLane="0" via=":village_center_4_0" tl="village_center" linkIndex="4" dir="l" state="O"/>
+    <connection from="main_seg3" to="main_seg4" fromLane="0" toLane="0" via=":village_exit_1_0" dir="s" state="M"/>
+    <connection from="main_seg4" to="fork_to_riverside" fromLane="0" toLane="0" via=":east_fork_0_0" dir="r" state="M"/>
+    <connection from="main_seg4" to="main_seg5" fromLane="0" toLane="0" via=":east_fork_1_0" dir="s" state="M"/>
+    <connection from="main_seg4" to="fork_to_mountain" fromLane="0" toLane="0" via=":east_fork_2_0" dir="l" state="M"/>
+    <connection from="north_loop1" to="north_loop2" fromLane="0" toLane="0" via=":north_curve1_0_0" dir="s" state="M"/>
+    <connection from="north_loop2" to="north_loop3" fromLane="0" toLane="0" via=":north_top_2_0" dir="r" state="m"/>
+    <connection from="north_loop2" to="to_church_junction" fromLane="0" toLane="0" via=":north_top_3_0" dir="l" state="m"/>
+    <connection from="north_loop3" to="north_loop4" fromLane="0" toLane="0" via=":north_curve2_1_0" dir="s" state="M"/>
+    <connection from="north_loop4" to="main_seg4" fromLane="0" toLane="0" via=":village_exit_2_0" dir="l" state="m"/>
+    <connection from="south_loop1" to="south_loop2" fromLane="0" toLane="0" via=":south_curve1_1_0" dir="s" state="M"/>
+    <connection from="south_loop2" to="to_farm_junction" fromLane="0" toLane="0" via=":south_bottom_2_0" dir="r" state="M"/>
+    <connection from="south_loop2" to="south_loop3" fromLane="0" toLane="0" via=":south_bottom_3_0" dir="l" state="M"/>
+    <connection from="south_loop3" to="south_loop4" fromLane="0" toLane="0" via=":south_curve2_0_0" dir="s" state="M"/>
+    <connection from="south_loop4" to="main_seg4" fromLane="0" toLane="0" via=":village_exit_0_0" dir="r" state="m"/>
+    <connection from="supermarket_to_south" to="south_loop2" fromLane="0" toLane="0" via=":south_curve1_0_0" dir="l" state="m"/>
+    <connection from="to_church_junction" to="church_fork_right" fromLane="0" toLane="0" via=":church_junction_0_0" dir="r" state="M"/>
+    <connection from="to_church_junction" to="church_fork_left" fromLane="0" toLane="0" via=":church_junction_1_0" dir="l" state="M"/>
+    <connection from="to_community" to="community_to_north" fromLane="0" toLane="0" via=":community_center_0_0" dir="s" state="M"/>
+    <connection from="to_farm_junction" to="farm_fork_left" fromLane="0" toLane="0" via=":farm_junction_0_0" dir="r" state="M"/>
+    <connection from="to_farm_junction" to="farm_fork_right" fromLane="0" toLane="0" via=":farm_junction_1_0" dir="l" state="M"/>
+    <connection from="to_supermarket" to="supermarket_to_south" fromLane="0" toLane="0" via=":supermarket_0_0" dir="s" state="M"/>
+
+    <connection from=":church_junction_0" to="church_fork_right" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":church_junction_1" to="church_fork_left" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":community_center_0" to="community_to_north" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":east_fork_0" to="fork_to_riverside" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":east_fork_1" to="main_seg5" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":east_fork_2" to="fork_to_mountain" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":farm_junction_0" to="farm_fork_left" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":farm_junction_1" to="farm_fork_right" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":house_cluster_0" to="alley_back_main" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":house_cluster_1" to="alley_back_main" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":main_west_0" to="main_seg1" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":north_curve1_0" to="north_loop2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":north_curve2_0" to="north_loop4" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":north_curve2_1" to="north_loop4" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":north_top_0" to="north_loop3" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":north_top_1" to="to_church_junction" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":north_top_2" to="north_loop3" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":north_top_3" to="to_church_junction" fromLane="0" toLane="0" via=":north_top_4_0" dir="l" state="m"/>
+    <connection from=":north_top_4" to="to_church_junction" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":south_bottom_0" to="to_farm_junction" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":south_bottom_1" to="south_loop3" fromLane="0" toLane="0" via=":south_bottom_4_0" dir="l" state="m"/>
+    <connection from=":south_bottom_4" to="south_loop3" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":south_bottom_2" to="to_farm_junction" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":south_bottom_3" to="south_loop3" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":south_curve1_0" to="south_loop2" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":south_curve1_1" to="south_loop2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":south_curve2_0" to="south_loop4" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":supermarket_0" to="supermarket_to_south" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":village_center_0" to="to_supermarket" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":village_center_1" to="center_to_south" fromLane="0" toLane="0" dir="R" state="M"/>
+    <connection from=":village_center_2" to="main_seg3" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":village_center_3" to="to_community" fromLane="0" toLane="0" dir="L" state="M"/>
+    <connection from=":village_center_4" to="center_to_north" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":village_entrance_0" to="alley_south" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":village_entrance_1" to="south_loop1" fromLane="0" toLane="0" dir="R" state="M"/>
+    <connection from=":village_entrance_2" to="main_seg2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":village_entrance_3" to="north_loop1" fromLane="0" toLane="0" dir="L" state="M"/>
+    <connection from=":village_entrance_4" to="alley_north" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":village_exit_0" to="main_seg4" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":village_exit_1" to="main_seg4" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":village_exit_2" to="main_seg4" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":west_alley1_0" to="alley_connect_north" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":west_alley2_0" to="alley_connect_south" fromLane="0" toLane="0" dir="r" state="M"/>
+
+</net>

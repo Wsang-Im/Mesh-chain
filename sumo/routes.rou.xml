@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <!-- Vehicle types with different OEMs -->
+    <vType id="OEM_A" vClass="passenger" accel="2.6" decel="4.5" sigma="0.5" length="5.0" maxSpeed="13.89" color="1,0,0"/>
+    <vType id="OEM_B" vClass="passenger" accel="2.6" decel="4.5" sigma="0.5" length="5.0" maxSpeed="13.89" color="0,1,0"/>
+    <vType id="OEM_C" vClass="passenger" accel="2.6" decel="4.5" sigma="0.5" length="5.0" maxSpeed="13.89" color="0,0,1"/>
+    <vType id="OEM_D" vClass="passenger" accel="2.6" decel="4.5" sigma="0.5" length="5.0" maxSpeed="13.89" color="1,1,0"/>
+    <vType id="OEM_E" vClass="passenger" accel="2.6" decel="4.5" sigma="0.5" length="5.0" maxSpeed="13.89" color="1,0,1"/>
+    <vType id="OEM_F" vClass="passenger" accel="2.6" decel="4.5" sigma="0.5" length="5.0" maxSpeed="13.89" color="0,1,1"/>
+
+    <!-- Simple circular route -->
+    <route id="circle" edges="e1 e2 e3 e4"/>
+
+    <!-- Vehicles with staggered departure times -->
+    <vehicle id="v0" type="OEM_A" route="circle" depart="0.0"/>
+    <vehicle id="v1" type="OEM_B" route="circle" depart="5.0"/>
+    <vehicle id="v2" type="OEM_C" route="circle" depart="10.0"/>
+    <vehicle id="v3" type="OEM_D" route="circle" depart="15.0"/>
+    <vehicle id="v4" type="OEM_E" route="circle" depart="20.0"/>
+    <vehicle id="v5" type="OEM_F" route="circle" depart="25.0"/>
+
+    <vehicle id="v6" type="OEM_A" route="circle" depart="30.0"/>
+    <vehicle id="v7" type="OEM_B" route="circle" depart="35.0"/>
+    <vehicle id="v8" type="OEM_C" route="circle" depart="40.0"/>
+    <vehicle id="v9" type="OEM_D" route="circle" depart="45.0"/>
+    <vehicle id="v10" type="OEM_E" route="circle" depart="50.0"/>
+    <vehicle id="v11" type="OEM_F" route="circle" depart="55.0"/>
+
+    <vehicle id="v12" type="OEM_A" route="circle" depart="60.0"/>
+    <vehicle id="v13" type="OEM_B" route="circle" depart="65.0"/>
+    <vehicle id="v14" type="OEM_C" route="circle" depart="70.0"/>
+    <vehicle id="v15" type="OEM_D" route="circle" depart="75.0"/>
+    <vehicle id="v16" type="OEM_E" route="circle" depart="80.0"/>
+    <vehicle id="v17" type="OEM_F" route="circle" depart="85.0"/>
+
+    <vehicle id="v18" type="OEM_A" route="circle" depart="90.0"/>
+    <vehicle id="v19" type="OEM_B" route="circle" depart="95.0"/>
+    <vehicle id="v20" type="OEM_C" route="circle" depart="100.0"/>
+    <vehicle id="v21" type="OEM_D" route="circle" depart="105.0"/>
+    <vehicle id="v22" type="OEM_E" route="circle" depart="110.0"/>
+    <vehicle id="v23" type="OEM_F" route="circle" depart="115.0"/>
+
+    <vehicle id="v24" type="OEM_A" route="circle" depart="120.0"/>
+    <vehicle id="v25" type="OEM_B" route="circle" depart="125.0"/>
+    <vehicle id="v26" type="OEM_C" route="circle" depart="130.0"/>
+    <vehicle id="v27" type="OEM_D" route="circle" depart="135.0"/>
+    <vehicle id="v28" type="OEM_E" route="circle" depart="140.0"/>
+    <vehicle id="v29" type="OEM_F" route="circle" depart="145.0"/>
+
+</routes>

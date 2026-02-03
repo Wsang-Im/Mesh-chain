@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 시골 도로 RSU 위치 (POI로 표시) -->
+<!-- 2km 도로에 4개 RSU 배치 (500m 간격) -->
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <!-- RSU - 도로 북쪽 (빨간색) -->
+    <!-- 도로가 y=88-128에 있으므로 북쪽은 y=155 정도 -->
+
+    <!-- RSU-R1: 시작 지점 (0km) -->
+    <poi id="RSU-R1" x="0.0" y="155.0" color="255,0,0" layer="200" type="RSU"/>
+
+    <!-- RSU-R2: 중간 지점 (500m) -->
+    <poi id="RSU-R2" x="500.0" y="145.0" color="255,0,0" layer="200" type="RSU"/>
+
+    <!-- RSU-R3: T자 교차로 (1km) -->
+    <poi id="RSU-R3" x="1000.0" y="165.0" color="255,0,0" layer="200" type="RSU"/>
+
+    <!-- RSU-R4: 중간 지점 (1.5km) -->
+    <poi id="RSU-R4" x="1500.0" y="150.0" color="255,0,0" layer="200" type="RSU"/>
+
+    <!-- RSU-R5: 종점 (2km) -->
+    <poi id="RSU-R5" x="2000.0" y="155.0" color="255,0,0" layer="200" type="RSU"/>
+
+    <!-- 농로 RSU (파란색) - T자 교차로 농로 입구 -->
+    <poi id="RSU-F1" x="1000.0" y="60.0" color="0,0,255" layer="200" type="RSU"/>
+</additional>

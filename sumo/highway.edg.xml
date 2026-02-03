@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edges>
+    <!-- 동쪽 방향 3차선 -->
+    <edge id="highway" from="west" to="east" numLanes="3" speed="33.33" priority="13" spreadType="center"/>
+    <!-- 서쪽 방향 3차선 (명시적으로 반대 방향 생성) -->
+    <edge id="-highway" from="east" to="west" numLanes="3" speed="33.33" priority="13" spreadType="center"/>
+</edges>

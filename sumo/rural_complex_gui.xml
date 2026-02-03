@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 복잡한 시골 마을 GUI 설정 -->
+<viewsettings>
+    <!-- 마을 전체가 보이도록 -->
+    <viewport zoom="300" x="800" y="500" angle="0"/>
+
+    <scheme name="real world"/>
+    <background backgroundColor="240,245,235"/>
+
+    <delay value="50"/>
+    <grid xSize="100" ySize="100" show="true"/>
+
+    <streets streetName="hide" streetNameSize="40" edgeName="hide"
+             hideConnectors="false" showLinkDecals="true"
+             showLane2Lane="false" showBikeMarkings="true"/>
+
+    <vehicles vehicleMode="0" vehicleQuality="2" minVehicleSize="1.5"
+              vehicleName="show" vehicleSize="1.5"
+              showBlinker="true" drawLaneChangePreference="false"
+              showBTRange="false" showRouteIndex="false"/>
+
+    <junctions showLane2Lane="false" drawShape="true"
+               drawCrossingsAndWalkingAreas="true"/>
+
+    <!-- RSU POI 표시 -->
+    <additionals addMode="0"
+                 poiSize="80.00"
+                 poiDetail="15"
+                 poiName="show"
+                 poiType="show"
+                 poiText="id"
+                 poiTextSize="100.00"
+                 poiColorer="given"/>
+
+    <legend showSizeLegend="false"/>
+</viewsettings>

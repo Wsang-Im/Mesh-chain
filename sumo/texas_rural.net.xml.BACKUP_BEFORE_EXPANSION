@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-11-11 20:28:09 by Eclipse SUMO netconvert Version 1.15.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <node-files value="texas_rural.nod.xml"/>
+        <edge-files value="texas_rural.edg.xml"/>
+        <type-files value="texas_rural.typ.xml"/>
+    </input>
+
+    <output>
+        <output-file value="texas_rural.net.xml"/>
+    </output>
+
+    <junctions>
+        <no-turnarounds value="false"/>
+    </junctions>
+
+</configuration>
+-->
+
+<net version="1.9" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,0.00" convBoundary="0.00,0.00,2000.00,1500.00" origBoundary="0.00,0.00,2000.00,1500.00" projParameter="!"/>
+
+    <type id="county_road" priority="7" numLanes="1" speed="20.12" oneway="0" width="3.30"/>
+    <type id="farm_access" priority="4" numLanes="1" speed="13.41" oneway="0" width="3.00"/>
+    <type id="fm_road" priority="8" numLanes="1" speed="24.59" oneway="0" width="3.60"/>
+    <type id="main_street" priority="7" numLanes="1" speed="17.88" oneway="0" width="3.60"/>
+    <type id="town_street" priority="6" numLanes="1" speed="15.65" oneway="0" width="3.30"/>
+
+    <edge id=":1st_north_0" function="internal">
+        <lane id=":1st_north_0_0" index="0" speed="6.54" length="9.11" width="3.30" shape="401.65,1092.70 402.00,1095.17 403.06,1096.94 404.83,1098.00 407.30,1098.35"/>
+    </edge>
+    <edge id=":1st_north_1" function="internal">
+        <lane id=":1st_north_1_0" index="0" speed="15.65" length="11.30" width="3.30" shape="396.00,1098.35 407.30,1098.35"/>
+    </edge>
+    <edge id=":1st_park_0" function="internal">
+        <lane id=":1st_park_0_0" index="0" speed="6.54" length="9.11" width="3.30" shape="401.65,392.70 402.00,395.17 403.06,396.94 404.83,398.00 407.30,398.35"/>
+    </edge>
+    <edge id=":1st_park_1" function="internal">
+        <lane id=":1st_park_1_0" index="0" speed="15.65" length="11.30" width="3.30" shape="401.65,392.70 401.65,404.00"/>
+    </edge>
+    <edge id=":1st_park_2" function="internal">
+        <lane id=":1st_park_2_0" index="0" speed="20.12" length="11.30" width="3.30" shape="396.00,398.35 407.30,398.35"/>
+    </edge>
+    <edge id=":1st_park_3" function="internal">
+        <lane id=":1st_park_3_0" index="0" speed="6.54" length="9.11" width="3.30" shape="396.00,398.35 398.47,398.70 400.24,399.76 401.30,401.53 401.65,404.00"/>
+    </edge>
+    <edge id=":2nd_north_0" function="internal">
+        <lane id=":2nd_north_0_0" index="0" speed="6.54" length="9.11" width="3.30" shape="1201.65,1092.70 1202.00,1095.17 1203.06,1096.94 1204.83,1098.00 1207.30,1098.35"/>
+    </edge>
+    <edge id=":2nd_north_1" function="internal">
+        <lane id=":2nd_north_1_0" index="0" speed="15.65" length="11.30" width="3.30" shape="1196.00,1098.35 1207.30,1098.35"/>
+    </edge>
+    <edge id=":2nd_south_0" function="internal">
+        <lane id=":2nd_south_0_0" index="0" speed="6.47" length="8.99" width="3.30" shape="1196.00,-1.50 1198.47,-1.16 1200.24,-0.12 1201.30,1.59 1201.65,4.00"/>
+    </edge>
+    <edge id=":2nd_store_0" function="internal">
+        <lane id=":2nd_store_0_0" index="0" speed="6.54" length="9.11" width="3.30" shape="1201.65,392.70 1202.00,395.17 1203.06,396.94 1204.83,398.00 1207.30,398.35"/>
+    </edge>
+    <edge id=":2nd_store_1" function="internal">
+        <lane id=":2nd_store_1_0" index="0" speed="15.65" length="11.30" width="3.30" shape="1201.65,392.70 1201.65,404.00"/>
+    </edge>
+    <edge id=":2nd_store_2" function="internal">
+        <lane id=":2nd_store_2_0" index="0" speed="20.12" length="11.30" width="3.30" shape="1196.00,398.35 1207.30,398.35"/>
+    </edge>
+    <edge id=":2nd_store_3" function="internal">
+        <lane id=":2nd_store_3_0" index="0" speed="6.54" length="9.11" width="3.30" shape="1196.00,398.35 1198.47,398.70 1200.24,399.76 1201.30,401.53 1201.65,404.00"/>
+    </edge>
+    <edge id=":county_east_0" function="internal">
+        <lane id=":county_east_0_0" index="0" speed="6.51" length="8.99" width="3.00" shape="1596.00,398.35 1598.41,398.70 1600.12,399.76 1601.16,401.53 1601.50,404.00"/>
+    </edge>
+    <edge id=":farm_south1_0" function="internal">
+        <lane id=":farm_south1_0_0" index="0" speed="13.41" length="0.10" width="3.00" shape="600.00,-1.50 600.00,-1.50"/>
+    </edge>
+    <edge id=":farm_south2_0" function="internal">
+        <lane id=":farm_south2_0_0" index="0" speed="13.41" length="0.10" width="3.00" shape="1000.00,-1.50 1000.00,-1.50"/>
+    </edge>
+    <edge id=":fm_1st_0" function="internal">
+        <lane id=":fm_1st_0_0" index="0" speed="6.61" length="9.23" width="3.30" shape="407.30,751.80 404.83,752.16 403.06,753.25 402.00,755.06 401.65,757.60"/>
+    </edge>
+    <edge id=":fm_1st_1" function="internal">
+        <lane id=":fm_1st_1_0" index="0" speed="24.59" length="11.30" width="3.60" shape="407.30,751.80 396.00,751.80"/>
+    </edge>
+    <edge id=":fm_1st_2" function="internal">
+        <lane id=":fm_1st_2_0" index="0" speed="3.87" length="1.62" width="3.60" shape="407.30,751.80 405.95,750.90"/>
+    </edge>
+    <edge id=":fm_1st_9" function="internal">
+        <lane id=":fm_1st_9_0" index="0" speed="3.87" length="3.63" width="3.60" shape="405.95,750.90 405.50,750.00 405.95,749.10 407.30,748.20"/>
+    </edge>
+    <edge id=":fm_1st_3" function="internal">
+        <lane id=":fm_1st_3_0" index="0" speed="6.58" length="9.23" width="3.60" shape="401.65,742.40 402.00,744.94 403.06,746.75 404.83,747.84 407.30,748.20"/>
+    </edge>
+    <edge id=":fm_1st_4" function="internal">
+        <lane id=":fm_1st_4_0" index="0" speed="15.65" length="15.20" width="3.30" shape="401.65,742.40 401.65,757.60"/>
+    </edge>
+    <edge id=":fm_1st_5" function="internal">
+        <lane id=":fm_1st_5_0" index="0" speed="7.49" length="12.29" width="3.60" shape="401.65,742.40 401.30,746.51 400.24,749.45 398.47,751.21 396.00,751.80"/>
+    </edge>
+    <edge id=":fm_1st_6" function="internal">
+        <lane id=":fm_1st_6_0" index="0" speed="24.59" length="11.30" width="3.60" shape="396.00,748.20 407.30,748.20"/>
+    </edge>
+    <edge id=":fm_1st_7" function="internal">
+        <lane id=":fm_1st_7_0" index="0" speed="7.52" length="2.85" width="3.30" shape="396.00,748.20 398.47,748.79 398.69,749.00"/>
+    </edge>
+    <edge id=":fm_1st_8" function="internal">
+        <lane id=":fm_1st_8_0" index="0" speed="3.87" length="1.62" width="3.60" shape="396.00,748.20 397.35,749.10"/>
+    </edge>
+    <edge id=":fm_1st_10" function="internal">
+        <lane id=":fm_1st_10_0" index="0" speed="7.52" length="9.44" width="3.30" shape="398.69,749.00 400.24,750.55 401.30,753.49 401.65,757.60"/>
+    </edge>
+    <edge id=":fm_1st_11" function="internal">
+        <lane id=":fm_1st_11_0" index="0" speed="3.87" length="3.63" width="3.60" shape="397.35,749.10 397.80,750.00 397.35,750.90 396.00,751.80"/>
+    </edge>
+    <edge id=":fm_2nd_0" function="internal">
+        <lane id=":fm_2nd_0_0" index="0" speed="5.94" length="13.93" width="3.00" shape="1222.14,751.80 1217.19,752.09 1215.41,752.95 1216.80,754.39 1221.36,756.41"/>
+    </edge>
+    <edge id=":fm_2nd_1" function="internal">
+        <lane id=":fm_2nd_1_0" index="0" speed="9.99" length="22.56" width="3.30" shape="1222.14,751.80 1213.18,752.16 1206.77,753.25 1202.93,755.06 1201.65,757.60"/>
+    </edge>
+    <edge id=":fm_2nd_2" function="internal">
+        <lane id=":fm_2nd_2_0" index="0" speed="24.59" length="26.14" width="3.60" shape="1222.14,751.80 1196.00,751.80"/>
+    </edge>
+    <edge id=":fm_2nd_3" function="internal">
+        <lane id=":fm_2nd_3_0" index="0" speed="3.87" length="1.75" width="3.60" shape="1222.14,751.80 1220.79,750.90 1220.74,750.79"/>
+    </edge>
+    <edge id=":fm_2nd_16" function="internal">
+        <lane id=":fm_2nd_16_0" index="0" speed="3.87" length="3.51" width="3.60" shape="1220.74,750.79 1220.34,750.00 1220.79,749.10 1222.14,748.20"/>
+    </edge>
+    <edge id=":fm_2nd_4" function="internal">
+        <lane id=":fm_2nd_4_0" index="0" speed="5.87" length="13.93" width="3.60" shape="1221.36,743.59 1216.80,745.61 1215.41,747.05 1217.19,747.91 1222.14,748.20"/>
+    </edge>
+    <edge id=":fm_2nd_5" function="internal">
+        <lane id=":fm_2nd_5_0" index="0" speed="7.76" length="22.03" width="3.00" shape="1221.36,743.59 1214.95,746.80 1212.82,750.00 1214.95,753.20 1221.36,756.41"/>
+    </edge>
+    <edge id=":fm_2nd_6" function="internal">
+        <lane id=":fm_2nd_6_0" index="0" speed="12.23" length="25.11" width="3.30" shape="1221.36,743.59 1212.74,747.24 1206.58,750.79 1202.88,754.24 1201.65,757.60"/>
+    </edge>
+    <edge id=":fm_2nd_7" function="internal">
+        <lane id=":fm_2nd_7_0" index="0" speed="19.00" length="26.72" width="3.60" shape="1221.36,743.59 1216.13,745.61 1208.80,748.35 1201.41,750.76 1196.00,751.80"/>
+    </edge>
+    <edge id=":fm_2nd_8" function="internal">
+        <lane id=":fm_2nd_8_0" index="0" speed="9.97" length="22.56" width="3.60" shape="1201.65,742.40 1202.93,744.94 1206.77,746.75 1213.18,747.84 1222.14,748.20"/>
+    </edge>
+    <edge id=":fm_2nd_9" function="internal">
+        <lane id=":fm_2nd_9_0" index="0" speed="12.24" length="25.11" width="3.00" shape="1201.65,742.40 1202.88,745.76 1206.58,749.21 1212.74,752.76 1221.36,756.41"/>
+    </edge>
+    <edge id=":fm_2nd_10" function="internal">
+        <lane id=":fm_2nd_10_0" index="0" speed="15.65" length="15.20" width="3.30" shape="1201.65,742.40 1201.65,757.60"/>
+    </edge>
+    <edge id=":fm_2nd_11" function="internal">
+        <lane id=":fm_2nd_11_0" index="0" speed="7.49" length="12.29" width="3.60" shape="1201.65,742.40 1201.30,746.51 1200.24,749.45 1198.47,751.21 1196.00,751.80"/>
+    </edge>
+    <edge id=":fm_2nd_12" function="internal">
+        <lane id=":fm_2nd_12_0" index="0" speed="24.59" length="26.14" width="3.60" shape="1196.00,748.20 1222.14,748.20"/>
+    </edge>
+    <edge id=":fm_2nd_13" function="internal">
+        <lane id=":fm_2nd_13_0" index="0" speed="19.00" length="26.72" width="3.00" shape="1196.00,748.20 1201.41,749.24 1208.80,751.65 1216.13,754.39 1221.36,756.41"/>
+    </edge>
+    <edge id=":fm_2nd_14" function="internal">
+        <lane id=":fm_2nd_14_0" index="0" speed="7.52" length="12.29" width="3.30" shape="1196.00,748.20 1198.47,748.79 1200.24,750.55 1201.30,753.49 1201.65,757.60"/>
+    </edge>
+    <edge id=":fm_2nd_15" function="internal">
+        <lane id=":fm_2nd_15_0" index="0" speed="3.87" length="5.26" width="3.60" shape="1196.00,748.20 1197.35,749.10 1197.80,750.00 1197.35,750.90 1196.00,751.80"/>
+    </edge>
+    <edge id=":fm_east_0" function="internal">
+        <lane id=":fm_east_0_0" index="0" speed="3.87" length="5.26" width="3.60" shape="2000.00,748.20 2001.35,749.10 2001.80,750.00 2001.35,750.90 2000.00,751.80"/>
+    </edge>
+    <edge id=":fm_main_0" function="internal">
+        <lane id=":fm_main_0_0" index="0" speed="6.65" length="9.35" width="3.60" shape="798.20,757.60 797.84,755.06 796.75,753.25 794.94,752.16 792.40,751.80"/>
+    </edge>
+    <edge id=":fm_main_1" function="internal">
+        <lane id=":fm_main_1_0" index="0" speed="17.88" length="15.20" width="3.60" shape="798.20,757.60 798.20,742.40"/>
+    </edge>
+    <edge id=":fm_main_2" function="internal">
+        <lane id=":fm_main_2_0" index="0" speed="8.08" length="4.65" width="3.60" shape="798.20,757.60 799.05,754.26 799.75,753.29"/>
+    </edge>
+    <edge id=":fm_main_3" function="internal">
+        <lane id=":fm_main_3_0" index="0" speed="3.87" length="1.62" width="3.60" shape="798.20,757.60 799.10,756.25"/>
+    </edge>
+    <edge id=":fm_main_16" function="internal">
+        <lane id=":fm_main_16_0" index="0" speed="8.08" length="9.71" width="3.60" shape="799.75,753.29 801.24,751.24 804.26,749.05 807.60,748.20"/>
+    </edge>
+    <edge id=":fm_main_17" function="internal">
+        <lane id=":fm_main_17_0" index="0" speed="3.87" length="3.63" width="3.60" shape="799.10,756.25 800.00,755.80 800.90,756.25 801.80,757.60"/>
+    </edge>
+    <edge id=":fm_main_4" function="internal">
+        <lane id=":fm_main_4_0" index="0" speed="6.65" length="9.35" width="3.60" shape="807.60,751.80 805.06,752.16 803.25,753.25 802.16,755.06 801.80,757.60"/>
+    </edge>
+    <edge id=":fm_main_5" function="internal">
+        <lane id=":fm_main_5_0" index="0" speed="24.59" length="15.20" width="3.60" shape="807.60,751.80 792.40,751.80"/>
+    </edge>
+    <edge id=":fm_main_6" function="internal">
+        <lane id=":fm_main_6_0" index="0" speed="8.08" length="4.65" width="3.60" shape="807.60,751.80 804.26,750.95 803.29,750.25"/>
+    </edge>
+    <edge id=":fm_main_7" function="internal">
+        <lane id=":fm_main_7_0" index="0" speed="3.87" length="1.62" width="3.60" shape="807.60,751.80 806.25,750.90"/>
+    </edge>
+    <edge id=":fm_main_18" function="internal">
+        <lane id=":fm_main_18_0" index="0" speed="8.08" length="9.71" width="3.60" shape="803.29,750.25 801.24,748.76 799.05,745.74 798.20,742.40"/>
+    </edge>
+    <edge id=":fm_main_19" function="internal">
+        <lane id=":fm_main_19_0" index="0" speed="3.87" length="3.63" width="3.60" shape="806.25,750.90 805.80,750.00 806.25,749.10 807.60,748.20"/>
+    </edge>
+    <edge id=":fm_main_8" function="internal">
+        <lane id=":fm_main_8_0" index="0" speed="6.65" length="9.35" width="3.60" shape="801.80,742.40 802.16,744.94 803.25,746.75 805.06,747.84 807.60,748.20"/>
+    </edge>
+    <edge id=":fm_main_9" function="internal">
+        <lane id=":fm_main_9_0" index="0" speed="17.88" length="15.20" width="3.60" shape="801.80,742.40 801.80,757.60"/>
+    </edge>
+    <edge id=":fm_main_10" function="internal">
+        <lane id=":fm_main_10_0" index="0" speed="8.08" length="4.65" width="3.60" shape="801.80,742.40 800.95,745.74 800.25,746.71"/>
+    </edge>
+    <edge id=":fm_main_11" function="internal">
+        <lane id=":fm_main_11_0" index="0" speed="3.87" length="1.62" width="3.60" shape="801.80,742.40 800.90,743.75"/>
+    </edge>
+    <edge id=":fm_main_20" function="internal">
+        <lane id=":fm_main_20_0" index="0" speed="8.08" length="9.71" width="3.60" shape="800.25,746.71 798.76,748.76 795.74,750.95 792.40,751.80"/>
+    </edge>
+    <edge id=":fm_main_21" function="internal">
+        <lane id=":fm_main_21_0" index="0" speed="3.87" length="3.63" width="3.60" shape="800.90,743.75 800.00,744.20 799.10,743.75 798.20,742.40"/>
+    </edge>
+    <edge id=":fm_main_12" function="internal">
+        <lane id=":fm_main_12_0" index="0" speed="6.65" length="9.35" width="3.60" shape="792.40,748.20 794.94,747.84 796.75,746.75 797.84,744.94 798.20,742.40"/>
+    </edge>
+    <edge id=":fm_main_13" function="internal">
+        <lane id=":fm_main_13_0" index="0" speed="24.59" length="15.20" width="3.60" shape="792.40,748.20 807.60,748.20"/>
+    </edge>
+    <edge id=":fm_main_14" function="internal">
+        <lane id=":fm_main_14_0" index="0" speed="8.08" length="4.65" width="3.60" shape="792.40,748.20 795.74,749.05 796.71,749.75"/>
+    </edge>
+    <edge id=":fm_main_15" function="internal">
+        <lane id=":fm_main_15_0" index="0" speed="3.87" length="1.62" width="3.60" shape="792.40,748.20 793.75,749.10"/>
+    </edge>
+    <edge id=":fm_main_22" function="internal">
+        <lane id=":fm_main_22_0" index="0" speed="8.08" length="9.71" width="3.60" shape="796.71,749.75 798.76,751.24 800.95,754.26 801.80,757.60"/>
+    </edge>
+    <edge id=":fm_main_23" function="internal">
+        <lane id=":fm_main_23_0" index="0" speed="3.87" length="3.63" width="3.60" shape="793.75,749.10 794.20,750.00 793.75,750.90 792.40,751.80"/>
+    </edge>
+    <edge id=":fm_west_0" function="internal">
+        <lane id=":fm_west_0_0" index="0" speed="3.87" length="5.26" width="3.60" shape="0.00,751.80 -1.35,750.90 -1.80,750.00 -1.35,749.10 0.00,748.20"/>
+    </edge>
+    <edge id=":main_church_0" function="internal">
+        <lane id=":main_church_0_0" index="0" speed="17.88" length="11.30" width="3.60" shape="798.20,1104.00 798.20,1092.70"/>
+    </edge>
+    <edge id=":main_church_1" function="internal">
+        <lane id=":main_church_1_0" index="0" speed="7.52" length="2.85" width="3.30" shape="798.20,1104.00 798.79,1101.53 799.00,1101.31"/>
+    </edge>
+    <edge id=":main_church_2" function="internal">
+        <lane id=":main_church_2_0" index="0" speed="3.87" length="1.62" width="3.60" shape="798.20,1104.00 799.10,1102.65"/>
+    </edge>
+    <edge id=":main_church_9" function="internal">
+        <lane id=":main_church_9_0" index="0" speed="7.52" length="9.44" width="3.30" shape="799.00,1101.31 800.55,1099.76 803.49,1098.70 807.60,1098.35"/>
+    </edge>
+    <edge id=":main_church_10" function="internal">
+        <lane id=":main_church_10_0" index="0" speed="3.87" length="3.63" width="3.60" shape="799.10,1102.65 800.00,1102.20 800.90,1102.65 801.80,1104.00"/>
+    </edge>
+    <edge id=":main_church_3" function="internal">
+        <lane id=":main_church_3_0" index="0" speed="6.61" length="9.23" width="3.30" shape="801.80,1092.70 802.16,1095.17 803.25,1096.94 805.06,1098.00 807.60,1098.35"/>
+    </edge>
+    <edge id=":main_church_4" function="internal">
+        <lane id=":main_church_4_0" index="0" speed="17.88" length="11.30" width="3.60" shape="801.80,1092.70 801.80,1104.00"/>
+    </edge>
+    <edge id=":main_church_5" function="internal">
+        <lane id=":main_church_5_0" index="0" speed="3.87" length="1.62" width="3.60" shape="801.80,1092.70 800.90,1094.05"/>
+    </edge>
+    <edge id=":main_church_11" function="internal">
+        <lane id=":main_church_11_0" index="0" speed="3.87" length="3.63" width="3.60" shape="800.90,1094.05 800.00,1094.50 799.10,1094.05 798.20,1092.70"/>
+    </edge>
+    <edge id=":main_church_6" function="internal">
+        <lane id=":main_church_6_0" index="0" speed="6.58" length="9.23" width="3.60" shape="792.40,1098.35 794.94,1098.00 796.75,1096.94 797.84,1095.17 798.20,1092.70"/>
+    </edge>
+    <edge id=":main_church_7" function="internal">
+        <lane id=":main_church_7_0" index="0" speed="15.65" length="15.20" width="3.30" shape="792.40,1098.35 807.60,1098.35"/>
+    </edge>
+    <edge id=":main_church_8" function="internal">
+        <lane id=":main_church_8_0" index="0" speed="7.49" length="12.29" width="3.60" shape="792.40,1098.35 796.51,1098.70 799.45,1099.76 801.21,1101.53 801.80,1104.00"/>
+    </edge>
+    <edge id=":main_north_0" function="internal">
+        <lane id=":main_north_0_0" index="0" speed="3.87" length="5.26" width="3.60" shape="801.80,1500.00 800.90,1501.35 800.00,1501.80 799.10,1501.35 798.20,1500.00"/>
+    </edge>
+    <edge id=":main_school_0" function="internal">
+        <lane id=":main_school_0_0" index="0" speed="17.88" length="11.30" width="3.60" shape="798.20,404.00 798.20,392.70"/>
+    </edge>
+    <edge id=":main_school_1" function="internal">
+        <lane id=":main_school_1_0" index="0" speed="7.52" length="12.29" width="3.30" shape="798.20,404.00 798.79,401.53 800.55,399.76 803.49,398.70 807.60,398.35"/>
+    </edge>
+    <edge id=":main_school_2" function="internal">
+        <lane id=":main_school_2_0" index="0" speed="3.87" length="5.26" width="3.60" shape="798.20,404.00 799.10,402.65 800.00,402.20 800.90,402.65 801.80,404.00"/>
+    </edge>
+    <edge id=":main_school_3" function="internal">
+        <lane id=":main_school_3_0" index="0" speed="6.61" length="9.23" width="3.30" shape="801.80,392.70 802.16,395.17 803.25,396.94 805.06,398.00 807.60,398.35"/>
+    </edge>
+    <edge id=":main_school_4" function="internal">
+        <lane id=":main_school_4_0" index="0" speed="17.88" length="11.30" width="3.60" shape="801.80,392.70 801.80,404.00"/>
+    </edge>
+    <edge id=":main_school_5" function="internal">
+        <lane id=":main_school_5_0" index="0" speed="3.87" length="5.26" width="3.60" shape="801.80,392.70 800.90,394.05 800.00,394.50 799.10,394.05 798.20,392.70"/>
+    </edge>
+    <edge id=":main_school_6" function="internal">
+        <lane id=":main_school_6_0" index="0" speed="6.58" length="9.23" width="3.60" shape="792.40,398.35 794.94,398.00 796.75,396.94 797.84,395.17 798.20,392.70"/>
+    </edge>
+    <edge id=":main_school_7" function="internal">
+        <lane id=":main_school_7_0" index="0" speed="20.12" length="15.20" width="3.30" shape="792.40,398.35 807.60,398.35"/>
+    </edge>
+    <edge id=":main_school_8" function="internal">
+        <lane id=":main_school_8_0" index="0" speed="7.49" length="12.29" width="3.60" shape="792.40,398.35 796.51,398.70 799.45,399.76 801.21,401.53 801.80,404.00"/>
+    </edge>
+    <edge id=":main_south_0" function="internal">
+        <lane id=":main_south_0_0" index="0" speed="6.29" length="8.23" width="3.00" shape="798.20,1.50 798.63,0.19 799.93,-0.75 802.08,-1.31 805.10,-1.50"/>
+    </edge>
+    <edge id=":main_south_1" function="internal">
+        <lane id=":main_south_1_0" index="0" speed="3.87" length="5.26" width="3.60" shape="798.20,1.50 799.10,0.15 800.00,-0.30 800.90,0.15 801.80,1.50"/>
+    </edge>
+    <edge id=":main_south_2" function="internal">
+        <lane id=":main_south_2_0" index="0" speed="13.41" length="10.20" width="3.00" shape="794.90,-1.50 805.10,-1.50"/>
+    </edge>
+    <edge id=":main_south_3" function="internal">
+        <lane id=":main_south_3_0" index="0" speed="6.22" length="8.23" width="3.60" shape="794.90,-1.50 797.92,-1.31 800.08,-0.75 801.37,0.19 801.80,1.50"/>
+    </edge>
+    <edge id=":ranch_east1_0" function="internal">
+        <lane id=":ranch_east1_0_0" index="0" speed="3.84" length="1.83" width="3.00" shape="1601.50,600.00 1601.44,600.48 1601.26,600.87 1600.95,601.18 1600.53,601.40"/>
+    </edge>
+    <edge id=":ranch_east2_0" function="internal">
+        <lane id=":ranch_east2_0_0" index="0" speed="3.84" length="1.83" width="3.00" shape="1600.53,898.60 1600.95,898.82 1601.26,899.13 1601.44,899.52 1601.50,900.00"/>
+    </edge>
+
+    <edge id="1st_fm_to_n" from="fm_1st" to="1st_north" priority="6" type="town_street">
+        <lane id="1st_fm_to_n_0" index="0" speed="15.65" length="335.10" width="3.30" shape="401.65,757.60 401.65,1092.70"/>
+    </edge>
+    <edge id="1st_park_to_fm" from="1st_park" to="fm_1st" priority="6" type="town_street">
+        <lane id="1st_park_to_fm_0" index="0" speed="15.65" length="338.40" width="3.30" shape="401.65,404.00 401.65,742.40"/>
+    </edge>
+    <edge id="1st_s_to_park" from="1st_south" to="1st_park" priority="6" type="town_street">
+        <lane id="1st_s_to_park_0" index="0" speed="15.65" length="391.20" width="3.30" shape="401.65,1.50 401.65,392.70"/>
+    </edge>
+    <edge id="2nd_fm_to_n" from="fm_2nd" to="2nd_north" priority="6" type="town_street">
+        <lane id="2nd_fm_to_n_0" index="0" speed="15.65" length="335.10" width="3.30" shape="1201.65,757.60 1201.65,1092.70"/>
+    </edge>
+    <edge id="2nd_s_to_store" from="2nd_south" to="2nd_store" priority="6" type="town_street">
+        <lane id="2nd_s_to_store_0" index="0" speed="15.65" length="388.70" width="3.30" shape="1201.65,4.00 1201.65,392.70"/>
+    </edge>
+    <edge id="2nd_store_to_fm" from="2nd_store" to="fm_2nd" priority="6" type="town_street">
+        <lane id="2nd_store_to_fm_0" index="0" speed="15.65" length="338.40" width="3.30" shape="1201.65,404.00 1201.65,742.40"/>
+    </edge>
+    <edge id="church_1st_to_main" from="1st_north" to="main_church" priority="6" type="town_street">
+        <lane id="church_1st_to_main_0" index="0" speed="15.65" length="385.10" width="3.30" shape="407.30,1098.35 792.40,1098.35"/>
+    </edge>
+    <edge id="church_2nd_to_e" from="2nd_north" to="church_east" priority="6" type="town_street">
+        <lane id="church_2nd_to_e_0" index="0" speed="15.65" length="391.20" width="3.30" shape="1207.30,1098.35 1598.50,1098.35"/>
+    </edge>
+    <edge id="church_main_to_2nd" from="main_church" to="2nd_north" priority="6" type="town_street">
+        <lane id="church_main_to_2nd_0" index="0" speed="15.65" length="388.40" width="3.30" shape="807.60,1098.35 1196.00,1098.35"/>
+    </edge>
+    <edge id="church_w_to_1st" from="church_west" to="1st_north" priority="6" type="town_street">
+        <lane id="church_w_to_1st_0" index="0" speed="15.65" length="396.00" width="3.30" shape="0.00,1098.35 396.00,1098.35"/>
+    </edge>
+    <edge id="county_1st_to_main" from="1st_park" to="main_school" priority="7" type="county_road">
+        <lane id="county_1st_to_main_0" index="0" speed="20.12" length="385.10" width="3.30" shape="407.30,398.35 792.40,398.35"/>
+    </edge>
+    <edge id="county_2nd_to_e" from="2nd_store" to="county_east" priority="7" type="county_road">
+        <lane id="county_2nd_to_e_0" index="0" speed="20.12" length="388.70" width="3.30" shape="1207.30,398.35 1596.00,398.35"/>
+    </edge>
+    <edge id="county_main_to_2nd" from="main_school" to="2nd_store" priority="7" type="county_road">
+        <lane id="county_main_to_2nd_0" index="0" speed="20.12" length="388.40" width="3.30" shape="807.60,398.35 1196.00,398.35"/>
+    </edge>
+    <edge id="county_w_to_1st" from="county_west" to="1st_park" priority="7" type="county_road">
+        <lane id="county_w_to_1st_0" index="0" speed="20.12" length="396.00" width="3.30" shape="0.00,398.35 396.00,398.35"/>
+    </edge>
+    <edge id="farm_1st_to_farm1" from="1st_south" to="farm_south1" priority="4" type="farm_access">
+        <lane id="farm_1st_to_farm1_0" index="0" speed="13.41" length="195.20" width="3.00" shape="404.80,-1.50 600.00,-1.50"/>
+    </edge>
+    <edge id="farm_farm1_to_main" from="farm_south1" to="main_south" priority="4" type="farm_access">
+        <lane id="farm_farm1_to_main_0" index="0" speed="13.41" length="194.90" width="3.00" shape="600.00,-1.50 794.90,-1.50"/>
+    </edge>
+    <edge id="farm_farm2_to_2nd" from="farm_south2" to="2nd_south" priority="4" type="farm_access">
+        <lane id="farm_farm2_to_2nd_0" index="0" speed="13.41" length="196.00" width="3.00" shape="1000.00,-1.50 1196.00,-1.50"/>
+    </edge>
+    <edge id="farm_main_to_farm2" from="main_south" to="farm_south2" priority="4" type="farm_access">
+        <lane id="farm_main_to_farm2_0" index="0" speed="13.41" length="194.90" width="3.00" shape="805.10,-1.50 1000.00,-1.50"/>
+    </edge>
+    <edge id="fm_1st_to_main" from="fm_1st" to="fm_main" priority="8" type="fm_road">
+        <lane id="fm_1st_to_main_0" index="0" speed="24.59" length="385.10" width="3.60" shape="407.30,748.20 792.40,748.20"/>
+    </edge>
+    <edge id="fm_1st_to_w" from="fm_1st" to="fm_west" priority="8" type="fm_road">
+        <lane id="fm_1st_to_w_0" index="0" speed="24.59" length="396.00" width="3.60" shape="396.00,751.80 0.00,751.80"/>
+    </edge>
+    <edge id="fm_2nd_to_east" from="fm_2nd" to="fm_east" priority="8" type="fm_road">
+        <lane id="fm_2nd_to_east_0" index="0" speed="24.59" length="777.86" width="3.60" shape="1222.14,748.20 2000.00,748.20"/>
+    </edge>
+    <edge id="fm_2nd_to_main" from="fm_2nd" to="fm_main" priority="8" type="fm_road">
+        <lane id="fm_2nd_to_main_0" index="0" speed="24.59" length="388.40" width="3.60" shape="1196.00,751.80 807.60,751.80"/>
+    </edge>
+    <edge id="fm_east_to_2nd" from="fm_east" to="fm_2nd" priority="8" type="fm_road">
+        <lane id="fm_east_to_2nd_0" index="0" speed="24.59" length="777.86" width="3.60" shape="2000.00,751.80 1222.14,751.80"/>
+    </edge>
+    <edge id="fm_main_to_1st" from="fm_main" to="fm_1st" priority="8" type="fm_road">
+        <lane id="fm_main_to_1st_0" index="0" speed="24.59" length="385.10" width="3.60" shape="792.40,751.80 407.30,751.80"/>
+    </edge>
+    <edge id="fm_main_to_2nd" from="fm_main" to="fm_2nd" priority="8" type="fm_road">
+        <lane id="fm_main_to_2nd_0" index="0" speed="24.59" length="388.40" width="3.60" shape="807.60,748.20 1196.00,748.20"/>
+    </edge>
+    <edge id="fm_w_to_1st" from="fm_west" to="fm_1st" priority="8" type="fm_road">
+        <lane id="fm_w_to_1st_0" index="0" speed="24.59" length="396.00" width="3.60" shape="0.00,748.20 396.00,748.20"/>
+    </edge>
+    <edge id="main_church_to_fm" from="main_church" to="fm_main" priority="7" type="main_street">
+        <lane id="main_church_to_fm_0" index="0" speed="17.88" length="335.10" width="3.60" shape="798.20,1092.70 798.20,757.60"/>
+    </edge>
+    <edge id="main_church_to_n" from="main_church" to="main_north" priority="7" type="main_street">
+        <lane id="main_church_to_n_0" index="0" speed="17.88" length="396.00" width="3.60" shape="801.80,1104.00 801.80,1500.00"/>
+    </edge>
+    <edge id="main_fm_to_church" from="fm_main" to="main_church" priority="7" type="main_street">
+        <lane id="main_fm_to_church_0" index="0" speed="17.88" length="335.10" width="3.60" shape="801.80,757.60 801.80,1092.70"/>
+    </edge>
+    <edge id="main_fm_to_school" from="fm_main" to="main_school" priority="7" type="main_street">
+        <lane id="main_fm_to_school_0" index="0" speed="17.88" length="338.40" width="3.60" shape="798.20,742.40 798.20,404.00"/>
+    </edge>
+    <edge id="main_n_to_church" from="main_north" to="main_church" priority="7" type="main_street">
+        <lane id="main_n_to_church_0" index="0" speed="17.88" length="396.00" width="3.60" shape="798.20,1500.00 798.20,1104.00"/>
+    </edge>
+    <edge id="main_s_to_school" from="main_south" to="main_school" priority="7" type="main_street">
+        <lane id="main_s_to_school_0" index="0" speed="17.88" length="391.20" width="3.60" shape="801.80,1.50 801.80,392.70"/>
+    </edge>
+    <edge id="main_school_to_fm" from="main_school" to="fm_main" priority="7" type="main_street">
+        <lane id="main_school_to_fm_0" index="0" speed="17.88" length="338.40" width="3.60" shape="801.80,404.00 801.80,742.40"/>
+    </edge>
+    <edge id="main_school_to_s" from="main_school" to="main_south" priority="7" type="main_street">
+        <lane id="main_school_to_s_0" index="0" speed="17.88" length="391.20" width="3.60" shape="798.20,392.70 798.20,1.50"/>
+    </edge>
+    <edge id="ranch_2nd_to_r2" from="fm_2nd" to="ranch_east2" priority="4" type="farm_access">
+        <lane id="ranch_2nd_to_r2_0" index="0" speed="13.41" length="404.95" width="3.00" shape="1221.36,756.41 1600.53,898.60"/>
+    </edge>
+    <edge id="ranch_county_to_r1" from="county_east" to="ranch_east1" priority="4" type="farm_access">
+        <lane id="ranch_county_to_r1_0" index="0" speed="13.41" length="196.00" width="3.00" shape="1601.50,404.00 1601.50,600.00"/>
+    </edge>
+    <edge id="ranch_r1_to_2nd" from="ranch_east1" to="fm_2nd" priority="4" type="farm_access">
+        <lane id="ranch_r1_to_2nd_0" index="0" speed="13.41" length="404.95" width="3.00" shape="1600.53,601.40 1221.36,743.59"/>
+    </edge>
+    <edge id="ranch_r2_to_church" from="ranch_east2" to="church_east" priority="4" type="farm_access">
+        <lane id="ranch_r2_to_church_0" index="0" speed="13.41" length="195.20" width="3.00" shape="1601.50,900.00 1601.50,1095.20"/>
+    </edge>
+
+    <tlLogic id="fm_1st" type="static" programID="0" offset="0">
+        <phase duration="40" state="GGgrrrGgg"/>
+        <phase duration="5"  state="yyyrrryyy"/>
+        <phase duration="40" state="rrrGGGrrr"/>
+        <phase duration="5"  state="rrryyyrrr"/>
+    </tlLogic>
+    <tlLogic id="fm_2nd" type="static" programID="0" offset="0">
+        <phase duration="16" state="rrrrrrrrrrrrGGGG"/>
+        <phase duration="5"  state="rrrrrrrrrrrryyyy"/>
+        <phase duration="18" state="GGGgGrrrrrrrrrrr"/>
+        <phase duration="5"  state="yyyyyrrrrrrrrrrr"/>
+        <phase duration="18" state="rrrrGGGGrrrrrrrr"/>
+        <phase duration="5"  state="rrrryyyyrrrrrrrr"/>
+        <phase duration="18" state="rrrrrrrrGGGGrrrr"/>
+        <phase duration="5"  state="rrrrrrrryyyyrrrr"/>
+    </tlLogic>
+    <tlLogic id="fm_main" type="static" programID="0" offset="0">
+        <phase duration="40" state="rrrrGGggrrrrGGgg"/>
+        <phase duration="5"  state="rrrryyyyrrrryyyy"/>
+        <phase duration="40" state="GGggrrrrGGggrrrr"/>
+        <phase duration="5"  state="yyyyrrrryyyyrrrr"/>
+    </tlLogic>
+
+    <junction id="1st_north" type="priority" x="400.00" y="1100.00" incLanes="1st_fm_to_n_0 church_w_to_1st_0" intLanes=":1st_north_0_0 :1st_north_1_0" shape="407.30,1100.00 407.30,1096.70 405.08,1096.26 404.30,1095.70 403.74,1094.92 403.41,1093.92 403.30,1092.70 400.00,1092.70 399.56,1094.92 399.00,1095.70 398.22,1096.26 397.22,1096.59 396.00,1096.70 396.00,1100.00">
+        <request index="0" response="00" foes="10" cont="0"/>
+        <request index="1" response="01" foes="01" cont="0"/>
+    </junction>
+    <junction id="1st_park" type="priority" x="400.00" y="400.00" incLanes="1st_s_to_park_0 county_w_to_1st_0" intLanes=":1st_park_0_0 :1st_park_1_0 :1st_park_2_0 :1st_park_3_0" shape="400.00,404.00 403.30,404.00 403.74,401.78 404.30,401.00 405.08,400.44 406.08,400.11 407.30,400.00 407.30,396.70 405.08,396.26 404.30,395.70 403.74,394.92 403.41,393.92 403.30,392.70 400.00,392.70 399.56,394.92 399.00,395.70 398.22,396.26 397.22,396.59 396.00,396.70 396.00,400.00 398.22,400.44 399.00,401.00 399.56,401.78 399.89,402.78">
+        <request index="0" response="0100" foes="0100" cont="0"/>
+        <request index="1" response="1100" foes="1100" cont="0"/>
+        <request index="2" response="0000" foes="0011" cont="0"/>
+        <request index="3" response="0000" foes="0010" cont="0"/>
+    </junction>
+    <junction id="1st_south" type="dead_end" x="400.00" y="0.00" incLanes="" intLanes="" shape="400.00,1.50 403.30,1.50 403.47,0.67 403.67,0.38 403.97,0.17 404.34,0.04 404.80,0.00 404.80,-3.00 402.13,-2.50 401.20,-1.88 400.53,-1.00 400.13,0.12"/>
+    <junction id="2nd_north" type="priority" x="1200.00" y="1100.00" incLanes="2nd_fm_to_n_0 church_main_to_2nd_0" intLanes=":2nd_north_0_0 :2nd_north_1_0" shape="1207.30,1100.00 1207.30,1096.70 1205.08,1096.26 1204.30,1095.70 1203.74,1094.92 1203.41,1093.92 1203.30,1092.70 1200.00,1092.70 1199.56,1094.92 1199.00,1095.70 1198.22,1096.26 1197.22,1096.59 1196.00,1096.70 1196.00,1100.00">
+        <request index="0" response="00" foes="10" cont="0"/>
+        <request index="1" response="01" foes="01" cont="0"/>
+    </junction>
+    <junction id="2nd_south" type="priority" x="1200.00" y="0.00" incLanes="farm_farm2_to_2nd_0" intLanes=":2nd_south_0_0" shape="1200.00,4.00 1203.30,4.00 1203.10,1.86 1202.49,0.11 1201.48,-1.25 1200.06,-2.22 1198.23,-2.81 1196.00,-3.00 1196.00,0.00 1198.22,0.44 1199.00,1.00 1199.56,1.78 1199.89,2.78">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="2nd_store" type="priority" x="1200.00" y="400.00" incLanes="2nd_s_to_store_0 county_main_to_2nd_0" intLanes=":2nd_store_0_0 :2nd_store_1_0 :2nd_store_2_0 :2nd_store_3_0" shape="1200.00,404.00 1203.30,404.00 1203.74,401.78 1204.30,401.00 1205.08,400.44 1206.08,400.11 1207.30,400.00 1207.30,396.70 1205.08,396.26 1204.30,395.70 1203.74,394.92 1203.41,393.92 1203.30,392.70 1200.00,392.70 1199.56,394.92 1199.00,395.70 1198.22,396.26 1197.22,396.59 1196.00,396.70 1196.00,400.00 1198.22,400.44 1199.00,401.00 1199.56,401.78 1199.89,402.78">
+        <request index="0" response="0100" foes="0100" cont="0"/>
+        <request index="1" response="1100" foes="1100" cont="0"/>
+        <request index="2" response="0000" foes="0011" cont="0"/>
+        <request index="3" response="0000" foes="0010" cont="0"/>
+    </junction>
+    <junction id="church_east" type="dead_end" x="1600.00" y="1100.00" incLanes="ranch_r2_to_church_0 church_2nd_to_e_0" intLanes="" shape="1603.00,1095.20 1600.00,1095.20 1599.83,1096.03 1599.62,1096.32 1599.33,1096.53 1598.96,1096.66 1598.50,1096.70 1598.50,1100.00 1601.00,1099.47 1601.88,1098.80 1602.50,1097.87 1602.88,1096.67"/>
+    <junction id="church_west" type="dead_end" x="0.00" y="1100.00" incLanes="" intLanes="" shape="0.00,1100.00 0.00,1096.70"/>
+    <junction id="county_east" type="priority" x="1600.00" y="400.00" incLanes="county_2nd_to_e_0" intLanes=":county_east_0_0" shape="1600.00,404.00 1603.00,404.00 1602.81,401.77 1602.22,399.94 1601.25,398.53 1599.89,397.51 1598.14,396.90 1596.00,396.70 1596.00,400.00 1598.22,400.44 1599.00,401.00 1599.56,401.78 1599.89,402.78">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="county_west" type="dead_end" x="0.00" y="400.00" incLanes="" intLanes="" shape="0.00,400.00 0.00,396.70"/>
+    <junction id="farm_south1" type="priority" x="600.00" y="0.00" incLanes="farm_1st_to_farm1_0" intLanes=":farm_south1_0_0" shape="600.00,0.00 600.00,-3.00 600.00,0.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="farm_south2" type="priority" x="1000.00" y="0.00" incLanes="farm_main_to_farm2_0" intLanes=":farm_south2_0_0" shape="1000.00,0.00 1000.00,-3.00 1000.00,0.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="fm_1st" type="traffic_light" x="400.00" y="750.00" incLanes="fm_main_to_1st_0 1st_park_to_fm_0 fm_w_to_1st_0" intLanes=":fm_1st_0_0 :fm_1st_1_0 :fm_1st_9_0 :fm_1st_3_0 :fm_1st_4_0 :fm_1st_5_0 :fm_1st_6_0 :fm_1st_10_0 :fm_1st_11_0" shape="400.00,757.60 403.30,757.60 403.74,755.38 404.30,754.60 405.08,754.04 406.08,753.71 407.30,753.60 407.30,746.40 405.08,745.96 404.30,745.40 403.74,744.62 403.41,743.62 403.30,742.40 400.00,742.40 399.56,744.62 399.00,745.40 398.22,745.96 397.22,746.29 396.00,746.40 396.00,753.60 398.22,754.04 399.00,754.60 399.56,755.38 399.89,756.38">
+        <request index="0" response="000000000" foes="010010000" cont="0"/>
+        <request index="1" response="000000000" foes="110110000" cont="0"/>
+        <request index="2" response="001001000" foes="001001000" cont="1"/>
+        <request index="3" response="001000000" foes="001000100" cont="0"/>
+        <request index="4" response="011000011" foes="011000011" cont="0"/>
+        <request index="5" response="011000010" foes="111000010" cont="0"/>
+        <request index="6" response="000000000" foes="000111100" cont="0"/>
+        <request index="7" response="000000011" foes="000110011" cont="1"/>
+        <request index="8" response="000100010" foes="000100010" cont="1"/>
+    </junction>
+    <junction id="fm_2nd" type="traffic_light" x="1200.00" y="750.00" incLanes="fm_east_to_2nd_0 ranch_r1_to_2nd_0 2nd_store_to_fm_0 fm_main_to_2nd_0" intLanes=":fm_2nd_0_0 :fm_2nd_1_0 :fm_2nd_2_0 :fm_2nd_16_0 :fm_2nd_4_0 :fm_2nd_5_0 :fm_2nd_6_0 :fm_2nd_7_0 :fm_2nd_8_0 :fm_2nd_9_0 :fm_2nd_10_0 :fm_2nd_11_0 :fm_2nd_12_0 :fm_2nd_13_0 :fm_2nd_14_0 :fm_2nd_15_0" shape="1200.00,757.60 1203.30,757.60 1205.25,754.80 1207.68,754.47 1211.09,754.87 1215.48,755.98 1220.84,757.81 1221.89,755.00 1222.14,753.60 1222.14,746.40 1221.89,745.00 1220.84,742.19 1215.48,744.02 1211.09,745.13 1207.68,745.53 1205.25,745.20 1203.79,744.16 1203.30,742.40 1200.00,742.40 1199.56,744.62 1199.00,745.40 1198.22,745.96 1197.22,746.29 1196.00,746.40 1196.00,753.60 1198.22,754.04 1199.00,754.60 1199.56,755.38 1199.89,756.38">
+        <request index="0"  response="0000000000000000" foes="0010001000100000" cont="0"/>
+        <request index="1"  response="0000000000000000" foes="0110011001100000" cont="0"/>
+        <request index="2"  response="0000000000000000" foes="1110111011100000" cont="0"/>
+        <request index="3"  response="0001000100010000" foes="0001000100010000" cont="1"/>
+        <request index="4"  response="0001000000000000" foes="0001000100001000" cont="0"/>
+        <request index="5"  response="0011000000000111" foes="0011001100000111" cont="0"/>
+        <request index="6"  response="0111010000000110" foes="0111011100000110" cont="0"/>
+        <request index="7"  response="0111000000000100" foes="1111111100000100" cont="0"/>
+        <request index="8"  response="0001000011110000" foes="0001000011111000" cont="0"/>
+        <request index="9"  response="0011000011100111" foes="0011000011100111" cont="0"/>
+        <request index="10" response="0111000010000110" foes="0111000011000110" cont="0"/>
+        <request index="11" response="0111000010000100" foes="1111000010000100" cont="0"/>
+        <request index="12" response="0000000000000000" foes="0000111111111000" cont="0"/>
+        <request index="13" response="0000000000000111" foes="0000111011100111" cont="0"/>
+        <request index="14" response="0000000000000110" foes="0000110011000110" cont="0"/>
+        <request index="15" response="0000100010000100" foes="0000100010000100" cont="0"/>
+    </junction>
+    <junction id="fm_east" type="priority" x="2000.00" y="750.00" incLanes="fm_2nd_to_east_0" intLanes=":fm_east_0_0" shape="2000.00,750.00 2000.00,746.40 2000.00,750.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="fm_main" type="traffic_light" x="800.00" y="750.00" incLanes="main_church_to_fm_0 fm_2nd_to_main_0 main_school_to_fm_0 fm_1st_to_main_0" intLanes=":fm_main_0_0 :fm_main_1_0 :fm_main_16_0 :fm_main_17_0 :fm_main_4_0 :fm_main_5_0 :fm_main_18_0 :fm_main_19_0 :fm_main_8_0 :fm_main_9_0 :fm_main_20_0 :fm_main_21_0 :fm_main_12_0 :fm_main_13_0 :fm_main_22_0 :fm_main_23_0" shape="796.40,757.60 803.60,757.60 804.04,755.38 804.60,754.60 805.38,754.04 806.38,753.71 807.60,753.60 807.60,746.40 805.38,745.96 804.60,745.40 804.04,744.62 803.71,743.62 803.60,742.40 796.40,742.40 795.96,744.62 795.40,745.40 794.62,745.96 793.62,746.29 792.40,746.40 792.40,753.60 794.62,754.04 795.40,754.60 795.96,755.38 796.29,756.38">
+        <request index="0"  response="0000000000100000" foes="1000010000100000" cont="0"/>
+        <request index="1"  response="0111000001100000" foes="0111110001100000" cont="0"/>
+        <request index="2"  response="0110001101100000" foes="0110001111100000" cont="1"/>
+        <request index="3"  response="0100001000010000" foes="0100001000010000" cont="1"/>
+        <request index="4"  response="0000000000000000" foes="0100001000001000" cont="0"/>
+        <request index="5"  response="0000010000000100" foes="1100011000000111" cont="0"/>
+        <request index="6"  response="0011010000000100" foes="0011111000000110" cont="1"/>
+        <request index="7"  response="0010000100000100" foes="0010000100000100" cont="1"/>
+        <request index="8"  response="0010000000000000" foes="0010000010000100" cont="0"/>
+        <request index="9"  response="0110000001110000" foes="0110000001111100" cont="0"/>
+        <request index="10" response="0110000001100011" foes="1110000001100011" cont="1"/>
+        <request index="11" response="0001000001000010" foes="0001000001000010" cont="1"/>
+        <request index="12" response="0000000000000000" foes="0000100001000010" cont="0"/>
+        <request index="13" response="0000010000000100" foes="0000011111000110" cont="0"/>
+        <request index="14" response="0000010000110100" foes="0000011000111110" cont="1"/>
+        <request index="15" response="0000010000100001" foes="0000010000100001" cont="1"/>
+    </junction>
+    <junction id="fm_west" type="priority" x="0.00" y="750.00" incLanes="fm_1st_to_w_0" intLanes=":fm_west_0_0" shape="0.00,750.00 0.00,753.60 0.00,750.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="main_church" type="priority" x="800.00" y="1100.00" incLanes="main_n_to_church_0 main_fm_to_church_0 church_1st_to_main_0" intLanes=":main_church_0_0 :main_church_9_0 :main_church_10_0 :main_church_3_0 :main_church_4_0 :main_church_11_0 :main_church_6_0 :main_church_7_0 :main_church_8_0" shape="796.40,1104.00 803.60,1104.00 804.04,1101.78 804.60,1101.00 805.38,1100.44 806.38,1100.11 807.60,1100.00 807.60,1096.70 805.38,1096.26 804.60,1095.70 804.04,1094.92 803.71,1093.92 803.60,1092.70 796.40,1092.70 795.96,1094.92 795.40,1095.70 794.62,1096.26 793.62,1096.59 792.40,1096.70 792.40,1100.00 794.62,1100.44 795.40,1101.00 795.96,1101.78 796.29,1102.78">
+        <request index="0" response="000000000" foes="111100000" cont="0"/>
+        <request index="1" response="000011000" foes="110011000" cont="1"/>
+        <request index="2" response="100010000" foes="100010000" cont="1"/>
+        <request index="3" response="000000000" foes="010000010" cont="0"/>
+        <request index="4" response="000000000" foes="110000110" cont="0"/>
+        <request index="5" response="001000001" foes="001000001" cont="1"/>
+        <request index="6" response="000000001" foes="000100001" cont="0"/>
+        <request index="7" response="000011011" foes="000011011" cont="0"/>
+        <request index="8" response="000010011" foes="000010111" cont="0"/>
+    </junction>
+    <junction id="main_north" type="priority" x="800.00" y="1500.00" incLanes="main_church_to_n_0" intLanes=":main_north_0_0" shape="800.00,1500.00 803.60,1500.00 800.00,1500.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="main_school" type="priority" x="800.00" y="400.00" incLanes="main_fm_to_school_0 main_s_to_school_0 county_1st_to_main_0" intLanes=":main_school_0_0 :main_school_1_0 :main_school_2_0 :main_school_3_0 :main_school_4_0 :main_school_5_0 :main_school_6_0 :main_school_7_0 :main_school_8_0" shape="796.40,404.00 803.60,404.00 804.04,401.78 804.60,401.00 805.38,400.44 806.38,400.11 807.60,400.00 807.60,396.70 805.38,396.26 804.60,395.70 804.04,394.92 803.71,393.92 803.60,392.70 796.40,392.70 795.96,394.92 795.40,395.70 794.62,396.26 793.62,396.59 792.40,396.70 792.40,400.00 794.62,400.44 795.40,401.00 795.96,401.78 796.29,402.78">
+        <request index="0" response="111000000" foes="111100000" cont="0"/>
+        <request index="1" response="110011000" foes="110011000" cont="0"/>
+        <request index="2" response="100010000" foes="100010000" cont="0"/>
+        <request index="3" response="010000000" foes="010000010" cont="0"/>
+        <request index="4" response="110000000" foes="110000110" cont="0"/>
+        <request index="5" response="001000001" foes="001000001" cont="0"/>
+        <request index="6" response="000000000" foes="000100001" cont="0"/>
+        <request index="7" response="000000000" foes="000011011" cont="0"/>
+        <request index="8" response="000000000" foes="000010111" cont="0"/>
+    </junction>
+    <junction id="main_south" type="priority" x="800.00" y="0.00" incLanes="main_school_to_s_0 farm_farm1_to_main_0" intLanes=":main_south_0_0 :main_south_1_0 :main_south_2_0 :main_south_3_0" shape="796.40,1.50 803.60,1.50 803.77,0.67 803.97,0.37 804.27,0.17 804.64,0.04 805.10,0.00 805.10,-3.00 794.90,-3.00 794.90,0.00 795.73,0.17 796.03,0.38 796.23,0.67 796.36,1.04">
+        <request index="0" response="0000" foes="1100" cont="0"/>
+        <request index="1" response="1000" foes="1000" cont="0"/>
+        <request index="2" response="0001" foes="0001" cont="0"/>
+        <request index="3" response="0001" foes="0011" cont="0"/>
+    </junction>
+    <junction id="ranch_east1" type="priority" x="1600.00" y="600.00" incLanes="ranch_county_to_r1_0" intLanes=":ranch_east1_0_0" shape="1603.00,600.00 1600.00,600.00 1601.05,602.81 1602.13,602.17 1602.51,601.74 1602.78,601.24 1602.95,600.66">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="ranch_east2" type="priority" x="1600.00" y="900.00" incLanes="ranch_2nd_to_r2_0" intLanes=":ranch_east2_0_0" shape="1600.00,900.00 1603.00,900.00 1602.78,898.76 1602.51,898.26 1602.13,897.83 1601.65,897.47 1601.05,897.19">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+
+    <junction id=":fm_1st_9_0" type="internal" x="405.95" y="750.90" incLanes=":fm_1st_2_0 1st_park_to_fm_0 fm_w_to_1st_0" intLanes=":fm_1st_3_0 :fm_1st_6_0"/>
+    <junction id=":fm_1st_10_0" type="internal" x="398.69" y="749.00" incLanes=":fm_1st_7_0 fm_main_to_1st_0" intLanes=":fm_1st_0_0 :fm_1st_1_0 :fm_1st_4_0 :fm_1st_5_0"/>
+    <junction id=":fm_1st_11_0" type="internal" x="397.35" y="749.10" incLanes=":fm_1st_8_0 1st_park_to_fm_0 fm_main_to_1st_0" intLanes=":fm_1st_1_0 :fm_1st_5_0"/>
+    <junction id=":fm_2nd_16_0" type="internal" x="1220.74" y="750.79" incLanes=":fm_2nd_3_0 2nd_store_to_fm_0 fm_main_to_2nd_0 ranch_r1_to_2nd_0" intLanes=":fm_2nd_4_0 :fm_2nd_8_0 :fm_2nd_12_0"/>
+    <junction id=":fm_main_16_0" type="internal" x="799.75" y="753.29" incLanes=":fm_main_2_0 main_school_to_fm_0" intLanes=":fm_main_5_0 :fm_main_6_0 :fm_main_7_0 :fm_main_8_0 :fm_main_9_0 :fm_main_13_0 :fm_main_14_0"/>
+    <junction id=":fm_main_17_0" type="internal" x="799.10" y="756.25" incLanes=":fm_main_3_0 fm_1st_to_main_0 fm_2nd_to_main_0 main_school_to_fm_0" intLanes=":fm_main_4_0 :fm_main_9_0 :fm_main_14_0"/>
+    <junction id=":fm_main_18_0" type="internal" x="803.29" y="750.25" incLanes=":fm_main_6_0 fm_1st_to_main_0" intLanes=":fm_main_1_0 :fm_main_2_0 :fm_main_9_0 :fm_main_10_0 :fm_main_11_0 :fm_main_12_0 :fm_main_13_0"/>
+    <junction id=":fm_main_19_0" type="internal" x="806.25" y="750.90" incLanes=":fm_main_7_0 fm_1st_to_main_0 main_church_to_fm_0 main_school_to_fm_0" intLanes=":fm_main_2_0 :fm_main_8_0 :fm_main_13_0"/>
+    <junction id=":fm_main_20_0" type="internal" x="800.25" y="746.71" incLanes=":fm_main_10_0 main_church_to_fm_0" intLanes=":fm_main_0_0 :fm_main_1_0 :fm_main_5_0 :fm_main_6_0 :fm_main_13_0 :fm_main_14_0 :fm_main_15_0"/>
+    <junction id=":fm_main_21_0" type="internal" x="800.90" y="743.75" incLanes=":fm_main_11_0 fm_1st_to_main_0 fm_2nd_to_main_0 main_church_to_fm_0" intLanes=":fm_main_1_0 :fm_main_6_0 :fm_main_12_0"/>
+    <junction id=":fm_main_22_0" type="internal" x="796.71" y="749.75" incLanes=":fm_main_14_0 fm_2nd_to_main_0" intLanes=":fm_main_1_0 :fm_main_2_0 :fm_main_3_0 :fm_main_4_0 :fm_main_5_0 :fm_main_9_0 :fm_main_10_0"/>
+    <junction id=":fm_main_23_0" type="internal" x="793.75" y="749.10" incLanes=":fm_main_15_0 fm_2nd_to_main_0 main_church_to_fm_0 main_school_to_fm_0" intLanes=":fm_main_0_0 :fm_main_5_0 :fm_main_10_0"/>
+    <junction id=":main_church_9_0" type="internal" x="799.00" y="1101.31" incLanes=":main_church_1_0 main_fm_to_church_0" intLanes=":main_church_3_0 :main_church_4_0 :main_church_7_0 :main_church_8_0"/>
+    <junction id=":main_church_10_0" type="internal" x="799.10" y="1102.65" incLanes=":main_church_2_0 church_1st_to_main_0 main_fm_to_church_0" intLanes=":main_church_4_0 :main_church_8_0"/>
+    <junction id=":main_church_11_0" type="internal" x="800.90" y="1094.05" incLanes=":main_church_5_0 church_1st_to_main_0 main_n_to_church_0" intLanes=":main_church_0_0 :main_church_6_0"/>
+
+    <connection from="1st_fm_to_n" to="church_1st_to_main" fromLane="0" toLane="0" via=":1st_north_0_0" dir="r" state="M"/>
+    <connection from="1st_park_to_fm" to="fm_1st_to_main" fromLane="0" toLane="0" via=":fm_1st_3_0" tl="fm_1st" linkIndex="3" dir="r" state="o"/>
+    <connection from="1st_park_to_fm" to="1st_fm_to_n" fromLane="0" toLane="0" via=":fm_1st_4_0" tl="fm_1st" linkIndex="4" dir="s" state="o"/>
+    <connection from="1st_park_to_fm" to="fm_1st_to_w" fromLane="0" toLane="0" via=":fm_1st_5_0" tl="fm_1st" linkIndex="5" dir="l" state="o"/>
+    <connection from="1st_s_to_park" to="county_1st_to_main" fromLane="0" toLane="0" via=":1st_park_0_0" dir="r" state="m"/>
+    <connection from="1st_s_to_park" to="1st_park_to_fm" fromLane="0" toLane="0" via=":1st_park_1_0" dir="s" state="m"/>
+    <connection from="2nd_fm_to_n" to="church_2nd_to_e" fromLane="0" toLane="0" via=":2nd_north_0_0" dir="r" state="M"/>
+    <connection from="2nd_s_to_store" to="county_2nd_to_e" fromLane="0" toLane="0" via=":2nd_store_0_0" dir="r" state="m"/>
+    <connection from="2nd_s_to_store" to="2nd_store_to_fm" fromLane="0" toLane="0" via=":2nd_store_1_0" dir="s" state="m"/>
+    <connection from="2nd_store_to_fm" to="fm_2nd_to_east" fromLane="0" toLane="0" via=":fm_2nd_8_0" tl="fm_2nd" linkIndex="8" dir="r" state="o"/>
+    <connection from="2nd_store_to_fm" to="ranch_2nd_to_r2" fromLane="0" toLane="0" via=":fm_2nd_9_0" tl="fm_2nd" linkIndex="9" dir="R" state="o"/>
+    <connection from="2nd_store_to_fm" to="2nd_fm_to_n" fromLane="0" toLane="0" via=":fm_2nd_10_0" tl="fm_2nd" linkIndex="10" dir="s" state="o"/>
+    <connection from="2nd_store_to_fm" to="fm_2nd_to_main" fromLane="0" toLane="0" via=":fm_2nd_11_0" tl="fm_2nd" linkIndex="11" dir="l" state="o"/>
+    <connection from="church_1st_to_main" to="main_church_to_fm" fromLane="0" toLane="0" via=":main_church_6_0" dir="r" state="m"/>
+    <connection from="church_1st_to_main" to="church_main_to_2nd" fromLane="0" toLane="0" via=":main_church_7_0" dir="s" state="m"/>
+    <connection from="church_1st_to_main" to="main_church_to_n" fromLane="0" toLane="0" via=":main_church_8_0" dir="l" state="m"/>
+    <connection from="church_main_to_2nd" to="church_2nd_to_e" fromLane="0" toLane="0" via=":2nd_north_1_0" dir="s" state="m"/>
+    <connection from="church_w_to_1st" to="church_1st_to_main" fromLane="0" toLane="0" via=":1st_north_1_0" dir="s" state="m"/>
+    <connection from="county_1st_to_main" to="main_school_to_s" fromLane="0" toLane="0" via=":main_school_6_0" dir="r" state="M"/>
+    <connection from="county_1st_to_main" to="county_main_to_2nd" fromLane="0" toLane="0" via=":main_school_7_0" dir="s" state="M"/>
+    <connection from="county_1st_to_main" to="main_school_to_fm" fromLane="0" toLane="0" via=":main_school_8_0" dir="l" state="M"/>
+    <connection from="county_2nd_to_e" to="ranch_county_to_r1" fromLane="0" toLane="0" via=":county_east_0_0" dir="l" state="M"/>
+    <connection from="county_main_to_2nd" to="county_2nd_to_e" fromLane="0" toLane="0" via=":2nd_store_2_0" dir="s" state="M"/>
+    <connection from="county_main_to_2nd" to="2nd_store_to_fm" fromLane="0" toLane="0" via=":2nd_store_3_0" dir="l" state="M"/>
+    <connection from="county_w_to_1st" to="county_1st_to_main" fromLane="0" toLane="0" via=":1st_park_2_0" dir="s" state="M"/>
+    <connection from="county_w_to_1st" to="1st_park_to_fm" fromLane="0" toLane="0" via=":1st_park_3_0" dir="l" state="M"/>
+    <connection from="farm_1st_to_farm1" to="farm_farm1_to_main" fromLane="0" toLane="0" via=":farm_south1_0_0" dir="s" state="M"/>
+    <connection from="farm_farm1_to_main" to="farm_main_to_farm2" fromLane="0" toLane="0" via=":main_south_2_0" dir="s" state="m"/>
+    <connection from="farm_farm1_to_main" to="main_s_to_school" fromLane="0" toLane="0" via=":main_south_3_0" dir="l" state="m"/>
+    <connection from="farm_farm2_to_2nd" to="2nd_s_to_store" fromLane="0" toLane="0" via=":2nd_south_0_0" dir="l" state="M"/>
+    <connection from="farm_main_to_farm2" to="farm_farm2_to_2nd" fromLane="0" toLane="0" via=":farm_south2_0_0" dir="s" state="M"/>
+    <connection from="fm_1st_to_main" to="main_fm_to_school" fromLane="0" toLane="0" via=":fm_main_12_0" tl="fm_main" linkIndex="12" dir="r" state="O"/>
+    <connection from="fm_1st_to_main" to="fm_main_to_2nd" fromLane="0" toLane="0" via=":fm_main_13_0" tl="fm_main" linkIndex="13" dir="s" state="O"/>
+    <connection from="fm_1st_to_main" to="main_fm_to_church" fromLane="0" toLane="0" via=":fm_main_14_0" tl="fm_main" linkIndex="14" dir="l" state="o"/>
+    <connection from="fm_1st_to_main" to="fm_main_to_1st" fromLane="0" toLane="0" via=":fm_main_15_0" tl="fm_main" linkIndex="15" dir="t" state="o"/>
+    <connection from="fm_1st_to_w" to="fm_w_to_1st" fromLane="0" toLane="0" via=":fm_west_0_0" dir="t" state="M"/>
+    <connection from="fm_2nd_to_east" to="fm_east_to_2nd" fromLane="0" toLane="0" via=":fm_east_0_0" dir="t" state="M"/>
+    <connection from="fm_2nd_to_main" to="main_fm_to_church" fromLane="0" toLane="0" via=":fm_main_4_0" tl="fm_main" linkIndex="4" dir="r" state="O"/>
+    <connection from="fm_2nd_to_main" to="fm_main_to_1st" fromLane="0" toLane="0" via=":fm_main_5_0" tl="fm_main" linkIndex="5" dir="s" state="O"/>
+    <connection from="fm_2nd_to_main" to="main_fm_to_school" fromLane="0" toLane="0" via=":fm_main_6_0" tl="fm_main" linkIndex="6" dir="l" state="o"/>
+    <connection from="fm_2nd_to_main" to="fm_main_to_2nd" fromLane="0" toLane="0" via=":fm_main_7_0" tl="fm_main" linkIndex="7" dir="t" state="o"/>
+    <connection from="fm_east_to_2nd" to="ranch_2nd_to_r2" fromLane="0" toLane="0" via=":fm_2nd_0_0" tl="fm_2nd" linkIndex="0" dir="r" state="O"/>
+    <connection from="fm_east_to_2nd" to="2nd_fm_to_n" fromLane="0" toLane="0" via=":fm_2nd_1_0" tl="fm_2nd" linkIndex="1" dir="R" state="O"/>
+    <connection from="fm_east_to_2nd" to="fm_2nd_to_main" fromLane="0" toLane="0" via=":fm_2nd_2_0" tl="fm_2nd" linkIndex="2" dir="s" state="O"/>
+    <connection from="fm_east_to_2nd" to="fm_2nd_to_east" fromLane="0" toLane="0" via=":fm_2nd_3_0" tl="fm_2nd" linkIndex="3" dir="t" state="o"/>
+    <connection from="fm_main_to_1st" to="1st_fm_to_n" fromLane="0" toLane="0" via=":fm_1st_0_0" tl="fm_1st" linkIndex="0" dir="r" state="O"/>
+    <connection from="fm_main_to_1st" to="fm_1st_to_w" fromLane="0" toLane="0" via=":fm_1st_1_0" tl="fm_1st" linkIndex="1" dir="s" state="O"/>
+    <connection from="fm_main_to_1st" to="fm_1st_to_main" fromLane="0" toLane="0" via=":fm_1st_2_0" tl="fm_1st" linkIndex="2" dir="t" state="o"/>
+    <connection from="fm_main_to_2nd" to="fm_2nd_to_east" fromLane="0" toLane="0" via=":fm_2nd_12_0" tl="fm_2nd" linkIndex="12" dir="s" state="O"/>
+    <connection from="fm_main_to_2nd" to="ranch_2nd_to_r2" fromLane="0" toLane="0" via=":fm_2nd_13_0" tl="fm_2nd" linkIndex="13" dir="L" state="o"/>
+    <connection from="fm_main_to_2nd" to="2nd_fm_to_n" fromLane="0" toLane="0" via=":fm_2nd_14_0" tl="fm_2nd" linkIndex="14" dir="l" state="o"/>
+    <connection from="fm_main_to_2nd" to="fm_2nd_to_main" fromLane="0" toLane="0" via=":fm_2nd_15_0" tl="fm_2nd" linkIndex="15" dir="t" state="o"/>
+    <connection from="fm_w_to_1st" to="fm_1st_to_main" fromLane="0" toLane="0" via=":fm_1st_6_0" tl="fm_1st" linkIndex="6" dir="s" state="O"/>
+    <connection from="fm_w_to_1st" to="1st_fm_to_n" fromLane="0" toLane="0" via=":fm_1st_7_0" tl="fm_1st" linkIndex="7" dir="l" state="o"/>
+    <connection from="fm_w_to_1st" to="fm_1st_to_w" fromLane="0" toLane="0" via=":fm_1st_8_0" tl="fm_1st" linkIndex="8" dir="t" state="o"/>
+    <connection from="main_church_to_fm" to="fm_main_to_1st" fromLane="0" toLane="0" via=":fm_main_0_0" tl="fm_main" linkIndex="0" dir="r" state="o"/>
+    <connection from="main_church_to_fm" to="main_fm_to_school" fromLane="0" toLane="0" via=":fm_main_1_0" tl="fm_main" linkIndex="1" dir="s" state="o"/>
+    <connection from="main_church_to_fm" to="fm_main_to_2nd" fromLane="0" toLane="0" via=":fm_main_2_0" tl="fm_main" linkIndex="2" dir="l" state="o"/>
+    <connection from="main_church_to_fm" to="main_fm_to_church" fromLane="0" toLane="0" via=":fm_main_3_0" tl="fm_main" linkIndex="3" dir="t" state="o"/>
+    <connection from="main_church_to_n" to="main_n_to_church" fromLane="0" toLane="0" via=":main_north_0_0" dir="t" state="M"/>
+    <connection from="main_fm_to_church" to="church_main_to_2nd" fromLane="0" toLane="0" via=":main_church_3_0" dir="r" state="M"/>
+    <connection from="main_fm_to_church" to="main_church_to_n" fromLane="0" toLane="0" via=":main_church_4_0" dir="s" state="M"/>
+    <connection from="main_fm_to_church" to="main_church_to_fm" fromLane="0" toLane="0" via=":main_church_5_0" dir="t" state="m"/>
+    <connection from="main_fm_to_school" to="main_school_to_s" fromLane="0" toLane="0" via=":main_school_0_0" dir="s" state="m"/>
+    <connection from="main_fm_to_school" to="county_main_to_2nd" fromLane="0" toLane="0" via=":main_school_1_0" dir="l" state="m"/>
+    <connection from="main_fm_to_school" to="main_school_to_fm" fromLane="0" toLane="0" via=":main_school_2_0" dir="t" state="m"/>
+    <connection from="main_n_to_church" to="main_church_to_fm" fromLane="0" toLane="0" via=":main_church_0_0" dir="s" state="M"/>
+    <connection from="main_n_to_church" to="church_main_to_2nd" fromLane="0" toLane="0" via=":main_church_1_0" dir="l" state="m"/>
+    <connection from="main_n_to_church" to="main_church_to_n" fromLane="0" toLane="0" via=":main_church_2_0" dir="t" state="m"/>
+    <connection from="main_s_to_school" to="county_main_to_2nd" fromLane="0" toLane="0" via=":main_school_3_0" dir="r" state="m"/>
+    <connection from="main_s_to_school" to="main_school_to_fm" fromLane="0" toLane="0" via=":main_school_4_0" dir="s" state="m"/>
+    <connection from="main_s_to_school" to="main_school_to_s" fromLane="0" toLane="0" via=":main_school_5_0" dir="t" state="m"/>
+    <connection from="main_school_to_fm" to="fm_main_to_2nd" fromLane="0" toLane="0" via=":fm_main_8_0" tl="fm_main" linkIndex="8" dir="r" state="o"/>
+    <connection from="main_school_to_fm" to="main_fm_to_church" fromLane="0" toLane="0" via=":fm_main_9_0" tl="fm_main" linkIndex="9" dir="s" state="o"/>
+    <connection from="main_school_to_fm" to="fm_main_to_1st" fromLane="0" toLane="0" via=":fm_main_10_0" tl="fm_main" linkIndex="10" dir="l" state="o"/>
+    <connection from="main_school_to_fm" to="main_fm_to_school" fromLane="0" toLane="0" via=":fm_main_11_0" tl="fm_main" linkIndex="11" dir="t" state="o"/>
+    <connection from="main_school_to_s" to="farm_main_to_farm2" fromLane="0" toLane="0" via=":main_south_0_0" dir="l" state="M"/>
+    <connection from="main_school_to_s" to="main_s_to_school" fromLane="0" toLane="0" via=":main_south_1_0" dir="t" state="m"/>
+    <connection from="ranch_2nd_to_r2" to="ranch_r2_to_church" fromLane="0" toLane="0" via=":ranch_east2_0_0" dir="l" state="M"/>
+    <connection from="ranch_county_to_r1" to="ranch_r1_to_2nd" fromLane="0" toLane="0" via=":ranch_east1_0_0" dir="l" state="M"/>
+    <connection from="ranch_r1_to_2nd" to="fm_2nd_to_east" fromLane="0" toLane="0" via=":fm_2nd_4_0" tl="fm_2nd" linkIndex="4" dir="r" state="o"/>
+    <connection from="ranch_r1_to_2nd" to="ranch_2nd_to_r2" fromLane="0" toLane="0" via=":fm_2nd_5_0" tl="fm_2nd" linkIndex="5" dir="r" state="o"/>
+    <connection from="ranch_r1_to_2nd" to="2nd_fm_to_n" fromLane="0" toLane="0" via=":fm_2nd_6_0" tl="fm_2nd" linkIndex="6" dir="R" state="o"/>
+    <connection from="ranch_r1_to_2nd" to="fm_2nd_to_main" fromLane="0" toLane="0" via=":fm_2nd_7_0" tl="fm_2nd" linkIndex="7" dir="s" state="o"/>
+
+    <connection from=":1st_north_0" to="church_1st_to_main" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":1st_north_1" to="church_1st_to_main" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":1st_park_0" to="county_1st_to_main" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":1st_park_1" to="1st_park_to_fm" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":1st_park_2" to="county_1st_to_main" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":1st_park_3" to="1st_park_to_fm" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":2nd_north_0" to="church_2nd_to_e" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":2nd_north_1" to="church_2nd_to_e" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":2nd_south_0" to="2nd_s_to_store" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":2nd_store_0" to="county_2nd_to_e" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":2nd_store_1" to="2nd_store_to_fm" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":2nd_store_2" to="county_2nd_to_e" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":2nd_store_3" to="2nd_store_to_fm" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":county_east_0" to="ranch_county_to_r1" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":farm_south1_0" to="farm_farm1_to_main" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":farm_south2_0" to="farm_farm2_to_2nd" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":fm_1st_0" to="1st_fm_to_n" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":fm_1st_1" to="fm_1st_to_w" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":fm_1st_2" to="fm_1st_to_main" fromLane="0" toLane="0" via=":fm_1st_9_0" dir="t" state="m"/>
+    <connection from=":fm_1st_9" to="fm_1st_to_main" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":fm_1st_3" to="fm_1st_to_main" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":fm_1st_4" to="1st_fm_to_n" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":fm_1st_5" to="fm_1st_to_w" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":fm_1st_6" to="fm_1st_to_main" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":fm_1st_7" to="1st_fm_to_n" fromLane="0" toLane="0" via=":fm_1st_10_0" dir="l" state="m"/>
+    <connection from=":fm_1st_10" to="1st_fm_to_n" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":fm_1st_8" to="fm_1st_to_w" fromLane="0" toLane="0" via=":fm_1st_11_0" dir="t" state="m"/>
+    <connection from=":fm_1st_11" to="fm_1st_to_w" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":fm_2nd_0" to="ranch_2nd_to_r2" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":fm_2nd_1" to="2nd_fm_to_n" fromLane="0" toLane="0" dir="R" state="M"/>
+    <connection from=":fm_2nd_2" to="fm_2nd_to_main" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":fm_2nd_3" to="fm_2nd_to_east" fromLane="0" toLane="0" via=":fm_2nd_16_0" dir="t" state="m"/>
+    <connection from=":fm_2nd_16" to="fm_2nd_to_east" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":fm_2nd_4" to="fm_2nd_to_east" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":fm_2nd_5" to="ranch_2nd_to_r2" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":fm_2nd_6" to="2nd_fm_to_n" fromLane="0" toLane="0" dir="R" state="M"/>
+    <connection from=":fm_2nd_7" to="fm_2nd_to_main" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":fm_2nd_8" to="fm_2nd_to_east" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":fm_2nd_9" to="ranch_2nd_to_r2" fromLane="0" toLane="0" dir="R" state="M"/>
+    <connection from=":fm_2nd_10" to="2nd_fm_to_n" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":fm_2nd_11" to="fm_2nd_to_main" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":fm_2nd_12" to="fm_2nd_to_east" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":fm_2nd_13" to="ranch_2nd_to_r2" fromLane="0" toLane="0" dir="L" state="M"/>
+    <connection from=":fm_2nd_14" to="2nd_fm_to_n" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":fm_2nd_15" to="fm_2nd_to_main" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":fm_east_0" to="fm_east_to_2nd" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":fm_main_0" to="fm_main_to_1st" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":fm_main_1" to="main_fm_to_school" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":fm_main_2" to="fm_main_to_2nd" fromLane="0" toLane="0" via=":fm_main_16_0" dir="l" state="m"/>
+    <connection from=":fm_main_16" to="fm_main_to_2nd" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":fm_main_3" to="main_fm_to_church" fromLane="0" toLane="0" via=":fm_main_17_0" dir="t" state="m"/>
+    <connection from=":fm_main_17" to="main_fm_to_church" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":fm_main_4" to="main_fm_to_church" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":fm_main_5" to="fm_main_to_1st" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":fm_main_6" to="main_fm_to_school" fromLane="0" toLane="0" via=":fm_main_18_0" dir="l" state="m"/>
+    <connection from=":fm_main_18" to="main_fm_to_school" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":fm_main_7" to="fm_main_to_2nd" fromLane="0" toLane="0" via=":fm_main_19_0" dir="t" state="m"/>
+    <connection from=":fm_main_19" to="fm_main_to_2nd" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":fm_main_8" to="fm_main_to_2nd" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":fm_main_9" to="main_fm_to_church" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":fm_main_10" to="fm_main_to_1st" fromLane="0" toLane="0" via=":fm_main_20_0" dir="l" state="m"/>
+    <connection from=":fm_main_20" to="fm_main_to_1st" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":fm_main_11" to="main_fm_to_school" fromLane="0" toLane="0" via=":fm_main_21_0" dir="t" state="m"/>
+    <connection from=":fm_main_21" to="main_fm_to_school" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":fm_main_12" to="main_fm_to_school" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":fm_main_13" to="fm_main_to_2nd" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":fm_main_14" to="main_fm_to_church" fromLane="0" toLane="0" via=":fm_main_22_0" dir="l" state="m"/>
+    <connection from=":fm_main_22" to="main_fm_to_church" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":fm_main_15" to="fm_main_to_1st" fromLane="0" toLane="0" via=":fm_main_23_0" dir="t" state="m"/>
+    <connection from=":fm_main_23" to="fm_main_to_1st" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":fm_west_0" to="fm_w_to_1st" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":main_church_0" to="main_church_to_fm" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":main_church_1" to="church_main_to_2nd" fromLane="0" toLane="0" via=":main_church_9_0" dir="l" state="m"/>
+    <connection from=":main_church_9" to="church_main_to_2nd" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":main_church_2" to="main_church_to_n" fromLane="0" toLane="0" via=":main_church_10_0" dir="t" state="m"/>
+    <connection from=":main_church_10" to="main_church_to_n" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":main_church_3" to="church_main_to_2nd" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":main_church_4" to="main_church_to_n" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":main_church_5" to="main_church_to_fm" fromLane="0" toLane="0" via=":main_church_11_0" dir="t" state="m"/>
+    <connection from=":main_church_11" to="main_church_to_fm" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":main_church_6" to="main_church_to_fm" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":main_church_7" to="church_main_to_2nd" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":main_church_8" to="main_church_to_n" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":main_north_0" to="main_n_to_church" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":main_school_0" to="main_school_to_s" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":main_school_1" to="county_main_to_2nd" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":main_school_2" to="main_school_to_fm" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":main_school_3" to="county_main_to_2nd" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":main_school_4" to="main_school_to_fm" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":main_school_5" to="main_school_to_s" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":main_school_6" to="main_school_to_s" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":main_school_7" to="county_main_to_2nd" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":main_school_8" to="main_school_to_fm" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":main_south_0" to="farm_main_to_farm2" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":main_south_1" to="main_s_to_school" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":main_south_2" to="farm_main_to_farm2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":main_south_3" to="main_s_to_school" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":ranch_east1_0" to="ranch_r1_to_2nd" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":ranch_east2_0" to="ranch_r2_to_church" fromLane="0" toLane="0" dir="l" state="M"/>
+
+</net>

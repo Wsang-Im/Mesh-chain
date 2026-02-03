@@ -1,0 +1,109 @@
+<viewsettings>
+    <!-- Professional SUMO GUI Settings for Academic Paper -->
+    <!-- Based on SUMO best practices for V2X/ITS visualization -->
+
+    <!-- Viewport: 3km curved highway overview -->
+    <viewport zoom="700" x="1500" y="17" angle="0"/>
+
+    <!-- Simulation speed control -->
+    <delay value="100"/>
+
+    <!-- Color scheme: "real world" for realistic visualization -->
+    <scheme name="real world"/>
+
+    <!-- Background: Light gray-blue for professional appearance -->
+    <background backgroundColor="200,210,220" showGrid="0" gridXSize="100" gridYSize="100"/>
+
+    <!-- Streets/Edges visualization -->
+    <edges laneEdgeMode="0"
+           edgeColorer="by speed (default)"
+           edgeName="show"
+           internalEdgeName="hide"
+           cwaEdgeName="hide"
+           streetName="hide"
+           edgeData="show"
+           laneData="show"
+           showLinkDecals="1"
+           showLinkRules="0"
+           showRails="1"
+           hideConnectors="0"
+           widthExaggeration="1.0"
+           minSize="0.0"
+           showLaneDirection="0"
+           showSublanes="0"
+           spreadSuperposed="0"/>
+
+    <!-- Vehicle visualization -->
+    <vehicles vehicleMode="0"
+              vehicleQuality="2"
+              minVehicleSize="1.0"
+              vehicleExaggeration="1.5"
+              showBlinker="1"
+              drawMinGap="1"
+              drawBrakeGap="0"
+              showBTRange="0"
+              showRouteIndex="0"
+              scaleLength="1.0"
+              drawLaneChangePreference="0"
+              drawVehicleName="show"
+              vehicleColorer="by speed"
+              vehicleName="show"
+              vehicleSize="show"
+              vehicleText="id,speed"
+              vehicleTextSize="50.00"/>
+
+    <!-- Persons (if any) -->
+    <persons personMode="0"
+             personQuality="2"
+             minPersonSize="0.0"
+             personExaggeration="1.0"
+             personName="hide"
+             personValue="hide"
+             personText=""
+             personTextSize="50.00"
+             showPedestrianNetwork="0"/>
+
+    <!-- Containers (if any) -->
+    <containers containerMode="0"
+                containerQuality="2"
+                minContainerSize="0.0"
+                containerExaggeration="1.0"
+                containerName="hide"
+                containerSize="hide"/>
+
+    <!-- Junctions -->
+    <junctions junctionMode="0"
+               drawLinkTLIndex="0"
+               drawLinkJunctionIndex="0"
+               junctionName="hide"
+               internalJunctionName="hide"
+               junctionSize="hide"
+               drawCrossingsAndWalkingAreas="0"
+               junctionColorer="by type"
+               tlsPhaseIndex="hide"
+               tlsPhaseName="hide"/>
+
+    <!-- Additional objects (POIs, Polygons) - RSU 표시 -->
+    <additionals addMode="0"
+                 addSize="5.0"
+                 addName="show"
+                 addFullName="show"
+                 poiSize="50.00"
+                 poiDetail="10"
+                 poiName="show"
+                 poiType="show"
+                 poiText="id"
+                 poiTextSize="80.00"
+                 poiColorer="given"
+                 polySize="1.0"
+                 polyName="hide"
+                 polyType="hide"
+                 polyColorer="given"/>
+
+    <!-- Legend -->
+    <legend showSizeLegend="1"/>
+
+    <!-- OpenGL settings for smooth rendering -->
+    <opengl antialiase="1" dither="1"/>
+
+</viewsettings>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 현실적인 5km 고속도로 시나리오 - 학술 논문 수준 -->
+<routes>
+    <!-- 다양한 차종 정의 (현실적인 파라미터) -->
+
+    <!-- 승용차 (Passenger Cars) - 70% -->
+    <vType id="sedan_eco" accel="2.0" decel="4.5" sigma="0.5" length="4.5" minGap="2.0" maxSpeed="27.78"
+           speedFactor="0.9" speedDev="0.1" color="100,150,200" vClass="passenger"/>
+    <vType id="sedan_normal" accel="2.6" decel="4.5" sigma="0.5" length="4.5" minGap="2.0" maxSpeed="30.56"
+           speedFactor="1.0" speedDev="0.1" color="150,150,150" vClass="passenger"/>
+    <vType id="sedan_sport" accel="3.5" decel="5.5" sigma="0.3" length="4.5" minGap="2.0" maxSpeed="36.11"
+           speedFactor="1.1" speedDev="0.1" color="255,50,50" vClass="passenger"/>
+
+    <!-- SUV - 20% -->
+    <vType id="suv_normal" accel="2.2" decel="4.0" sigma="0.5" length="5.0" minGap="2.5" maxSpeed="30.56"
+           speedFactor="1.0" speedDev="0.1" color="80,80,80" vClass="passenger"/>
+    <vType id="suv_large" accel="2.0" decel="4.0" sigma="0.6" length="5.5" minGap="2.5" maxSpeed="27.78"
+           speedFactor="0.95" speedDev="0.1" color="50,50,50" vClass="passenger"/>
+
+    <!-- 트럭/화물차 - 10% -->
+    <vType id="truck_medium" accel="1.5" decel="3.5" sigma="0.7" length="10.0" minGap="3.0" maxSpeed="25.00"
+           speedFactor="0.85" speedDev="0.05" color="255,200,0" vClass="truck"/>
+    <vType id="truck_large" accel="1.2" decel="3.0" sigma="0.8" length="16.5" minGap="4.0" maxSpeed="22.22"
+           speedFactor="0.8" speedDev="0.05" color="255,150,0" vClass="truck"/>
+
+    <!-- 경로 정의 -->
+    <!-- 메인 고속도로 경로 (west → east, 3km 통과) -->
+    <route id="route_main_east" edges="highway_seg1a highway_seg1b highway_seg2 highway_seg3"/>
+
+    <!-- 역방향 경로 (east → west) -->
+    <route id="route_main_west" edges="-highway_seg3 -highway_seg2 -highway_seg1b -highway_seg1a"/>
+
+    <!-- 진입 램프 경로 (1.5km 지점에서 진입) -->
+    <route id="route_ramp_entry" edges="ramp1_approach ramp1_accel ramp1_on highway_seg2 highway_seg3"/>
+
+    <!-- 진출 램프 경로 - 단순화된 3km 도로에서는 제거 -->
+    <!-- <route id="route_exit_ramp" edges="highway_seg1a highway_seg1b highway_seg2 highway_seg3a ramp2_off ramp2_decel ramp2_exit"/> -->
+
+    <!-- 현실적인 차량 흐름 (총 ~1800 veh/hr, 양방향) -->
+
+    <!-- Eastbound (동쪽 방향) - 약 900 veh/hr -->
+    <!-- 승용차 (630 veh/hr) -->
+    <flow id="flow_e_sedan_eco" type="sedan_eco" route="route_main_east"
+          vehsPerHour="180" begin="0" end="3600" departLane="best" departSpeed="max"/>
+    <flow id="flow_e_sedan_normal" type="sedan_normal" route="route_main_east"
+          vehsPerHour="300" begin="0" end="3600" departLane="best" departSpeed="max"/>
+    <flow id="flow_e_sedan_sport" type="sedan_sport" route="route_main_east"
+          vehsPerHour="150" begin="0" end="3600" departLane="best" departSpeed="max"/>
+
+    <!-- SUV (180 veh/hr) -->
+    <flow id="flow_e_suv_normal" type="suv_normal" route="route_main_east"
+          vehsPerHour="120" begin="0" end="3600" departLane="best" departSpeed="max"/>
+    <flow id="flow_e_suv_large" type="suv_large" route="route_main_east"
+          vehsPerHour="60" begin="0" end="3600" departLane="best" departSpeed="max"/>
+
+    <!-- 트럭 (90 veh/hr) -->
+    <flow id="flow_e_truck_medium" type="truck_medium" route="route_main_east"
+          vehsPerHour="60" begin="0" end="3600" departLane="0" departSpeed="max"/>
+    <flow id="flow_e_truck_large" type="truck_large" route="route_main_east"
+          vehsPerHour="30" begin="0" end="3600" departLane="0" departSpeed="max"/>
+
+    <!-- Westbound (서쪽 방향) - 약 900 veh/hr -->
+    <!-- 승용차 (630 veh/hr) -->
+    <flow id="flow_w_sedan_eco" type="sedan_eco" route="route_main_west"
+          vehsPerHour="180" begin="0" end="3600" departLane="best" departSpeed="max"/>
+    <flow id="flow_w_sedan_normal" type="sedan_normal" route="route_main_west"
+          vehsPerHour="300" begin="0" end="3600" departLane="best" departSpeed="max"/>
+    <flow id="flow_w_sedan_sport" type="sedan_sport" route="route_main_west"
+          vehsPerHour="150" begin="0" end="3600" departLane="best" departSpeed="max"/>
+
+    <!-- SUV (180 veh/hr) -->
+    <flow id="flow_w_suv_normal" type="suv_normal" route="route_main_west"
+          vehsPerHour="120" begin="0" end="3600" departLane="best" departSpeed="max"/>
+    <flow id="flow_w_suv_large" type="suv_large" route="route_main_west"
+          vehsPerHour="60" begin="0" end="3600" departLane="best" departSpeed="max"/>
+
+    <!-- 트럭 (90 veh/hr) -->
+    <flow id="flow_w_truck_medium" type="truck_medium" route="route_main_west"
+          vehsPerHour="60" begin="0" end="3600" departLane="0" departSpeed="max"/>
+    <flow id="flow_w_truck_large" type="truck_large" route="route_main_west"
+          vehsPerHour="30" begin="0" end="3600" departLane="0" departSpeed="max"/>
+
+    <!-- 램프 트래픽 (진입/진출) - 약 200 veh/hr -->
+    <flow id="flow_ramp_in_sedan" type="sedan_normal" route="route_ramp_entry"
+          vehsPerHour="70" begin="0" end="3600" departLane="best" departSpeed="max"/>
+    <flow id="flow_ramp_in_suv" type="suv_normal" route="route_ramp_entry"
+          vehsPerHour="30" begin="0" end="3600" departLane="best" departSpeed="max"/>
+
+
+</routes>

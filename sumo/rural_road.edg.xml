@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 시골 도로 시나리오 - 엣지 정의 -->
+<!-- 왕복 2차선 (각 방향 1차선), 좁은 차선 폭, 낮은 속도 -->
+<edges xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/edges_file.xsd">
+    <!-- 메인 시골 도로 (동쪽 방향) -->
+    <!-- priority: 7 (지방도), numLanes: 1 (편도 1차선), speed: 16.67 m/s (60 km/h) -->
+    <!-- width: 3.0m (시골도로 좁은 차선), spreadType: center -->
+
+    <edge id="rural_seg1" from="rural_start" to="rural_curve1"
+          priority="7" numLanes="1" speed="16.67" width="3.0"
+          spreadType="center"
+          shape="0.0,0.0 125.0,12.0 250.0,20.0">
+        <lane index="0" allow="all"/>
+    </edge>
+
+    <edge id="rural_seg2" from="rural_curve1" to="rural_curve2"
+          priority="7" numLanes="1" speed="16.67" width="3.0"
+          spreadType="center"
+          shape="250.0,20.0 350.0,10.0 500.0,-10.0"/>
+
+    <edge id="rural_seg3" from="rural_curve2" to="rural_junction"
+          priority="7" numLanes="1" speed="16.67" width="3.0"
+          spreadType="center"
+          shape="500.0,-10.0 625.0,-5.0 750.0,5.0"/>
+
+    <edge id="rural_seg4" from="rural_junction" to="rural_curve3"
+          priority="7" numLanes="1" speed="16.67" width="3.0"
+          spreadType="center"
+          shape="750.0,5.0 875.0,20.0 1000.0,30.0"/>
+
+    <edge id="rural_seg5" from="rural_curve3" to="rural_curve4"
+          priority="7" numLanes="1" speed="16.67" width="3.0"
+          spreadType="center"
+          shape="1000.0,30.0 1125.0,25.0 1250.0,15.0"/>
+
+    <edge id="rural_seg6" from="rural_curve4" to="rural_curve5"
+          priority="7" numLanes="1" speed="16.67" width="3.0"
+          spreadType="center"
+          shape="1250.0,15.0 1375.0,2.0 1500.0,-5.0"/>
+
+    <edge id="rural_seg7" from="rural_curve5" to="rural_curve6"
+          priority="7" numLanes="1" speed="16.67" width="3.0"
+          spreadType="center"
+          shape="1500.0,-5.0 1625.0,5.0 1750.0,10.0"/>
+
+    <edge id="rural_seg8" from="rural_curve6" to="rural_end"
+          priority="7" numLanes="1" speed="16.67" width="3.0"
+          spreadType="center"
+          shape="1750.0,10.0 1875.0,5.0 2000.0,0.0"/>
+
+    <!-- 농로 진입로 (T자 교차로에서 남쪽) -->
+    <!-- priority: 5 (농로), numLanes: 1, speed: 11.11 m/s (40 km/h) -->
+    <edge id="farm_road" from="rural_junction" to="farm_road_start"
+          priority="5" numLanes="1" speed="11.11" width="3.0"
+          spreadType="center"
+          shape="750.0,5.0 750.0,-50.0 750.0,-100.0"/>
+</edges>

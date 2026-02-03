@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 시골 도로 시나리오 - 차량 경로 및 흐름 -->
+<!-- 한산한 시골 도로 - 낮은 차량 밀도 -->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <!-- 차량 타입 정의 - 시골 지역 차량 -->
+
+    <!-- 일반 승용차 (가장 많음) -->
+    <vType id="rural_sedan" vClass="passenger"
+           accel="2.0" decel="4.5" sigma="0.3" length="4.5"
+           minGap="2.0" maxSpeed="20.0" color="0.8,0.8,0.8"/>
+
+    <!-- 경차 -->
+    <vType id="rural_small_car" vClass="passenger"
+           accel="2.2" decel="5.0" sigma="0.3" length="3.5"
+           minGap="1.5" maxSpeed="18.0" color="0.9,0.9,0.5"/>
+
+    <!-- 트럭 (농산물 운반) -->
+    <vType id="rural_truck" vClass="truck"
+           accel="1.0" decel="3.5" sigma="0.4" length="8.0"
+           minGap="3.0" maxSpeed="16.0" color="0.3,0.5,0.3"/>
+
+    <!-- 경운기/트랙터 (매우 느림) -->
+    <vType id="tractor" vClass="truck"
+           accel="0.5" decel="2.0" sigma="0.5" length="3.0"
+           minGap="1.0" maxSpeed="8.0" color="0.8,0.3,0.1"/>
+
+    <!-- 경로 정의 -->
+    <!-- 메인 도로 동쪽 방향 (서 → 동) -->
+    <route id="route_east" edges="rural_west_east rural_east_main"/>
+
+    <!-- 메인 도로 서쪽 방향 (동 → 서) -->
+    <route id="route_west" edges="-rural_east_main -rural_west_east"/>
+
+    <!-- 농로 진입 경로 (서쪽에서 와서 농로로) -->
+    <route id="route_to_farm" edges="rural_west_east farm_road"/>
+
+    <!-- 농로에서 나와서 동쪽으로 -->
+    <route id="route_from_farm" edges="-farm_road rural_east_main"/>
+
+    <!-- 차량 흐름 정의 - 한산한 시골 도로 -->
+    <!-- 1시간에 약 20-30대 정도 (3600초 / 120초 = 30대) -->
+
+    <!-- 동쪽 방향 승용차 (가장 많음, 60%) -->
+    <flow id="flow_east_sedan" type="rural_sedan" route="route_east"
+          begin="0" end="3600" probability="0.008" departSpeed="random" departLane="best"/>
+
+    <!-- 서쪽 방향 승용차 (50%) -->
+    <flow id="flow_west_sedan" type="rural_sedan" route="route_west"
+          begin="0" end="3600" probability="0.007" departSpeed="random" departLane="best"/>
+
+    <!-- 동쪽 방향 경차 (20%) -->
+    <flow id="flow_east_small" type="rural_small_car" route="route_east"
+          begin="0" end="3600" probability="0.003" departSpeed="random" departLane="best"/>
+
+    <!-- 서쪽 방향 경차 (15%) -->
+    <flow id="flow_west_small" type="rural_small_car" route="route_west"
+          begin="0" end="3600" probability="0.002" departSpeed="random" departLane="best"/>
+
+    <!-- 트럭 (10%) -->
+    <flow id="flow_truck_east" type="rural_truck" route="route_east"
+          begin="0" end="3600" probability="0.0015" departSpeed="random" departLane="best"/>
+
+    <flow id="flow_truck_west" type="rural_truck" route="route_west"
+          begin="0" end="3600" probability="0.0015" departSpeed="random" departLane="best"/>
+
+    <!-- 경운기/트랙터 (5%, 낮 시간대만) -->
+    <flow id="flow_tractor" type="tractor" route="route_east"
+          begin="300" end="2400" probability="0.0008" departSpeed="random" departLane="best"/>
+
+    <!-- 농로 진입 차량 (매우 드뭄, 5%) -->
+    <flow id="flow_to_farm" type="rural_sedan" route="route_to_farm"
+          begin="0" end="3600" probability="0.0008" departSpeed="random" departLane="best"/>
+
+    <flow id="flow_from_farm" type="rural_truck" route="route_from_farm"
+          begin="0" end="3600" probability="0.0008" departSpeed="random" departLane="best"/>
+</routes>

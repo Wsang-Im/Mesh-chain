@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 도로 타입 정의 - 양방향 설정 -->
+<types xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/types_file.xsd">
+    <type id="rural_road" priority="7" numLanes="1" speed="16.67" oneway="false"/>
+    <type id="farm_road" priority="5" numLanes="1" speed="11.11" oneway="true"/>
+</types>

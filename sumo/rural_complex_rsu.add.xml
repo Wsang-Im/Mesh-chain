@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 복잡한 시골 마을 RSU 위치 (전략적 배치) -->
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+
+    <!-- ========== 주요 지점 RSU (빨간색) ========== -->
+
+    <!-- RSU-1: 서쪽 입구 -->
+    <poi id="RSU-1-WEST" x="200.0" y="500.0" color="255,0,0" layer="200" type="RSU"/>
+
+    <!-- RSU-2: 마을 입구 (주택가 골목 시작) -->
+    <poi id="RSU-2-ENTRANCE" x="400.0" y="500.0" color="255,0,0" layer="200" type="RSU"/>
+
+    <!-- RSU-3: 마을 중심 사거리 (가장 중요!) -->
+    <poi id="RSU-3-CENTER" x="800.0" y="500.0" color="255,100,0" layer="200" type="RSU"/>
+
+    <!-- RSU-4: 마을 출구 -->
+    <poi id="RSU-4-EXIT" x="1200.0" y="500.0" color="255,0,0" layer="200" type="RSU"/>
+
+    <!-- RSU-5: 동쪽 Y자 갈림길 -->
+    <poi id="RSU-5-FORK" x="1400.0" y="500.0" color="255,0,0" layer="200" type="RSU"/>
+
+    <!-- ========== 순환도로 RSU (파란색) ========== -->
+
+    <!-- RSU-6: 북쪽 순환로 (교회/학교 방향) -->
+    <poi id="RSU-6-NORTH" x="800.0" y="780.0" color="0,100,255" layer="200" type="RSU"/>
+
+    <!-- RSU-7: 남쪽 순환로 (논밭 방향) -->
+    <poi id="RSU-7-SOUTH" x="800.0" y="220.0" color="0,100,255" layer="200" type="RSU"/>
+
+    <!-- ========== 지선 RSU (녹색) ========== -->
+
+    <!-- RSU-8: 교회/학교 분기점 -->
+    <poi id="RSU-8-CHURCH" x="800.0" y="900.0" color="0,255,100" layer="200" type="RSU"/>
+
+    <!-- RSU-9: 논밭 분기점 -->
+    <poi id="RSU-9-FARM" x="800.0" y="100.0" color="0,255,100" layer="200" type="RSU"/>
+
+    <!-- ========== 보조 RSU (노란색) ========== -->
+
+    <!-- RSU-10: 마을회관 -->
+    <poi id="RSU-10-COMMUNITY" x="850.0" y="600.0" color="255,255,0" layer="200" type="RSU"/>
+
+    <!-- RSU-11: 슈퍼마켓 -->
+    <poi id="RSU-11-SUPER" x="750.0" y="400.0" color="255,255,0" layer="200" type="RSU"/>
+
+    <!-- RSU-12: 동쪽 끝 -->
+    <poi id="RSU-12-EAST" x="1600.0" y="500.0" color="255,0,0" layer="200" type="RSU"/>
+
+</additional>

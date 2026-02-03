@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Texas 스타일 시골 마을 - 그리드 기반 도로망 -->
+<!-- 약 2km x 1.5km 크기의 작은 마을 -->
+<nodes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/nodes_file.xsd">
+
+    <!-- ==================== FM Road (Farm-to-Market) - 동서 방향 메인 도로 ==================== -->
+    <!-- FM Road가 마을을 관통 (서쪽에서 동쪽으로) -->
+    <node id="fm_west" x="0.0" y="750.0" type="priority"/>
+    <node id="fm_1st" x="400.0" y="750.0" type="traffic_light"/>      <!-- 1st St 교차로 -->
+    <node id="fm_main" x="800.0" y="750.0" type="traffic_light"/>     <!-- Main St 교차로 (마을 중심) -->
+    <node id="fm_2nd" x="1200.0" y="750.0" type="traffic_light"/>     <!-- 2nd St 교차로 -->
+    <node id="fm_east" x="2000.0" y="750.0" type="priority"/>
+
+    <!-- ==================== Main Street (남북 방향) ==================== -->
+    <!-- 마을의 중심축 -->
+    <node id="main_south" x="800.0" y="0.0" type="priority"/>
+    <node id="main_school" x="800.0" y="400.0" type="priority"/>      <!-- 학교 근처 -->
+    <!-- fm_main (800, 750) 이미 정의됨 - Main과 FM 교차점 -->
+    <node id="main_church" x="800.0" y="1100.0" type="priority"/>     <!-- 교회 근처 -->
+    <node id="main_north" x="800.0" y="1500.0" type="priority"/>
+
+    <!-- ==================== 1st Street (서쪽, 남북 방향) ==================== -->
+    <node id="1st_south" x="400.0" y="0.0" type="priority"/>
+    <node id="1st_park" x="400.0" y="400.0" type="priority"/>         <!-- 공원 -->
+    <!-- fm_1st (400, 750) 이미 정의됨 -->
+    <node id="1st_north" x="400.0" y="1100.0" type="priority"/>
+
+    <!-- ==================== 2nd Street (동쪽, 남북 방향) ==================== -->
+    <node id="2nd_south" x="1200.0" y="0.0" type="priority"/>
+    <node id="2nd_store" x="1200.0" y="400.0" type="priority"/>       <!-- 상점가 -->
+    <!-- fm_2nd (1200, 750) 이미 정의됨 -->
+    <node id="2nd_north" x="1200.0" y="1100.0" type="priority"/>
+
+    <!-- ==================== County Road (남쪽 수평 도로) ==================== -->
+    <node id="county_west" x="0.0" y="400.0" type="priority"/>
+    <!-- 1st_park, main_school, 2nd_store (y=400) 이미 정의됨 -->
+    <node id="county_east" x="1600.0" y="400.0" type="priority"/>
+
+    <!-- ==================== Church Road (북쪽 수평 도로) ==================== -->
+    <node id="church_west" x="0.0" y="1100.0" type="priority"/>
+    <!-- 1st_north, main_church, 2nd_north (y=1100) 이미 정의됨 -->
+    <node id="church_east" x="1600.0" y="1100.0" type="priority"/>
+
+    <!-- ==================== 농장 진입로 (Farm Access Roads) ==================== -->
+    <!-- 남쪽 농장들 -->
+    <node id="farm_south1" x="600.0" y="0.0" type="priority"/>
+    <node id="farm_south2" x="1000.0" y="0.0" type="priority"/>
+
+    <!-- 동쪽 농장/목장 -->
+    <node id="ranch_east1" x="1600.0" y="600.0" type="priority"/>
+    <node id="ranch_east2" x="1600.0" y="900.0" type="priority"/>
+
+</nodes>

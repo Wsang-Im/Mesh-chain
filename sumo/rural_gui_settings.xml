@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 시골 도로 GUI 설정 - 시각화 최적화 -->
+<viewsettings>
+    <!-- 초기 뷰포트: 2km 도로 중앙 -->
+    <viewport zoom="500" x="1000" y="100" angle="0"/>
+
+    <!-- 배경 설정 -->
+    <scheme name="real world"/>
+    <background backgroundColor="245,245,245"/>
+
+    <!-- 그리드 및 좌표 -->
+    <delay value="50"/>
+    <grid xSize="100" ySize="100" show="false"/>
+
+    <!-- 도로 외관 -->
+    <streets streetName="show" streetNameSize="60" edgeName="hide"
+             hideConnectors="true" showLinkDecals="true"
+             showLane2Lane="false" showBikeMarkings="true"/>
+
+    <!-- 차량 표시 -->
+    <vehicles vehicleMode="0" vehicleQuality="2" minVehicleSize="1.0"
+              vehicleName="show" vehicleSize="1.2"
+              showBlinker="true" drawLaneChangePreference="false"
+              showBTRange="false" showRouteIndex="false"/>
+
+    <!-- Junction 표시 -->
+    <junctions showLane2Lane="false" drawShape="true"
+               drawCrossingsAndWalkingAreas="true"/>
+
+    <!-- POI 및 Polygon 표시 (RSU) -->
+    <additionals addMode="0"
+                 poiSize="60.00"
+                 poiDetail="10"
+                 poiName="show"
+                 poiType="show"
+                 poiText="id"
+                 poiTextSize="100.00"
+                 poiColorer="given"/>
+
+    <!-- 범례 표시 -->
+    <legend showSizeLegend="false"/>
+</viewsettings>

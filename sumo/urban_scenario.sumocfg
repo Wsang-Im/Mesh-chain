@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SUMO Scenario Configuration for Mesh-Chain Simulation
+
+  Urban scenario with varying vehicle density:
+  - High density: > 20 vehicles/km² (pure mesh)
+  - Medium: 5-20 vehicles/km² (mesh + RSU)
+  - Low: < 5 vehicles/km² (RSU-centric)
+-->
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="network.net.xml"/>
+        <route-files value="routes.rou.xml"/>
+        <additional-files value="rsu_locations.add.xml"/>
+    </input>
+
+    <time>
+        <begin value="0"/>
+        <end value="300"/>  <!-- 5 minutes simulation -->
+        <step-length value="0.1"/>  <!-- 100ms steps for network events -->
+    </time>
+
+    <processing>
+        <time-to-teleport value="-1"/>  <!-- Disable teleporting -->
+        <max-depart-delay value="0"/>
+        <routing-algorithm value="dijkstra"/>
+    </processing>
+
+    <report>
+        <verbose value="true"/>
+        <duration-log.statistics value="true"/>
+    </report>
+
+    <!-- GUI settings removed - not needed for TraCI -->
+    <!-- <gui_only>
+        <start value="true"/>
+    </gui_only> -->
+
+    <traci_server>
+        <remote-port value="8813"/>
+    </traci_server>
+
+</configuration>

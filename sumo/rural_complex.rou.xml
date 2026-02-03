@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 복잡한 시골 마을 차량 경로 및 흐름 -->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <!-- ========== 차량 타입 ========== -->
+    <!-- 일반 승용차 -->
+    <vType id="car" vClass="passenger" accel="2.0" decel="4.5" sigma="0.3"
+           length="4.5" minGap="2.0" maxSpeed="20.0" color="0.8,0.8,0.8"/>
+
+    <!-- 경차 -->
+    <vType id="small_car" vClass="passenger" accel="2.2" decel="5.0" sigma="0.3"
+           length="3.5" minGap="1.5" maxSpeed="18.0" color="0.9,0.9,0.5"/>
+
+    <!-- 트럭 (배달, 농산물) -->
+    <vType id="truck" vClass="truck" accel="1.0" decel="3.5" sigma="0.4"
+           length="7.0" minGap="3.0" maxSpeed="16.0" color="0.3,0.5,0.3"/>
+
+    <!-- 경운기 -->
+    <vType id="tractor" vClass="truck" accel="0.5" decel="2.0" sigma="0.5"
+           length="3.0" minGap="1.0" maxSpeed="7.0" color="0.8,0.3,0.1"/>
+
+    <!-- 오토바이/스쿠터 -->
+    <vType id="motorcycle" vClass="motorcycle" accel="3.0" decel="6.0" sigma="0.2"
+           length="2.0" minGap="1.0" maxSpeed="15.0" color="0.2,0.2,0.8"/>
+
+    <!-- ========== 주요 경로 정의 ========== -->
+
+    <!-- 1. 관통 통과 (서 → 동) -->
+    <route id="route_through_east" edges="main_seg1 main_seg2 main_seg3 main_seg4 main_seg5"/>
+
+    <!-- 2. 관통 통과 (동 → 서) - 비활성화 (역방향 edge 없음) -->
+    <!-- <route id="route_through_west" edges="main_seg5 main_seg4 south_loop4 south_loop3 south_loop2 south_loop1 main_seg2 main_seg1"/> -->
+
+    <!-- 3. 교회 방문 (서쪽에서) -->
+    <route id="route_to_church" edges="main_seg1 main_seg2 center_to_north to_church_junction church_fork_left"/>
+
+    <!-- 4. 학교 방문 (서쪽에서) -->
+    <route id="route_to_school" edges="main_seg1 main_seg2 center_to_north to_church_junction church_fork_right"/>
+
+    <!-- 5. 논밭 작업 (서쪽에서) -->
+    <route id="route_to_farm_west" edges="main_seg1 main_seg2 center_to_south to_farm_junction farm_fork_left"/>
+    <route id="route_to_farm_east" edges="main_seg1 main_seg2 center_to_south to_farm_junction farm_fork_right"/>
+
+    <!-- 6. 마을회관 방문 -->
+    <route id="route_to_community" edges="main_seg1 main_seg2 to_community"/>
+
+    <!-- 7. 슈퍼 방문 -->
+    <route id="route_to_supermarket" edges="main_seg1 main_seg2 to_supermarket"/>
+
+    <!-- 8. 북쪽 순환 -->
+    <route id="route_north_loop" edges="main_seg1 main_seg2 center_to_north north_loop3 north_loop4 main_seg4 main_seg5"/>
+
+    <!-- 9. 남쪽 순환 -->
+    <route id="route_south_loop" edges="main_seg1 main_seg2 center_to_south south_loop3 south_loop4 main_seg4 main_seg5"/>
+
+    <!-- 10. 산길로 (동쪽 Y자) -->
+    <route id="route_to_mountain" edges="main_seg1 main_seg2 main_seg3 main_seg4 fork_to_mountain"/>
+
+    <!-- 11. 강변길로 (동쪽 Y자) -->
+    <route id="route_to_riverside" edges="main_seg1 main_seg2 main_seg3 main_seg4 fork_to_riverside"/>
+
+    <!-- 12. 주택가 골목 순환 -->
+    <route id="route_alley_loop" edges="main_seg1 alley_north alley_connect_north alley_back_main"/>
+
+    <!-- 13. 마을 전체 순환 (긴 코스) - 북쪽 순환 후 동쪽 exit -->
+    <route id="route_village_tour" edges="main_seg1 main_seg2 center_to_north north_loop3 north_loop4 main_seg4 main_seg5"/>
+
+    <!-- ========== 차량 흐름 (Flow) ========== -->
+    <!-- V2V 테스트를 위해 확률 증가 (시골 도로지만 적절한 차량 밀도 유지) -->
+
+    <!-- 관통 통과 차량 (가장 많음, 40%) -->
+    <flow id="flow_through_east" type="car" route="route_through_east"
+          begin="0" end="3600" probability="0.040" departSpeed="random"/>
+
+    <!-- 역방향 경로는 네트워크 제약으로 비활성화 -->
+    <!-- <flow id="flow_through_west" type="car" route="route_through_west"
+          begin="0" end="3600" probability="0.020" departSpeed="random"/> -->
+
+    <!-- 교회/학교 방문 (15%) -->
+    <flow id="flow_church" type="car" route="route_to_church"
+          begin="0" end="3600" probability="0.008" departSpeed="random"/>
+
+    <flow id="flow_school" type="small_car" route="route_to_school"
+          begin="0" end="3600" probability="0.007" departSpeed="random"/>
+
+    <!-- 농사일 (10%) -->
+    <flow id="flow_farm1" type="tractor" route="route_to_farm_west"
+          begin="0" end="3600" probability="0.005" departSpeed="random"/>
+
+    <flow id="flow_farm2" type="truck" route="route_to_farm_east"
+          begin="0" end="3600" probability="0.005" departSpeed="random"/>
+
+    <!-- 마을회관/슈퍼 (10%) -->
+    <flow id="flow_community" type="car" route="route_to_community"
+          begin="0" end="3600" probability="0.005" departSpeed="random"/>
+
+    <flow id="flow_supermarket" type="small_car" route="route_to_supermarket"
+          begin="0" end="3600" probability="0.005" departSpeed="random"/>
+
+    <!-- 순환도로 (10%) -->
+    <flow id="flow_north_loop" type="car" route="route_north_loop"
+          begin="0" end="3600" probability="0.005" departSpeed="random"/>
+
+    <flow id="flow_south_loop" type="car" route="route_south_loop"
+          begin="0" end="3600" probability="0.005" departSpeed="random"/>
+
+    <!-- Y자 갈림길 (5%) -->
+    <flow id="flow_mountain" type="car" route="route_to_mountain"
+          begin="0" end="3600" probability="0.0025" departSpeed="random"/>
+
+    <flow id="flow_riverside" type="car" route="route_to_riverside"
+          begin="0" end="3600" probability="0.0025" departSpeed="random"/>
+
+    <!-- 골목길 (5%) -->
+    <flow id="flow_alley" type="small_car" route="route_alley_loop"
+          begin="0" end="3600" probability="0.0025" departSpeed="random"/>
+
+    <!-- 오토바이/스쿠터 (배달, 5%) -->
+    <flow id="flow_delivery" type="motorcycle" route="route_village_tour"
+          begin="0" end="3600" probability="0.0025" departSpeed="random"/>
+
+    <!-- 마을 투어 (관광객, 드뭄, 1%) -->
+    <flow id="flow_tour" type="car" route="route_village_tour"
+          begin="0" end="3600" probability="0.001" departSpeed="random"/>
+
+</routes>

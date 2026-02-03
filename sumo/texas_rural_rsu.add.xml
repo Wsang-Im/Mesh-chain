@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Texas 시골 마을 RSU 배치 - 주요 교차로 중심 -->
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+
+    <!-- 주요 교차로에 RSU 배치 (빨간색 - 신호등 교차로) -->
+    <poi id="RSU-1-FM-1ST" x="400.0" y="750.0" color="255,0,0" layer="200" type="RSU"/>
+    <poi id="RSU-2-FM-MAIN" x="800.0" y="750.0" color="255,0,0" layer="200" type="RSU"/>
+    <poi id="RSU-3-FM-2ND" x="1200.0" y="750.0" color="255,0,0" layer="200" type="RSU"/>
+
+    <!-- Main Street 주요 지점 (파란색) -->
+    <poi id="RSU-4-MAIN-SCHOOL" x="800.0" y="400.0" color="0,100,255" layer="200" type="RSU"/>
+    <poi id="RSU-5-MAIN-CHURCH" x="800.0" y="1100.0" color="0,100,255" layer="200" type="RSU"/>
+
+    <!-- 마을 외곽 진입점 (녹색) -->
+    <poi id="RSU-6-FM-WEST" x="100.0" y="750.0" color="0,255,100" layer="200" type="RSU"/>
+    <poi id="RSU-7-FM-EAST" x="1900.0" y="750.0" color="0,255,100" layer="200" type="RSU"/>
+
+    <!-- County Road (노란색) -->
+    <poi id="RSU-8-COUNTY-MAIN" x="800.0" y="400.0" color="255,255,0" layer="200" type="RSU"/>
+
+    <!-- 2nd Street Store (주황색) -->
+    <poi id="RSU-9-STORE" x="1200.0" y="400.0" color="255,165,0" layer="200" type="RSU"/>
+
+</additional>

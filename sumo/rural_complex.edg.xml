@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 복잡한 시골 마을 도로 - 엣지 정의 -->
+<edges xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/edges_file.xsd">
+
+    <!-- ========== 메인 도로 (동서 관통, 2차선) ========== -->
+    <edge id="main_seg1" from="main_west" to="village_entrance" type="main_road"/>
+    <edge id="main_seg2" from="village_entrance" to="village_center" type="main_road"/>
+    <edge id="main_seg3" from="village_center" to="village_exit" type="main_road"/>
+    <edge id="main_seg4" from="village_exit" to="east_fork" type="main_road"/>
+    <edge id="main_seg5" from="east_fork" to="main_east" type="main_road"/>
+
+    <!-- ========== 마을 순환도로 (북쪽) ========== -->
+    <edge id="north_loop1" from="village_entrance" to="north_curve1" type="village_road"/>
+    <edge id="north_loop2" from="north_curve1" to="north_top" type="village_road"/>
+    <edge id="north_loop3" from="north_top" to="north_curve2" type="village_road"/>
+    <edge id="north_loop4" from="north_curve2" to="village_exit" type="village_road"/>
+
+    <!-- ========== 마을 순환도로 (남쪽) ========== -->
+    <edge id="south_loop1" from="village_entrance" to="south_curve1" type="village_road"/>
+    <edge id="south_loop2" from="south_curve1" to="south_bottom" type="village_road"/>
+    <edge id="south_loop3" from="south_bottom" to="south_curve2" type="village_road"/>
+    <edge id="south_loop4" from="south_curve2" to="village_exit" type="village_road"/>
+
+    <!-- ========== 마을 중심과 순환도로 연결 ========== -->
+    <edge id="center_to_north" from="village_center" to="north_top" type="village_road"/>
+    <edge id="center_to_south" from="village_center" to="south_bottom" type="village_road"/>
+
+    <!-- ========== 북쪽 지선 (교회, 학교) ========== -->
+    <edge id="to_church_junction" from="north_top" to="church_junction" type="narrow_road"/>
+    <edge id="church_fork_left" from="church_junction" to="church" type="narrow_road"/>
+    <edge id="church_fork_right" from="church_junction" to="school" type="narrow_road"/>
+
+    <!-- ========== 남쪽 지선 (논밭) ========== -->
+    <edge id="to_farm_junction" from="south_bottom" to="farm_junction" type="narrow_road"/>
+    <edge id="farm_fork_left" from="farm_junction" to="farm_west" type="farm_road"/>
+    <edge id="farm_fork_right" from="farm_junction" to="farm_east" type="farm_road"/>
+
+    <!-- ========== 동쪽 Y자 갈림길 ========== -->
+    <edge id="fork_to_mountain" from="east_fork" to="mountain_road" type="village_road"/>
+    <edge id="fork_to_riverside" from="east_fork" to="riverside_road" type="village_road"/>
+
+    <!-- ========== 서쪽 주택가 골목 ========== -->
+    <edge id="alley_north" from="village_entrance" to="west_alley1" type="alley"/>
+    <edge id="alley_south" from="village_entrance" to="west_alley2" type="alley"/>
+    <edge id="alley_connect_north" from="west_alley1" to="house_cluster" type="alley"/>
+    <edge id="alley_connect_south" from="west_alley2" to="house_cluster" type="alley"/>
+    <edge id="alley_back_main" from="house_cluster" to="main_west" type="alley"/>
+
+    <!-- ========== 마을회관/슈퍼 연결 ========== -->
+    <edge id="to_community" from="village_center" to="community_center" type="narrow_road"/>
+    <edge id="community_to_north" from="community_center" to="north_curve2" type="narrow_road"/>
+    <edge id="to_supermarket" from="village_center" to="supermarket" type="narrow_road"/>
+    <edge id="supermarket_to_south" from="supermarket" to="south_curve1" type="narrow_road"/>
+
+</edges>

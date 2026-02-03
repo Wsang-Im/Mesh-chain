@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Complex Highway Network Edges
+5km main highway (3 lanes each direction, 120 km/h)
+On/off ramps (1 lane, 80 km/h)
+-->
+<edges>
+    <!-- ========================================
+         Main Highway (East-bound: west → east)
+         3 lanes, 120 km/h (33.33 m/s)
+         ======================================== -->
+    <edge id="highway_main_wb1" from="highway_west" to="interchange1" priority="13" numLanes="3" speed="33.33" spreadType="center"/>
+    <edge id="highway_main_wb2" from="interchange1" to="interchange2" priority="13" numLanes="3" speed="33.33" spreadType="center"/>
+    <edge id="highway_main_wb3" from="interchange2" to="highway_east" priority="13" numLanes="3" speed="33.33" spreadType="center"/>
+
+    <!-- ========================================
+         Main Highway (West-bound: east → west)
+         3 lanes, 120 km/h (33.33 m/s)
+         ======================================== -->
+    <edge id="highway_main_eb1" from="highway_east" to="interchange2" priority="13" numLanes="3" speed="33.33" spreadType="center"/>
+    <edge id="highway_main_eb2" from="interchange2" to="interchange1" priority="13" numLanes="3" speed="33.33" spreadType="center"/>
+    <edge id="highway_main_eb3" from="interchange1" to="highway_west" priority="13" numLanes="3" speed="33.33" spreadType="center"/>
+
+    <!-- ========================================
+         Interchange 1: On-ramp (south → highway)
+         1 lane, 80 km/h (22.22 m/s)
+         ======================================== -->
+    <edge id="ramp1_on" from="ramp1_on_start" to="interchange1" priority="9" numLanes="1" speed="22.22" spreadType="center"/>
+
+    <!-- ========================================
+         Interchange 1: Off-ramp (highway → south)
+         1 lane, 80 km/h (22.22 m/s)
+         ======================================== -->
+    <edge id="ramp1_off" from="interchange1" to="ramp1_off_end" priority="9" numLanes="1" speed="22.22" spreadType="center"/>
+
+    <!-- ========================================
+         Interchange 2: On-ramp (north → highway)
+         1 lane, 80 km/h (22.22 m/s)
+         ======================================== -->
+    <edge id="ramp2_on" from="ramp2_on_start" to="interchange2" priority="9" numLanes="1" speed="22.22" spreadType="center"/>
+
+    <!-- ========================================
+         Interchange 2: Off-ramp (highway → north)
+         1 lane, 80 km/h (22.22 m/s)
+         ======================================== -->
+    <edge id="ramp2_off" from="interchange2" to="ramp2_off_end" priority="9" numLanes="1" speed="22.22" spreadType="center"/>
+</edges>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 단순 5km 직선 고속도로 엣지 정의 -->
+<edges>
+    <!-- 메인 고속도로: 5km 단일 구간 (양방향 3차선, 120 km/h) -->
+    <edge id="highway_main" from="west" to="east" priority="13" numLanes="3" speed="33.33" spreadType="center"/>
+
+    <!-- 역방향 -->
+    <edge id="-highway_main" from="east" to="west" priority="13" numLanes="3" speed="33.33" spreadType="center"/>
+</edges>

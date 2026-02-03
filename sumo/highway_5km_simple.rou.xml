@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 단순 5km 직선 고속도로 차량 routes & flows -->
+<routes>
+    <!-- 차량 타입 -->
+    <vType id="car_slow" accel="2.0" decel="4.0" sigma="0.8" length="4.5" minGap="2.5" maxSpeed="27.78" color="1,0,0"/>
+    <vType id="car_medium" accel="2.6" decel="4.5" sigma="0.7" length="4.5" minGap="2.5" maxSpeed="30.56" color="0,1,0"/>
+    <vType id="car_fast" accel="3.0" decel="5.0" sigma="0.5" length="4.5" minGap="2.5" maxSpeed="33.33" color="0,0,1"/>
+
+    <!-- 단순 경로 (west → east, 5km 직선) -->
+    <route id="route_east" edges="highway_main"/>
+
+    <!-- 역방향 경로 (east → west) -->
+    <route id="route_west" edges="-highway_main"/>
+
+    <!-- 차량 Flow (~1200 veh/hr) -->
+    <!-- East-bound (600 veh/hr) -->
+    <flow id="flow_east_slow" type="car_slow" route="route_east" vehsPerHour="200" begin="0" end="3600"/>
+    <flow id="flow_east_medium" type="car_medium" route="route_east" vehsPerHour="250" begin="0" end="3600"/>
+    <flow id="flow_east_fast" type="car_fast" route="route_east" vehsPerHour="150" begin="0" end="3600"/>
+
+    <!-- West-bound (600 veh/hr) -->
+    <flow id="flow_west_slow" type="car_slow" route="route_west" vehsPerHour="200" begin="0" end="3600"/>
+    <flow id="flow_west_medium" type="car_medium" route="route_west" vehsPerHour="250" begin="0" end="3600"/>
+    <flow id="flow_west_fast" type="car_fast" route="route_west" vehsPerHour="150" begin="0" end="3600"/>
+</routes>

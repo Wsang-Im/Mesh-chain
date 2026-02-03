@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Texas 시골 마을 차량 경로 및 흐름 -->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <!-- ========== 차량 타입 ========== -->
+    <vType id="car" vClass="passenger" accel="2.0" decel="4.5" sigma="0.3"
+           length="4.5" minGap="2.0" maxSpeed="26.82" color="0.8,0.8,0.8"/>
+
+    <vType id="pickup" vClass="passenger" accel="1.8" decel="4.0" sigma="0.3"
+           length="5.5" minGap="2.5" maxSpeed="24.59" color="0.6,0.6,0.8"/>
+
+    <vType id="truck" vClass="truck" accel="1.2" decel="3.5" sigma="0.4"
+           length="8.0" minGap="3.0" maxSpeed="22.35" color="0.3,0.5,0.3"/>
+
+    <vType id="tractor" vClass="truck" accel="0.8" decel="2.5" sigma="0.5"
+           length="4.0" minGap="2.0" maxSpeed="11.18" color="0.8,0.3,0.1"/>
+
+    <!-- ========== 주요 경로 정의 ========== -->
+
+    <!-- 1. FM Road 관통 (서→동) - 가장 많은 통과 차량 -->
+    <route id="route_fm_through_e" edges="fm_w_to_1st fm_1st_to_main fm_main_to_2nd fm_2nd_to_east"/>
+
+    <!-- 2. Main Street 남북 관통 (남→북) -->
+    <route id="route_main_north" edges="main_s_to_school main_school_to_fm main_fm_to_church main_church_to_n"/>
+
+    <!-- 3. 마을 학교 방문 (FM에서 Main Street로) -->
+    <route id="route_to_school" edges="fm_w_to_1st fm_1st_to_main fm_main_to_2nd fm_2nd_to_east"/>
+
+    <!-- 4. 교회 방문 (FM에서 Main으로 북쪽) -->
+    <route id="route_to_church" edges="fm_w_to_1st fm_1st_to_main main_fm_to_church main_church_to_n"/>
+
+    <!-- 5. 상점가 방문 (2nd Street) -->
+    <route id="route_to_store" edges="fm_w_to_1st fm_1st_to_main fm_main_to_2nd 2nd_fm_to_n"/>
+
+    <!-- 6. County Road 이용 (남쪽 우회) -->
+    <route id="route_county_road" edges="county_w_to_1st county_1st_to_main county_main_to_2nd county_2nd_to_e"/>
+
+    <!-- 7. 농장 진입 (남쪽 농장들) - County Road 경유 -->
+    <route id="route_farm_access1" edges="county_w_to_1st county_1st_to_main county_main_to_2nd county_2nd_to_e"/>
+    <route id="route_farm_access2" edges="county_w_to_1st county_1st_to_main county_main_to_2nd county_2nd_to_e"/>
+
+    <!-- 8. 목장 진입 (동쪽) -->
+    <route id="route_ranch_e" edges="fm_w_to_1st fm_1st_to_main fm_main_to_2nd ranch_2nd_to_r2"/>
+
+    <!-- 9. 마을 내부 순환 (간단한 루프) -->
+    <route id="route_town_loop1" edges="fm_w_to_1st fm_1st_to_main fm_main_to_2nd fm_2nd_to_east"/>
+
+    <!-- 10. Church Road 이용 -->
+    <route id="route_church_road" edges="church_w_to_1st church_1st_to_main church_main_to_2nd church_2nd_to_e"/>
+
+    <!-- ========== 역방향 경로 (양방향 도로) ========== -->
+
+    <!-- 11. FM Road 역방향 (동→서) -->
+    <route id="route_fm_through_w" edges="fm_east_to_2nd fm_2nd_to_main fm_main_to_1st fm_1st_to_w"/>
+
+    <!-- 12. Main Street 역방향 (북→남) -->
+    <route id="route_main_south" edges="main_n_to_church main_church_to_fm main_fm_to_school main_school_to_s"/>
+
+    <!-- 13. FM+Main 혼합 (동쪽에서 남쪽으로) -->
+    <route id="route_east_to_south" edges="fm_east_to_2nd fm_2nd_to_main main_fm_to_school main_school_to_s"/>
+
+    <!-- 14. Main+FM 혼합 (북쪽에서 동쪽으로) -->
+    <route id="route_north_to_east" edges="main_n_to_church main_church_to_fm fm_main_to_2nd fm_2nd_to_east"/>
+
+    <!-- ========== 차량 흐름 (Flow) ========== -->
+    <!-- V2X 테스트를 위해 차량 확률 대폭 증가! (2~3배 상향) -->
+
+    <!-- FM Road 관통 차량 (가장 많음, 40%) - 전체 경로 커버 -->
+    <flow id="flow_fm_through_1" type="car" route="route_fm_through_e"
+          begin="0" end="3600" probability="0.500" departSpeed="random"/>
+
+    <flow id="flow_fm_through_2" type="pickup" route="route_fm_through_e"
+          begin="0" end="3600" probability="0.400" departSpeed="random"/>
+
+    <flow id="flow_fm_through_3" type="car" route="route_fm_through_e"
+          begin="0" end="3600" probability="0.350" departSpeed="random"/>
+
+    <!-- Main Street 남북 관통 (25%) - Main Street RSU 커버 -->
+    <flow id="flow_main_north_1" type="car" route="route_main_north"
+          begin="0" end="3600" probability="0.280" departSpeed="random"/>
+
+    <flow id="flow_main_north_2" type="pickup" route="route_main_north"
+          begin="0" end="3600" probability="0.220" departSpeed="random"/>
+
+    <flow id="flow_main_north_3" type="car" route="route_main_north"
+          begin="0" end="3600" probability="0.200" departSpeed="random"/>
+
+    <!-- 학교 방문 (FM → Main 전환, 10%) -->
+    <flow id="flow_school_1" type="car" route="route_to_school"
+          begin="0" end="3600" probability="0.140" departSpeed="random"/>
+
+    <flow id="flow_school_2" type="pickup" route="route_to_school"
+          begin="0" end="3600" probability="0.140" departSpeed="random"/>
+
+    <!-- 교회 방문 (FM → Main 북쪽, 10%) -->
+    <flow id="flow_church_1" type="pickup" route="route_to_church"
+          begin="0" end="3600" probability="0.140" departSpeed="random"/>
+
+    <flow id="flow_church_2" type="car" route="route_to_church"
+          begin="0" end="3600" probability="0.140" departSpeed="random"/>
+
+    <!-- 상점가 (2nd Street, 5%) -->
+    <flow id="flow_store" type="car" route="route_to_store"
+          begin="0" end="3600" probability="0.140" departSpeed="random"/>
+
+    <!-- County Road (남쪽 우회, 5%) -->
+    <flow id="flow_county" type="pickup" route="route_county_road"
+          begin="0" end="3600" probability="0.140" departSpeed="random"/>
+
+    <!-- 농장/목장 (5%) -->
+    <flow id="flow_farm1" type="tractor" route="route_farm_access1"
+          begin="0" end="3600" probability="0.070" departSpeed="random"/>
+
+    <flow id="flow_farm2" type="truck" route="route_farm_access2"
+          begin="0" end="3600" probability="0.070" departSpeed="random"/>
+
+    <flow id="flow_ranch" type="pickup" route="route_ranch_e"
+          begin="0" end="3600" probability="0.084" departSpeed="random"/>
+
+    <!-- 마을 내부 순환 (5%) -->
+    <flow id="flow_loop" type="car" route="route_town_loop1"
+          begin="0" end="3600" probability="0.140" departSpeed="random"/>
+
+    <!-- Church Road (5%) -->
+    <flow id="flow_church_road" type="car" route="route_church_road"
+          begin="0" end="3600" probability="0.140" departSpeed="random"/>
+
+    <!-- ========== 역방향 흐름 (동→서, 북→남) ========== -->
+
+    <!-- FM Road 역방향 (동→서, 30%) - 동쪽 RSU 즉시 활성화 -->
+    <flow id="flow_fm_west_1" type="car" route="route_fm_through_w"
+          begin="0" end="3600" probability="0.330" departSpeed="random"/>
+
+    <flow id="flow_fm_west_2" type="pickup" route="route_fm_through_w"
+          begin="0" end="3600" probability="0.280" departSpeed="random"/>
+
+    <flow id="flow_fm_west_3" type="car" route="route_fm_through_w"
+          begin="0" end="3600" probability="0.220" departSpeed="random"/>
+
+    <!-- Main Street 역방향 (북→남, 15%) -->
+    <flow id="flow_main_south_1" type="car" route="route_main_south"
+          begin="0" end="3600" probability="0.200" departSpeed="random"/>
+
+    <flow id="flow_main_south_2" type="pickup" route="route_main_south"
+          begin="0" end="3600" probability="0.220" departSpeed="random"/>
+
+    <!-- 동쪽→남쪽 혼합 (10%) -->
+    <flow id="flow_east_south_1" type="car" route="route_east_to_south"
+          begin="0" end="3600" probability="0.140" departSpeed="random"/>
+
+    <flow id="flow_east_south_2" type="pickup" route="route_east_to_south"
+          begin="0" end="3600" probability="0.140" departSpeed="random"/>
+
+    <!-- 북쪽→동쪽 혼합 (10%) -->
+    <flow id="flow_north_east_1" type="car" route="route_north_to_east"
+          begin="0" end="3600" probability="0.140" departSpeed="random"/>
+
+    <flow id="flow_north_east_2" type="pickup" route="route_north_to_east"
+          begin="0" end="3600" probability="0.140" departSpeed="random"/>
+
+</routes>

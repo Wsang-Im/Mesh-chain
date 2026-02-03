@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 복잡한 시골 도로 타입 정의 -->
+<types xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/types_file.xsd">
+
+    <!-- 메인 도로: 왕복 2차선, 60km/h -->
+    <type id="main_road" priority="7" numLanes="1" speed="16.67" width="3.5" oneway="false"/>
+
+    <!-- 마을 도로: 단선, 40km/h -->
+    <type id="village_road" priority="5" numLanes="1" speed="11.11" width="3.0" oneway="false"/>
+
+    <!-- 좁은 길: 단선, 30km/h -->
+    <type id="narrow_road" priority="4" numLanes="1" speed="8.33" width="2.5" oneway="false"/>
+
+    <!-- 골목길: 매우 좁음, 20km/h -->
+    <type id="alley" priority="3" numLanes="1" speed="5.56" width="2.0" oneway="false"/>
+
+    <!-- 농로: 비포장 느낌, 25km/h -->
+    <type id="farm_road" priority="2" numLanes="1" speed="6.94" width="2.5" oneway="true"/>
+
+</types>

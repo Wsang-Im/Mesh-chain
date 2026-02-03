@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-11-10 15:18:34 by Eclipse SUMO netconvert Version 1.15.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <node-files value="highway_5km.nod.xml"/>
+        <edge-files value="highway_5km.edg.xml"/>
+    </input>
+
+    <output>
+        <output-file value="highway_5km.net.xml"/>
+    </output>
+
+    <processing>
+        <geometry.remove value="false"/>
+    </processing>
+
+    <junctions>
+        <junctions.corner-detail value="5"/>
+        <junctions.internal-link-detail value="5"/>
+    </junctions>
+
+</configuration>
+-->
+
+<net version="1.9" junctionCornerDetail="5" junctionLinkDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,180.00" convBoundary="0.00,0.00,3000.00,215.00" origBoundary="0.00,-180.00,3000.00,35.00" projParameter="!"/>
+
+    <edge id=":curve1_0" function="internal">
+        <lane id=":curve1_0_0" index="0" speed="33.33" length="0.81" shape="600.05,203.00 599.24,202.98"/>
+        <lane id=":curve1_0_1" index="1" speed="33.33" length="0.81" shape="600.18,199.80 599.37,199.78"/>
+        <lane id=":curve1_0_2" index="2" speed="33.33" length="0.81" shape="600.30,196.61 599.49,196.58"/>
+    </edge>
+    <edge id=":curve1_3" function="internal">
+        <lane id=":curve1_3_0" index="0" speed="33.33" length="0.81" shape="599.87,187.00 600.68,187.02"/>
+        <lane id=":curve1_3_1" index="1" speed="33.33" length="0.81" shape="599.75,190.20 600.56,190.22"/>
+        <lane id=":curve1_3_2" index="2" speed="33.33" length="0.81" shape="599.62,193.40 600.43,193.42"/>
+    </edge>
+    <edge id=":curve2_0" function="internal">
+        <lane id=":curve2_0_0" index="0" speed="33.33" length="0.77" shape="2100.46,207.99 2099.70,208.01"/>
+        <lane id=":curve2_0_1" index="1" speed="33.33" length="0.77" shape="2100.42,204.79 2099.65,204.81"/>
+        <lane id=":curve2_0_2" index="2" speed="33.33" length="0.77" shape="2100.39,201.59 2099.59,201.61"/>
+    </edge>
+    <edge id=":curve2_3" function="internal">
+        <lane id=":curve2_3_0" index="0" speed="33.33" length="0.83" shape="2099.43,192.02 2100.27,192.00"/>
+        <lane id=":curve2_3_1" index="1" speed="33.33" length="0.83" shape="2099.48,195.22 2100.31,195.20"/>
+        <lane id=":curve2_3_2" index="2" speed="33.33" length="0.83" shape="2099.54,198.42 2100.35,198.40"/>
+    </edge>
+    <edge id=":east_0" function="internal">
+        <lane id=":east_0_0" index="0" speed="3.66" length="4.67" shape="2999.86,178.40 3001.08,179.18 3001.50,179.97 3001.11,180.77 2999.93,181.60"/>
+    </edge>
+    <edge id=":junction1_0" function="internal">
+        <lane id=":junction1_0_0" index="0" speed="33.33" length="10.49" shape="1505.20,222.83 1494.63,222.86"/>
+        <lane id=":junction1_0_1" index="1" speed="33.33" length="10.49" shape="1505.20,219.63 1494.71,219.66"/>
+        <lane id=":junction1_0_2" index="2" speed="33.33" length="10.49" shape="1505.20,216.43 1494.80,216.46"/>
+    </edge>
+    <edge id=":junction1_3" function="internal">
+        <lane id=":junction1_3_0" index="0" speed="3.60" length="1.19" shape="1505.20,216.43 1504.21,215.77"/>
+    </edge>
+    <edge id=":junction1_11" function="internal">
+        <lane id=":junction1_11_0" index="0" speed="3.60" length="3.23" shape="1504.21,215.77 1504.06,215.67 1503.68,214.91 1504.06,214.16 1505.20,213.40"/>
+    </edge>
+    <edge id=":junction1_4" function="internal">
+        <lane id=":junction1_4_0" index="0" speed="6.69" length="8.49" shape="1499.58,201.76 1500.23,204.05 1501.39,205.69 1503.04,206.67 1505.20,207.00"/>
+    </edge>
+    <edge id=":junction1_5" function="internal">
+        <lane id=":junction1_5_0" index="0" speed="9.01" length="20.76" shape="1499.58,201.76 1500.32,209.67 1499.76,215.29 1497.89,218.62 1494.71,219.66"/>
+        <lane id=":junction1_5_1" index="1" speed="8.32" length="17.52" shape="1499.58,201.76 1500.14,208.26 1499.53,212.88 1497.75,215.61 1494.80,216.46"/>
+    </edge>
+    <edge id=":junction1_7" function="internal">
+        <lane id=":junction1_7_0" index="0" speed="33.33" length="10.24" shape="1495.05,206.98 1505.20,207.00"/>
+        <lane id=":junction1_7_1" index="1" speed="33.33" length="10.24" shape="1494.96,210.18 1505.20,210.20"/>
+        <lane id=":junction1_7_2" index="2" speed="33.33" length="10.24" shape="1494.88,213.38 1505.20,213.40"/>
+    </edge>
+    <edge id=":junction1_10" function="internal">
+        <lane id=":junction1_10_0" index="0" speed="3.62" length="1.25" shape="1494.88,213.38 1495.90,214.10"/>
+    </edge>
+    <edge id=":junction1_12" function="internal">
+        <lane id=":junction1_12_0" index="0" speed="3.62" length="3.26" shape="1495.90,214.10 1496.02,214.18 1496.38,214.96 1495.98,215.72 1494.80,216.46"/>
+    </edge>
+    <edge id=":ramp1_accel_start_0" function="internal">
+        <lane id=":ramp1_accel_start_0_0" index="0" speed="26.39" length="0.23" shape="1481.43,119.28 1481.46,119.34 1481.48,119.39 1481.50,119.43 1481.52,119.49"/>
+    </edge>
+    <edge id=":ramp1_merge_prep_0" function="internal">
+        <lane id=":ramp1_merge_prep_0_0" index="0" speed="23.61" length="0.37" shape="1451.23,58.98 1451.30,59.06 1451.34,59.12 1451.38,59.19 1451.43,59.28"/>
+    </edge>
+    <edge id=":west_0" function="internal">
+        <lane id=":west_0_0" index="0" speed="3.66" length="4.66" shape="0.11,181.60 -1.07,180.77 -1.44,179.96 -1.02,179.17 0.20,178.41"/>
+    </edge>
+
+    <edge id="-highway_seg1a" from="curve1" to="west" priority="13" spreadType="center" shape="599.89,199.80 300.00,188.00 -0.13,184.80">
+        <lane id="-highway_seg1a_0" index="0" speed="33.33" length="599.59" shape="599.24,202.98 299.92,191.20 -0.06,188.00"/>
+        <lane id="-highway_seg1a_1" index="1" speed="33.33" length="599.59" shape="599.37,199.78 300.00,188.00 0.03,184.80"/>
+        <lane id="-highway_seg1a_2" index="2" speed="33.33" length="599.59" shape="599.49,196.58 300.08,184.80 0.11,181.60"/>
+    </edge>
+    <edge id="-highway_seg1b" from="junction1" to="curve1" priority="13" spreadType="center" shape="1499.93,219.80 1050.00,208.00 599.86,199.80">
+        <lane id="-highway_seg1b_0" index="0" speed="33.33" length="894.76" shape="1494.63,222.86 1049.93,211.20 600.05,203.00"/>
+        <lane id="-highway_seg1b_1" index="1" speed="33.33" length="894.76" shape="1494.71,219.66 1050.00,208.00 600.18,199.80"/>
+        <lane id="-highway_seg1b_2" index="2" speed="33.33" length="894.76" shape="1494.80,216.46 1050.07,204.80 600.30,196.61"/>
+    </edge>
+    <edge id="-highway_seg2" from="curve2" to="junction1" priority="13" spreadType="center" shape="2100.16,204.80 1800.00,210.00 1500.08,219.80">
+        <lane id="-highway_seg2_0" index="0" speed="33.33" length="594.65" shape="2099.70,208.01 1800.08,213.20 1505.20,222.83"/>
+        <lane id="-highway_seg2_1" index="1" speed="33.33" length="594.65" shape="2099.65,204.81 1800.00,210.00 1505.20,219.63"/>
+        <lane id="-highway_seg2_2" index="2" speed="33.33" length="594.65" shape="2099.59,201.61 1799.92,206.80 1505.20,216.43"/>
+    </edge>
+    <edge id="-highway_seg3" from="east" to="curve2" priority="13" spreadType="center" shape="3000.11,184.80 2550.00,190.00 2100.11,204.80">
+        <lane id="-highway_seg3_0" index="0" speed="33.33" length="899.88" shape="3000.14,188.00 2550.07,193.20 2100.46,207.99"/>
+        <lane id="-highway_seg3_1" index="1" speed="33.33" length="899.88" shape="3000.00,184.80 2550.00,190.00 2100.42,204.79"/>
+        <lane id="-highway_seg3_2" index="2" speed="33.33" length="899.88" shape="2999.93,181.60 2549.93,186.80 2100.39,201.59"/>
+    </edge>
+    <edge id="highway_seg1a" from="west" to="curve1" priority="13" spreadType="center" shape="0.13,175.20 300.00,188.00 600.11,190.20">
+        <lane id="highway_seg1a_0" index="0" speed="33.33" length="599.75" shape="0.37,172.01 300.08,184.80 599.87,187.00"/>
+        <lane id="highway_seg1a_1" index="1" speed="33.33" length="599.75" shape="0.28,175.21 300.00,188.00 599.75,190.20"/>
+        <lane id="highway_seg1a_2" index="2" speed="33.33" length="599.75" shape="0.20,178.41 299.92,191.20 599.62,193.40"/>
+    </edge>
+    <edge id="highway_seg1b" from="curve1" to="junction1" priority="13" spreadType="center" shape="600.14,190.20 1050.00,208.00 1500.07,210.20">
+        <lane id="highway_seg1b_0" index="0" speed="33.33" length="894.76" shape="600.68,187.02 1050.07,204.80 1495.05,206.98"/>
+        <lane id="highway_seg1b_1" index="1" speed="33.33" length="894.76" shape="600.56,190.22 1050.00,208.00 1494.96,210.18"/>
+        <lane id="highway_seg1b_2" index="2" speed="33.33" length="894.76" shape="600.43,193.42 1049.93,211.20 1494.88,213.38"/>
+    </edge>
+    <edge id="highway_seg2" from="junction1" to="curve2" priority="13" spreadType="center" shape="1499.92,210.20 1800.00,210.00 2099.84,195.20">
+        <lane id="highway_seg2_0" index="0" speed="33.33" length="594.65" shape="1505.20,207.00 1799.92,206.80 2099.43,192.02"/>
+        <lane id="highway_seg2_1" index="1" speed="33.33" length="594.65" shape="1505.20,210.20 1800.00,210.00 2099.48,195.22"/>
+        <lane id="highway_seg2_2" index="2" speed="33.33" length="594.65" shape="1505.20,213.40 1800.08,213.20 2099.54,198.42"/>
+    </edge>
+    <edge id="highway_seg3" from="curve2" to="east" priority="13" spreadType="center" shape="2099.89,195.20 2550.00,190.00 2999.89,175.20">
+        <lane id="highway_seg3_0" index="0" speed="33.33" length="899.78" shape="2100.27,192.00 2549.93,186.80 2999.79,172.00"/>
+        <lane id="highway_seg3_1" index="1" speed="33.33" length="899.78" shape="2100.31,195.20 2550.00,190.00 2999.79,175.20"/>
+        <lane id="highway_seg3_2" index="2" speed="33.33" length="899.78" shape="2100.35,198.40 2550.07,193.20 2999.86,178.40"/>
+    </edge>
+    <edge id="ramp1_accel" from="ramp1_merge_prep" to="ramp1_accel_start" priority="9" shape="1450.00,60.00 1465.00,90.00 1480.00,120.00">
+        <lane id="ramp1_accel_0" index="0" speed="25.00" length="67.08" shape="1451.43,59.28 1466.43,89.28 1481.43,119.28"/>
+    </edge>
+    <edge id="ramp1_approach" from="ramp1_start" to="ramp1_merge_prep" priority="9" shape="1400.00,0.00 1425.00,30.00 1450.00,60.00">
+        <lane id="ramp1_approach_0" index="0" speed="22.22" length="78.10" shape="1401.23,-1.02 1426.23,28.98 1451.23,58.98"/>
+    </edge>
+    <edge id="ramp1_on" from="ramp1_accel_start" to="junction1" priority="9" shape="1480.00,120.00 1490.00,150.00 1500.00,215.00">
+        <lane id="ramp1_on_0" index="0" speed="27.78" length="84.50" shape="1481.52,119.49 1491.56,149.62 1499.58,201.76"/>
+    </edge>
+
+    <junction id="curve1" type="priority" x="600.00" y="195.00" incLanes="-highway_seg1b_0 -highway_seg1b_1 -highway_seg1b_2 highway_seg1a_0 highway_seg1a_1 highway_seg1a_2" intLanes=":curve1_0_0 :curve1_0_1 :curve1_0_2 :curve1_3_0 :curve1_3_1 :curve1_3_2" shape="599.99,204.60 600.75,185.42 599.93,185.40 599.18,204.57">
+        <request index="0" response="000000" foes="000000" cont="0"/>
+        <request index="1" response="000000" foes="000000" cont="0"/>
+        <request index="2" response="000000" foes="000000" cont="0"/>
+        <request index="3" response="000000" foes="000000" cont="0"/>
+        <request index="4" response="000000" foes="000000" cont="0"/>
+        <request index="5" response="000000" foes="000000" cont="0"/>
+    </junction>
+    <junction id="curve2" type="priority" x="2100.00" y="200.00" incLanes="-highway_seg3_0 -highway_seg3_1 -highway_seg3_2 highway_seg2_0 highway_seg2_1 highway_seg2_2" intLanes=":curve2_0_0 :curve2_0_1 :curve2_0_2 :curve2_3_0 :curve2_3_1 :curve2_3_2" shape="2100.48,209.59 2100.26,190.40 2099.40,190.42 2099.73,209.61">
+        <request index="0" response="000000" foes="000000" cont="0"/>
+        <request index="1" response="000000" foes="000000" cont="0"/>
+        <request index="2" response="000000" foes="000000" cont="0"/>
+        <request index="3" response="000000" foes="000000" cont="0"/>
+        <request index="4" response="000000" foes="000000" cont="0"/>
+        <request index="5" response="000000" foes="000000" cont="0"/>
+    </junction>
+    <junction id="east" type="priority" x="3000.00" y="180.00" incLanes="highway_seg3_0 highway_seg3_1 highway_seg3_2" intLanes=":east_0_0" shape="3000.00,180.00 3000.11,189.60 2999.68,170.41">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="junction1" type="priority" x="1500.00" y="215.00" incLanes="-highway_seg2_0 -highway_seg2_1 -highway_seg2_2 ramp1_on_0 highway_seg1b_0 highway_seg1b_1 highway_seg1b_2" intLanes=":junction1_0_0 :junction1_0_1 :junction1_0_2 :junction1_11_0 :junction1_4_0 :junction1_5_0 :junction1_5_1 :junction1_7_0 :junction1_7_1 :junction1_7_2 :junction1_12_0" shape="1505.20,224.43 1505.19,205.40 1503.22,204.97 1502.47,204.43 1501.88,203.67 1501.44,202.70 1501.16,201.51 1498.00,202.00 1497.91,203.88 1497.53,204.54 1496.94,205.01 1496.12,205.29 1495.09,205.38 1494.59,224.46">
+        <request index="0"  response="00000000000" foes="10001100000" cont="0"/>
+        <request index="1"  response="00000000000" foes="10001100000" cont="0"/>
+        <request index="2"  response="00000000000" foes="10001100000" cont="0"/>
+        <request index="3"  response="01110000000" foes="01110000000" cont="1"/>
+        <request index="4"  response="01110000000" foes="01110000000" cont="0"/>
+        <request index="5"  response="01110000111" foes="11110000111" cont="0"/>
+        <request index="6"  response="01110000111" foes="11110000111" cont="0"/>
+        <request index="7"  response="00000000000" foes="00001111000" cont="0"/>
+        <request index="8"  response="00000000000" foes="00001111000" cont="0"/>
+        <request index="9"  response="00000000000" foes="00001111000" cont="0"/>
+        <request index="10" response="00001100111" foes="00001100111" cont="1"/>
+    </junction>
+    <junction id="ramp1_accel_start" type="priority" x="1480.00" y="120.00" incLanes="ramp1_accel_0" intLanes=":ramp1_accel_start_0_0" shape="1480.00,120.00 1483.04,118.99 1482.98,118.83 1482.96,118.77 1482.94,118.72 1482.91,118.66">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="ramp1_merge_prep" type="priority" x="1450.00" y="60.00" incLanes="ramp1_approach_0" intLanes=":ramp1_merge_prep_0_0" shape="1450.00,60.00 1452.86,58.57 1452.74,58.33 1452.69,58.24 1452.63,58.16 1452.56,58.07 1452.46,57.95">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="ramp1_start" type="dead_end" x="1400.00" y="0.00" incLanes="" intLanes="" shape="1400.00,0.00 1402.46,-2.05"/>
+    <junction id="west" type="priority" x="0.00" y="180.00" incLanes="-highway_seg1a_0 -highway_seg1a_1 -highway_seg1a_2" intLanes=":west_0_0" shape="-0.00,180.00 0.41,170.41 -0.10,189.60">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+
+    <junction id=":junction1_11_0" type="internal" x="1504.21" y="215.77" incLanes=":junction1_3_0 highway_seg1b_0 highway_seg1b_1 highway_seg1b_2 ramp1_on_0" intLanes=":junction1_4_0 :junction1_7_0 :junction1_7_1 :junction1_7_2"/>
+    <junction id=":junction1_12_0" type="internal" x="1495.90" y="214.10" incLanes=":junction1_10_0 -highway_seg2_0 -highway_seg2_1 -highway_seg2_2 ramp1_on_0" intLanes=":junction1_0_0 :junction1_0_1 :junction1_0_2 :junction1_5_0 :junction1_5_1"/>
+
+    <connection from="-highway_seg1a" to="highway_seg1a" fromLane="2" toLane="2" via=":west_0_0" dir="t" state="M"/>
+    <connection from="-highway_seg1b" to="-highway_seg1a" fromLane="0" toLane="0" via=":curve1_0_0" dir="s" state="M"/>
+    <connection from="-highway_seg1b" to="-highway_seg1a" fromLane="1" toLane="1" via=":curve1_0_1" dir="s" state="M"/>
+    <connection from="-highway_seg1b" to="-highway_seg1a" fromLane="2" toLane="2" via=":curve1_0_2" dir="s" state="M"/>
+    <connection from="-highway_seg2" to="-highway_seg1b" fromLane="0" toLane="0" via=":junction1_0_0" dir="s" state="M"/>
+    <connection from="-highway_seg2" to="-highway_seg1b" fromLane="1" toLane="1" via=":junction1_0_1" dir="s" state="M"/>
+    <connection from="-highway_seg2" to="-highway_seg1b" fromLane="2" toLane="2" via=":junction1_0_2" dir="s" state="M"/>
+    <connection from="-highway_seg2" to="highway_seg2" fromLane="2" toLane="2" via=":junction1_3_0" dir="t" state="m"/>
+    <connection from="-highway_seg3" to="-highway_seg2" fromLane="0" toLane="0" via=":curve2_0_0" dir="s" state="M"/>
+    <connection from="-highway_seg3" to="-highway_seg2" fromLane="1" toLane="1" via=":curve2_0_1" dir="s" state="M"/>
+    <connection from="-highway_seg3" to="-highway_seg2" fromLane="2" toLane="2" via=":curve2_0_2" dir="s" state="M"/>
+    <connection from="highway_seg1a" to="highway_seg1b" fromLane="0" toLane="0" via=":curve1_3_0" dir="s" state="M"/>
+    <connection from="highway_seg1a" to="highway_seg1b" fromLane="1" toLane="1" via=":curve1_3_1" dir="s" state="M"/>
+    <connection from="highway_seg1a" to="highway_seg1b" fromLane="2" toLane="2" via=":curve1_3_2" dir="s" state="M"/>
+    <connection from="highway_seg1b" to="highway_seg2" fromLane="0" toLane="0" via=":junction1_7_0" dir="s" state="M"/>
+    <connection from="highway_seg1b" to="highway_seg2" fromLane="1" toLane="1" via=":junction1_7_1" dir="s" state="M"/>
+    <connection from="highway_seg1b" to="highway_seg2" fromLane="2" toLane="2" via=":junction1_7_2" dir="s" state="M"/>
+    <connection from="highway_seg1b" to="-highway_seg1b" fromLane="2" toLane="2" via=":junction1_10_0" dir="t" state="m"/>
+    <connection from="highway_seg2" to="highway_seg3" fromLane="0" toLane="0" via=":curve2_3_0" dir="s" state="M"/>
+    <connection from="highway_seg2" to="highway_seg3" fromLane="1" toLane="1" via=":curve2_3_1" dir="s" state="M"/>
+    <connection from="highway_seg2" to="highway_seg3" fromLane="2" toLane="2" via=":curve2_3_2" dir="s" state="M"/>
+    <connection from="highway_seg3" to="-highway_seg3" fromLane="2" toLane="2" via=":east_0_0" dir="t" state="M"/>
+    <connection from="ramp1_accel" to="ramp1_on" fromLane="0" toLane="0" via=":ramp1_accel_start_0_0" dir="s" state="M"/>
+    <connection from="ramp1_approach" to="ramp1_accel" fromLane="0" toLane="0" via=":ramp1_merge_prep_0_0" dir="s" state="M"/>
+    <connection from="ramp1_on" to="highway_seg2" fromLane="0" toLane="0" via=":junction1_4_0" dir="r" state="m"/>
+    <connection from="ramp1_on" to="-highway_seg1b" fromLane="0" toLane="1" via=":junction1_5_0" dir="l" state="m"/>
+    <connection from="ramp1_on" to="-highway_seg1b" fromLane="0" toLane="2" via=":junction1_5_1" dir="l" state="m"/>
+
+    <connection from=":curve1_0" to="-highway_seg1a" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":curve1_0" to="-highway_seg1a" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":curve1_0" to="-highway_seg1a" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":curve1_3" to="highway_seg1b" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":curve1_3" to="highway_seg1b" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":curve1_3" to="highway_seg1b" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":curve2_0" to="-highway_seg2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":curve2_0" to="-highway_seg2" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":curve2_0" to="-highway_seg2" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":curve2_3" to="highway_seg3" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":curve2_3" to="highway_seg3" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":curve2_3" to="highway_seg3" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":east_0" to="-highway_seg3" fromLane="0" toLane="2" dir="t" state="M"/>
+    <connection from=":junction1_0" to="-highway_seg1b" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":junction1_0" to="-highway_seg1b" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":junction1_0" to="-highway_seg1b" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":junction1_3" to="highway_seg2" fromLane="0" toLane="2" via=":junction1_11_0" dir="t" state="m"/>
+    <connection from=":junction1_11" to="highway_seg2" fromLane="0" toLane="2" dir="t" state="M"/>
+    <connection from=":junction1_4" to="highway_seg2" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":junction1_5" to="-highway_seg1b" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":junction1_5" to="-highway_seg1b" fromLane="1" toLane="2" dir="l" state="M"/>
+    <connection from=":junction1_7" to="highway_seg2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":junction1_7" to="highway_seg2" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":junction1_7" to="highway_seg2" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":junction1_10" to="-highway_seg1b" fromLane="0" toLane="2" via=":junction1_12_0" dir="t" state="m"/>
+    <connection from=":junction1_12" to="-highway_seg1b" fromLane="0" toLane="2" dir="t" state="M"/>
+    <connection from=":ramp1_accel_start_0" to="ramp1_on" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":ramp1_merge_prep_0" to="ramp1_accel" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":west_0" to="highway_seg1a" fromLane="0" toLane="2" dir="t" state="M"/>
+
+</net>

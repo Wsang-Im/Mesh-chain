@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- RSU (Road Side Unit) locations for Mesh-Chain 3km Highway (Curved Alignment) -->
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+
+    <!-- 3km 고속도로 곡선을 따라 1km 간격으로 배치된 RSU 안테나 -->
+    <!-- 도로 노드: y=0~35, 도로 바로 옆에 배치 -->
+    <!-- 마주보는 RSU는 500m 엇갈림 배치 -->
+
+    <!-- 북쪽 RSU (빨강) - 0km, 1km, 2km, 3km 지점, 도로 북쪽 바로 옆 -->
+    <poi id="RSU-1N" x="0.0" y="203.0" color="255,0,0" layer="200" type="RSU"/>
+    <poi id="RSU-2N" x="1000.0" y="223.0" color="255,0,0" layer="200" type="RSU"/>
+    <poi id="RSU-3N" x="2000.0" y="223.0" color="255,0,0" layer="200" type="RSU"/>
+    <poi id="RSU-4N" x="3000.0" y="188.0" color="255,0,0" layer="200" type="RSU"/>
+
+    <!-- 남쪽 RSU (파랑) - 0.5km, 1.5km, 2.5km 지점, 도로 남쪽 바로 옆 (500m 엇갈림) -->
+    <poi id="RSU-1S" x="500.0" y="169.0" color="0,0,255" layer="200" type="RSU"/>
+    <poi id="RSU-2S" x="1500.0" y="192.0" color="0,0,255" layer="200" type="RSU"/>
+    <poi id="RSU-3S" x="2500.0" y="177.0" color="0,0,255" layer="200" type="RSU"/>
+
+</additional>

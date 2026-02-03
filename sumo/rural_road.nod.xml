@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 시골 도로 시나리오 - 노드 정의 -->
+<!-- 2km 구불구불한 왕복 2차선 도로 (각 방향 1차선) -->
+<nodes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/nodes_file.xsd">
+    <!-- 메인 도로 노드 (서쪽에서 동쪽으로) -->
+    <!-- 자연스러운 S자 곡선과 언덕길 형태 -->
+    <node id="rural_start" x="0.0" y="0.0" type="priority"/>
+    <node id="rural_curve1" x="250.0" y="20.0" type="priority"/>
+    <node id="rural_curve2" x="500.0" y="-10.0" type="priority"/>
+    <node id="rural_junction" x="750.0" y="5.0" type="priority"/>  <!-- T자 교차로 -->
+    <node id="rural_curve3" x="1000.0" y="30.0" type="priority"/>
+    <node id="rural_curve4" x="1250.0" y="15.0" type="priority"/>
+    <node id="rural_curve5" x="1500.0" y="-5.0" type="priority"/>
+    <node id="rural_curve6" x="1750.0" y="10.0" type="priority"/>
+    <node id="rural_end" x="2000.0" y="0.0" type="priority"/>
+
+    <!-- 농로 진입로 (T자 교차로에서 남쪽으로) -->
+    <node id="farm_road_start" x="750.0" y="-100.0" type="priority"/>
+</nodes>

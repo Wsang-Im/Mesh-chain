@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Complex Highway Network Nodes
+5km main highway with 2 interchanges
+-->
+<nodes>
+    <!-- Main highway nodes (west to east, 5km) -->
+    <node id="highway_west" x="0.0" y="0.0" type="priority"/>
+    <node id="interchange1" x="1500.0" y="0.0" type="priority"/>
+    <node id="interchange2" x="3500.0" y="0.0" type="priority"/>
+    <node id="highway_east" x="5000.0" y="0.0" type="priority"/>
+
+    <!-- Interchange 1: On-ramp and Off-ramp (south side) -->
+    <node id="ramp1_on_start" x="1300.0" y="-200.0" type="priority"/>
+    <node id="ramp1_off_end" x="1700.0" y="-200.0" type="priority"/>
+
+    <!-- Interchange 2: On-ramp and Off-ramp (north side) -->
+    <node id="ramp2_on_start" x="3300.0" y="200.0" type="priority"/>
+    <node id="ramp2_off_end" x="3700.0" y="200.0" type="priority"/>
+</nodes>

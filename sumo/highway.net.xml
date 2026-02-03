@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-11-05 10:11:57 by Eclipse SUMO netconvert Version 1.15.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <node-files value="highway.nod.xml"/>
+        <edge-files value="highway.edg.xml"/>
+    </input>
+
+    <output>
+        <output-file value="highway.net.xml"/>
+    </output>
+
+    <building_defaults>
+        <default.lanewidth value="3.2"/>
+    </building_defaults>
+
+</configuration>
+-->
+
+<net version="1.9" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,0.00" convBoundary="0.00,0.00,1000.00,0.00" origBoundary="0.00,0.00,1000.00,0.00" projParameter="!"/>
+
+    <edge id=":east_0" function="internal">
+        <lane id=":east_0_0" index="0" speed="3.65" length="4.67" width="3.20" shape="1000.00,-1.60 1001.20,-0.80 1001.60,0.00 1001.20,0.80 1000.00,1.60"/>
+    </edge>
+    <edge id=":west_0" function="internal">
+        <lane id=":west_0_0" index="0" speed="3.65" length="4.67" width="3.20" shape="-0.02,1.60 -1.22,0.80 -1.62,0.00 -1.22,-0.80 -0.02,-1.60"/>
+    </edge>
+
+    <edge id="-highway" from="east" to="west" priority="13" spreadType="center" shape="1000.00,4.80 -0.02,4.80">
+        <lane id="-highway_0" index="0" speed="33.33" length="1000.02" width="3.20" shape="1000.00,8.00 -0.02,8.00"/>
+        <lane id="-highway_1" index="1" speed="33.33" length="1000.02" width="3.20" shape="1000.00,4.80 -0.02,4.80"/>
+        <lane id="-highway_2" index="2" speed="33.33" length="1000.02" width="3.20" shape="1000.00,1.60 -0.02,1.60"/>
+    </edge>
+    <edge id="highway" from="west" to="east" priority="13" spreadType="center" shape="-0.02,-4.80 1000.00,-4.80">
+        <lane id="highway_0" index="0" speed="33.33" length="1000.02" width="3.20" shape="-0.02,-8.00 1000.00,-8.00"/>
+        <lane id="highway_1" index="1" speed="33.33" length="1000.02" width="3.20" shape="-0.02,-4.80 1000.00,-4.80"/>
+        <lane id="highway_2" index="2" speed="33.33" length="1000.02" width="3.20" shape="-0.02,-1.60 1000.00,-1.60"/>
+    </edge>
+
+    <junction id="east" type="priority" x="1000.00" y="0.00" incLanes="highway_0 highway_1 highway_2" intLanes=":east_0_0" shape="1000.00,-0.00 1000.00,-9.60 1000.00,0.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="west" type="priority" x="0.00" y="0.00" incLanes="-highway_0 -highway_1 -highway_2" intLanes=":west_0_0" shape="0.00,0.00 -0.00,9.60 0.00,-0.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+
+    <connection from="-highway" to="highway" fromLane="2" toLane="2" via=":west_0_0" dir="t" state="M"/>
+    <connection from="highway" to="-highway" fromLane="2" toLane="2" via=":east_0_0" dir="t" state="M"/>
+
+    <connection from=":east_0" to="-highway" fromLane="0" toLane="2" dir="t" state="M"/>
+    <connection from=":west_0" to="highway" fromLane="0" toLane="2" dir="t" state="M"/>
+
+</net>

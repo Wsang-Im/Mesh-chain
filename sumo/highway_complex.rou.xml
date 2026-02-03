@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <!--
+    Complex Highway Scenario: 5km highway with 2 interchanges
+    - Main traffic: Through traffic on highway
+    - Ramp traffic: Entering/exiting at interchanges
+    - Total density: ~2000 veh/hr (realistic highway density)
+    -->
+
+    <!-- ========================================
+         Vehicle Types
+         ======================================== -->
+    <vType id="car_slow" accel="2.0" decel="4.0" sigma="0.8" length="4.5" minGap="2.5" maxSpeed="27.78" speedFactor="0.85" speedDev="0.15" vClass="passenger" color="1,0,0"/>
+    <vType id="car_medium" accel="2.6" decel="4.5" sigma="0.7" length="4.5" minGap="2.5" maxSpeed="30.56" speedFactor="0.95" speedDev="0.15" vClass="passenger" color="1,0.5,0"/>
+    <vType id="car_fast" accel="3.0" decel="5.0" sigma="0.6" length="4.5" minGap="2.0" maxSpeed="33.33" speedFactor="1.05" speedDev="0.15" vClass="passenger" color="1,1,0"/>
+    <vType id="truck_slow" accel="1.0" decel="3.5" sigma="0.7" length="12.0" minGap="3.0" maxSpeed="25.00" speedFactor="0.80" speedDev="0.10" vClass="truck" color="0,1,0"/>
+    <vType id="truck_normal" accel="1.3" decel="4.0" sigma="0.6" length="12.0" minGap="3.0" maxSpeed="27.78" speedFactor="0.90" speedDev="0.10" vClass="truck" color="0,0.7,0"/>
+
+    <!-- ========================================
+         Routes: Through Traffic (East-bound)
+         Full highway traversal (5km)
+         ======================================== -->
+    <route id="route_eb_through" edges="highway_main_wb1 highway_main_wb2 highway_main_wb3"/>
+
+    <!-- ========================================
+         Routes: Through Traffic (West-bound)
+         Full highway traversal (5km)
+         ======================================== -->
+    <route id="route_wb_through" edges="highway_main_eb1 highway_main_eb2 highway_main_eb3"/>
+
+    <!-- ========================================
+         Routes: Enter at Ramp 1, Exit at Ramp 2
+         ======================================== -->
+    <route id="route_ramp1_to_ramp2" edges="ramp1_on highway_main_wb2 ramp2_off"/>
+
+    <!-- ========================================
+         Routes: Enter at Ramp 2, Exit at End
+         ======================================== -->
+    <route id="route_ramp2_to_end" edges="ramp2_on highway_main_eb2 highway_main_eb3"/>
+
+    <!-- ========================================
+         Routes: Enter at Start, Exit at Ramp 1
+         ======================================== -->
+    <route id="route_start_to_ramp1" edges="highway_main_eb3 highway_main_eb2 ramp1_off"/>
+
+    <!-- ========================================
+         Vehicle Flows
+         Total: ~2000 veh/hr
+         - Through traffic: 1500 veh/hr (75%)
+         - Ramp traffic: 500 veh/hr (25%)
+         ======================================== -->
+
+    <!-- Through Traffic East-bound: 750 veh/hr -->
+    <flow id="flow_eb_slow" type="car_slow" route="route_eb_through" begin="0.0" end="3600" vehsPerHour="250" departLane="best" departSpeed="random"/>
+    <flow id="flow_eb_medium" type="car_medium" route="route_eb_through" begin="0.5" end="3600" vehsPerHour="250" departLane="best" departSpeed="avg"/>
+    <flow id="flow_eb_fast" type="car_fast" route="route_eb_through" begin="1.0" end="3600" vehsPerHour="200" departLane="best" departSpeed="random"/>
+    <flow id="flow_eb_truck" type="truck_normal" route="route_eb_through" begin="1.5" end="3600" vehsPerHour="50" departLane="0" departSpeed="avg"/>
+
+    <!-- Through Traffic West-bound: 750 veh/hr -->
+    <flow id="flow_wb_slow" type="car_slow" route="route_wb_through" begin="0.2" end="3600" vehsPerHour="250" departLane="best" departSpeed="random"/>
+    <flow id="flow_wb_medium" type="car_medium" route="route_wb_through" begin="0.7" end="3600" vehsPerHour="250" departLane="best" departSpeed="avg"/>
+    <flow id="flow_wb_fast" type="car_fast" route="route_wb_through" begin="1.2" end="3600" vehsPerHour="200" departLane="best" departSpeed="random"/>
+    <flow id="flow_wb_truck" type="truck_slow" route="route_wb_through" begin="1.7" end="3600" vehsPerHour="50" departLane="0" departSpeed="avg"/>
+
+    <!-- Ramp Traffic: Ramp1 → Ramp2: 200 veh/hr -->
+    <flow id="flow_ramp1_2_slow" type="car_slow" route="route_ramp1_to_ramp2" begin="2.0" end="3600" vehsPerHour="80" departLane="best" departSpeed="random"/>
+    <flow id="flow_ramp1_2_medium" type="car_medium" route="route_ramp1_to_ramp2" begin="2.5" end="3600" vehsPerHour="80" departLane="best" departSpeed="avg"/>
+    <flow id="flow_ramp1_2_fast" type="car_fast" route="route_ramp1_to_ramp2" begin="3.0" end="3600" vehsPerHour="40" departLane="best" departSpeed="random"/>
+
+    <!-- Ramp Traffic: Ramp2 → End: 150 veh/hr -->
+    <flow id="flow_ramp2_end_slow" type="car_slow" route="route_ramp2_to_end" begin="2.2" end="3600" vehsPerHour="60" departLane="best" departSpeed="random"/>
+    <flow id="flow_ramp2_end_medium" type="car_medium" route="route_ramp2_to_end" begin="2.7" end="3600" vehsPerHour="60" departLane="best" departSpeed="avg"/>
+    <flow id="flow_ramp2_end_fast" type="car_fast" route="route_ramp2_to_end" begin="3.2" end="3600" vehsPerHour="30" departLane="best" departSpeed="random"/>
+
+    <!-- Ramp Traffic: Start → Ramp1: 150 veh/hr -->
+    <flow id="flow_start_ramp1_slow" type="car_slow" route="route_start_to_ramp1" begin="2.4" end="3600" vehsPerHour="60" departLane="best" departSpeed="random"/>
+    <flow id="flow_start_ramp1_medium" type="car_medium" route="route_start_to_ramp1" begin="2.9" end="3600" vehsPerHour="60" departLane="best" departSpeed="avg"/>
+    <flow id="flow_start_ramp1_fast" type="car_fast" route="route_start_to_ramp1" begin="3.4" end="3600" vehsPerHour="30" departLane="best" departSpeed="random"/>
+</routes>

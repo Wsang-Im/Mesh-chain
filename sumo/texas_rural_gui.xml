@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Texas 시골 마을 GUI 설정 -->
+<viewsettings>
+    <!-- 전체 마을이 보이도록 -->
+    <viewport zoom="400" x="1000" y="750" angle="0"/>
+
+    <scheme name="real world"/>
+    <background backgroundColor="245,240,230"/>
+
+    <delay value="50"/>
+    <grid xSize="100" ySize="100" show="true"/>
+
+    <streets streetName="show" streetNameSize="50" edgeName="hide"
+             hideConnectors="false" showLinkDecals="true"
+             showLane2Lane="false" showBikeMarkings="false"/>
+
+    <vehicles vehicleMode="0" vehicleQuality="2" minVehicleSize="2.0"
+              vehicleName="show" vehicleSize="2.0"
+              showBlinker="true" drawLaneChangePreference="false"
+              showBTRange="false" showRouteIndex="false"/>
+
+    <junctions showLane2Lane="false" drawShape="true"
+               drawCrossingsAndWalkingAreas="true"/>
+
+    <!-- RSU POI 표시 -->
+    <additionals addMode="0"
+                 poiSize="100.00"
+                 poiDetail="20"
+                 poiName="show"
+                 poiType="show"
+                 poiText="id"
+                 poiTextSize="120.00"
+                 poiColorer="given"/>
+
+    <legend showSizeLegend="false"/>
+</viewsettings>
