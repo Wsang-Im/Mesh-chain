@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\caption{Defense Mechanism Effectiveness Against MeshChain Threats}
+\label{tab:defense_effectiveness}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Defense & Checked & Detected & FP & TPR (\%) & FPR (\%) & F1 & Time ($\mu$s) \\
+\midrule
+Signature Verify & 1000 & 150 & 0 & 100.0 & 0.0 & 1.000 & 0.01 \\
+Reputation Screen & 1000 & 100 & 0 & 100.0 & 0.0 & 1.000 & 0.01 \\
+Diversity Check & 1000 & 200 & 0 & 100.0 & 0.0 & 1.000 & 0.12 \\
+Rate Limiting & 1000 & 99 & 0 & 99.0 & 0.0 & 0.995 & 0.03 \\
+Witness Consensus & 1000 & 67 & 0 & 100.0 & 0.0 & 1.000 & 0.01 \\
+TEE Attestation & 1000 & 84 & 0 & 100.0 & 0.0 & 1.000 & 0.01 \\
+\bottomrule
+\end{tabular}
+\end{table}

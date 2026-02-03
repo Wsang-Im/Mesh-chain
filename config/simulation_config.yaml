@@ -1,0 +1,204 @@
+# Mesh-Chain Simulation Configuration
+# User-friendly configuration file
+
+# ==================== Simulation Basic Settings ====================
+simulation:
+  # Simulation execution time (seconds)
+  # SUMO scenario generates vehicles up to 3600 seconds (1 hour)
+  # Recommended: Observe vehicle behavior for at least 180 seconds (3 minutes)
+  duration_seconds: 180
+  # Simulation step length (seconds)
+  step_length: 0.1
+  # Result output directory
+  output_directory: "../results"
+  # Log level: DEBUG, INFO, WARN, ERROR
+  log_level: "INFO"
+
+# ==================== Vehicle Settings ====================
+vehicles:
+  # Number of vehicles (applies only in simulation mode)
+  count: 20
+  # Vehicle spawn interval (seconds)
+  spawn_interval: 1.0
+  # Vehicle communication range (meters)
+  communication_range: 300.0
+
+  # ==================== Block Generation Policy ====================
+  # SIMPLE: Generate block immediately upon receiving V2X communication records (CAM/DENM/CPM)
+  # Local finality ≤100ms refers to block generation "speed"
+
+# ==================== RSU Settings ====================
+rsu:
+  # Number of RSUs (5 on each side of 5km road, total 10 - 1km spacing)
+  count: 6
+  # L1 anchor period (seconds)
+  l1_anchor_period: 60
+  # L2 anchor period (seconds)
+  l2_anchor_period: 180
+  # L3 anchor period (seconds)
+  l3_anchor_period: 600
+
+# ==================== SUMO Settings ====================
+sumo:
+  # Whether to use SUMO
+  enabled: true
+  # SUMO configuration file path (5km complex highway scenario)
+  # Use absolute path (stable even in GUI mode)
+  config_file: "../sumo/highway_5km.sumo.cfg"
+  # Whether to use SUMO GUI (libsumo-gui recommended to be disabled due to memory issues)
+  use_gui: false
+  # SUMO server address
+  host: "localhost"
+  # SUMO TraCI port
+  port: 8813
+  # Whether to auto-start SUMO
+  auto_start: true
+
+# ==================== WAVE (IEEE 802.11p) Settings ====================
+wave:
+  # Transmission power (dBm)
+  tx_power_dbm: 20.0
+  # Frequency (GHz)
+  frequency_ghz: 5.9
+  # Bandwidth (MHz)
+  bandwidth_mhz: 10.0
+  # Data rate (Mbps)
+  data_rate_mbps: 6.0
+  # Communication range (meters)
+  range_m: 300.0
+  # Packet loss rate (0.0~1.0)
+  packet_loss_rate: 0.2
+  # CAM transmission period (milliseconds)
+  cam_interval_ms: 100
+  # DENM priority (0~7)
+  denm_priority: 6
+
+# ==================== ToF (Time-of-Flight) Settings ====================
+tof:
+  # ToF standard deviation (nanoseconds)
+  sigma_tof_ns: 3.0
+  # ToF maximum tolerance (nanoseconds)
+  # Paper requirement: εtof ≤ 10ns (nanosecond-grade tolerance)
+  # RTT measurement, so vehicle movement is mostly canceled out (bidirectional propagation)
+  max_tolerance_ns: 10.0
+  # Whether to use UWB
+  use_uwb: true
+  # Channel noise (dB)
+  channel_noise_db: 20.0
+
+# ==================== Witness Selection and Diversity Policy ====================
+witness:
+  # Witness count profiles: 3, 5, 7
+  profiles:
+    - witnesses: 3
+      threshold: 2
+    - witnesses: 5
+      threshold: 3
+    - witnesses: 7
+      threshold: 5
+  # Default profile index (0, 1, 2)
+  default_profile: 1
+
+  # Diversity policy
+  diversity:
+    # OEM diversity: Minimum Shannon entropy (bits)
+    # Paper requirement: H_m ≥ 1.5 bits (Section 3.2)
+    # Simulation environment: Relaxed to 0.9 (considering realistic vehicle distribution)
+    min_oem_entropy: 0.9
+    # Maximum ratio per OEM
+    max_per_oem_ratio: 0.4
+    # Spatial diversity: Minimum separation distance (meters)
+    # Simulation environment: More lenient criteria applied (2.7m → 1.0m)
+    min_spatial_separation: 1.0
+    # Temporal diversity: Minimum MAD (seconds)
+    # Relaxed at simulation start (since all vehicles start simultaneously)
+    min_temporal_mad: 0.0
+    # Reputation diversity: Minimum reputation score
+    min_reputation: 0.3
+    # Reputation diversity: Minimum deviation
+    # Paper requirement: ∃i≠j: |R_i - R_j| ≥ 0.3 (Section 3.2)
+    # Simulation environment: Relaxed to 0.25 (considering reputation convergence characteristics)
+    min_reputation_diff: 0.25
+
+# ==================== Cryptography Settings ====================
+crypto:
+  # PQC algorithms
+  pqc:
+    # Vehicle signature: FALCON-512
+    vehicle_signature: "FALCON-512"
+    # RSU signature: Dilithium-3
+    rsu_signature: "DILITHIUM-3"
+    # KEM: ML-KEM-768
+    kem: "ML-KEM-768"
+
+  # AEAD encryption
+  aead:
+    # Algorithm: XChaCha20-Poly1305
+    algorithm: "XChaCha20-Poly1305"
+    # Key derivation function
+    kdf: "HKDF-SHA3-256"
+
+# ==================== Off-chain Storage Settings ====================
+offchain:
+  # Shamir secret sharing settings
+  shamir:
+    # Threshold
+    threshold: 3
+    # Total shares
+    total_shares: 5
+
+  # Storage tiers
+  tiers:
+    # Hot tier (0~5 minutes)
+    hot:
+      duration_minutes: 5
+      redundancy: "none"
+    # Warm tier (5 minutes~24 hours)
+    warm:
+      duration_hours: 24
+      redundancy: "(3,5)"
+    # Cold tier (24 hours or more)
+    cold:
+      redundancy: "(6,10)"
+
+# ==================== libp2p Settings ====================
+libp2p:
+  # Whether to use libp2p
+  enabled: true
+  # Whether to use DHT
+  enable_dht: true
+  # Whether to use GossipSub
+  enable_gossipsub: true
+  # Whether to use Bitswap
+  enable_bitswap: true
+  # Bootstrap peer address list
+  bootstrap_peers: []
+
+# ==================== Performance Goals ====================
+performance:
+  # Local finality target latency (milliseconds)
+  local_finality_target_ms: 100
+  # Maximum block size (KB)
+  max_block_size_kb: 10
+  # Maximum signature bandwidth (KB/s)
+  max_signature_bandwidth_kbps: 50
+
+# ==================== Evaluation and Test Settings ====================
+evaluation:
+  # Whether to collect performance metrics
+  collect_metrics: true
+  # Metrics output interval (seconds)
+  metrics_interval: 10
+  # Whether to output verbose logging
+  verbose_logging: false
+  # Whether to update real-time dashboard
+  realtime_dashboard: true
+
+# ==================== Advanced Settings ====================
+advanced:
+  # Whether to use multithreading
+  enable_multithreading: true
+  # Number of worker threads (0 = auto)
+  worker_threads: 0
+  # Memory limit (MB)
+  memory_limit_mb: 2048

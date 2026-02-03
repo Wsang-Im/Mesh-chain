@@ -1,0 +1,138 @@
+# 시골 도로 시나리오 설정 (Scalability Test)
+# Texas 스타일 시골 마을 - 300대 차량 스케일 테스트
+# KD-Tree 기반 공간 인덱싱 적용
+# 국지적 밀집도 측정 및 보고
+
+# ==================== 시뮬레이션 기본 설정 ====================
+simulation:
+  # 시뮬레이션 실행 시간 (초)
+  # 300대 차량 목표: flow 확률 1.8배 증가 + 600초 시뮬레이션
+  # 예상: 9.187 vehicles/sec × 600s = 270-300대 동시 차량
+  duration_seconds: 600
+  step_length: 0.1
+  output_directory: "results_rural_scalability"
+  log_level: "INFO"
+
+# ==================== 차량 설정 ====================
+vehicles:
+  # 300대 스케일 테스트 (SUMO flow로 자동 생성)
+  # 실제 차량 수는 SUMO route 파일의 확률에 의해 결정됨
+  # 예상: 200-300대 동시 차량 (피크 시간)
+  count: 300  # 참고용 (실제는 SUMO flow로 결정)
+  spawn_interval: 0.5  # SUMO flow 기반 (참고용)
+  communication_range: 300.0  # DSRC 300m range
+
+# ==================== RSU 설정 ====================
+rsu:
+  # Texas 스타일 그리드 마을: 9개 RSU (교차로 중심)
+  count: 9
+  l1_anchor_period: 60
+  l2_anchor_period: 180
+  l3_anchor_period: 600
+
+# ==================== SUMO 설정 ====================
+sumo:
+  enabled: true
+  # Texas 스타일 시골 마을 시나리오 (300대 차량 스케일)
+  # SUMO route 파일에서 확률 2.8배 증가 (총 확률 ~5.0)
+  # 예상 동시 차량 수: 200-300대 (밀집 지역에서 테스트)
+  config_file: "/home/crypto/Desktop/meshchain_sim_tls_scale/sumo/texas_rural.sumo.cfg"
+  use_gui: false  # GUI는 300대 차량에서 성능 저하 가능
+  host: "localhost"
+  port: 8813
+  auto_start: true
+
+# ==================== WAVE (IEEE 802.11p) 설정 ====================
+wave:
+  tx_power_dbm: 20.0
+  frequency_ghz: 5.9
+  bandwidth_mhz: 10.0
+  data_rate_mbps: 6.0
+  range_m: 300.0
+  # 시골 도로는 장애물이 적어 패킷 손실률 낮음
+  packet_loss_rate: 0.1
+  cam_interval_ms: 100
+  denm_priority: 6
+
+# ==================== ToF (Time-of-Flight) 설정 ====================
+tof:
+  sigma_tof_ns: 3.0
+  max_tolerance_ns: 10.0
+  use_uwb: true
+  channel_noise_db: 20.0
+
+# ==================== 증인 선택 및 다양성 정책 ====================
+witness:
+  profiles:
+    - witnesses: 3
+      threshold: 2
+    - witnesses: 5
+      threshold: 3
+    - witnesses: 7
+      threshold: 5
+  # 시골 도로는 차량이 적으므로 더 작은 프로파일 사용
+  default_profile: 0  # 3명의 증인
+
+  diversity:
+    # 300대 차량 환경: 충분한 다양성 확보 가능
+    # 밀집 지역에서도 다양성 기준 유지
+    # Reputation diversity 완화: 초기 reputation이 [0.3, 0.8] 범위이므로
+    # min_R_diff를 0.20으로 완화하여 블록 생성 성공률 향상
+    min_oem_entropy: 0.9  # 20개 OEM 중 충분한 다양성
+    max_per_oem_ratio: 0.4
+    min_spatial_separation: 3.0  # 밀집 환경에서 적절한 간격
+    min_temporal_mad: 0.0
+    min_reputation: 0.3
+    min_reputation_diff: 0.20  # 0.30 → 0.20 완화 (블록 생성 성공률 향상)
+
+# ==================== 암호화 설정 ====================
+crypto:
+  pqc:
+    vehicle_signature: "FALCON-512"
+    rsu_signature: "DILITHIUM-3"
+    kem: "ML-KEM-768"
+  aead:
+    algorithm: "XChaCha20-Poly1305"
+    kdf: "HKDF-SHA3-256"
+
+# ==================== 오프체인 저장소 설정 ====================
+offchain:
+  shamir:
+    threshold: 3
+    total_shares: 5
+  tiers:
+    hot:
+      duration_minutes: 5
+      redundancy: "none"
+    warm:
+      duration_hours: 24
+      redundancy: "(3,5)"
+    cold:
+      redundancy: "(6,10)"
+
+# ==================== libp2p 설정 ====================
+libp2p:
+  enabled: true
+  enable_dht: true
+  enable_gossipsub: true
+  enable_bitswap: true
+  bootstrap_peers: []
+
+# ==================== 성능 목표 ====================
+performance:
+  local_finality_target_ms: 100
+  max_block_size_kb: 10
+  max_signature_bandwidth_kbps: 50
+
+# ==================== 평가 및 테스트 설정 ====================
+evaluation:
+  collect_metrics: true
+  metrics_interval: 10
+  verbose_logging: false
+  realtime_dashboard: true
+
+# ==================== 고급 설정 ====================
+advanced:
+  enable_multithreading: true
+  worker_threads: 0
+  memory_limit_mb: 2048
