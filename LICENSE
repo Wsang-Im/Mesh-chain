@@ -29,7 +29,7 @@ implementation includes experimental cryptographic protocols and blockchain
 mechanisms that have not undergone formal security audits. Use in production
 environments is not recommended without thorough security review and testing.
 
-The post-quantum cryptographic primitives (FALCON-512, ML-KEM-768, Dilithium-3)
+The post-quantum cryptographic primitives (FALCON-512, ML-KEM-768, ML-DSA-65)
 are based on NIST standards but the specific implementation and integration
 patterns should be validated by cryptography experts before deployment in
 security-critical applications.
