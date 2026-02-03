@@ -28,7 +28,7 @@ MeshChain is a distributed blockchain system designed for Vehicle-to-Everything 
 - Off-chain storage with Shamir secret sharing
 - Local finality under 100ms
 
-### Attack Resistance
+### Attack Resistance directly
 - Defense against witness collusion (T1)
 - Protection from replay attacks (T2)
 - Mitigation of Sybil attacks (T3)
@@ -147,18 +147,6 @@ cd build
 - Signature bandwidth: Under 50 KB/s
 - Scalability: 300+ concurrent vehicles
 
-
-## Paper Implementation
-
-This implementation corresponds to the paper:
-"Mesh-Chain: Witness-Linked Mesh Blockchain for Real-Time Vehicular Accountability and Post-Quantum Forensics"
-
-Key implementations:
-- Section 3.1: Witness selection with diversity policy
-- Section 3.2: TEE-based attestquorum protocol
-- Section 3.3: Multi-tier anchoring system
-- Section 4: Attack scenarios and defense evaluation
-
 ## Directory Structure
 
 ```
@@ -173,9 +161,7 @@ meshchain_sim_tls_scale/
 │   ├── storage/           # Off-chain storage
 │   └── security/          # Attack models
 ├── config/                # Configuration files
-├── sumo/                  # SUMO scenarios
-├── build/                 # Build output directory
-└── docs/                  # Documentation
+└── sumo/                  # SUMO scenarios
 
 ```
 
