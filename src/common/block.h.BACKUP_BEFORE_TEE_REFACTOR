@@ -1,0 +1,163 @@
+#ifndef MESHCHAIN_BLOCK_H
+#define MESHCHAIN_BLOCK_H
+
+#include "types.h"
+#include "../crypto/sha3_wrapper.h"
+#include <vector>
+#include <bitset>
+#include <functional>
+
+namespace meshchain {
+
+// Block header structure (Section 3.1)
+// Total size target: 6-7 KB for w=7
+struct BlockHeader {
+    // Chain linkage
+    Hash256 prev_hash;
+    Timestamp time;
+    Nonce nonce;
+
+    // Creator information
+    std::vector<uint8_t> creator_pk;  // Falcon-512 public key (~897 bytes)
+    double creator_rep;  // Reputation R ∈ [0,1]
+
+    // Off-chain data reference (async, NOT in 100ms path)
+    DataPointer data_pointer;
+    Hash256 data_hash;  // H(payload) for integrity
+
+    // Witness set commitment (Merkle root of sorted witness IDs)
+    Hash256 witness_set_commit;
+
+    // Witness bitmap (which committed witnesses actually signed)
+    std::bitset<MAX_WITNESS_COUNT> witness_bitmap;
+
+    // Diversity certificate (commitment to metrics)
+    DiversityCert diversity_cert;
+
+    // ToF transcripts (one per witness, for proximity proof)
+    std::vector<ToFTranscript> proximity_transcripts;
+
+    // Signatures (PQC-only fast path)
+    std::vector<uint8_t> creator_sig;  // Falcon-512 signature (~690 bytes)
+    std::vector<std::vector<uint8_t>> witness_sigs;  // Falcon-512 signatures
+
+    // TEE Aggregated Commit (added for witness signature aggregation)
+    bool has_tee_commit;  // true if TEE commit is present
+    Hash256 tee_aggregate_hash;  // Aggregated hash from TEE
+    std::vector<Hash256> tee_signature_hashes;  // Individual signature hashes for verification
+
+    // State tracking
+    BlockState state;
+
+    // Fallback flags (Section 4.2: Witness Unavailability)
+    bool reduced_threshold_flag;  // true if τ was reduced due to witness unavailability
+    bool rsu_super_witness_flag;  // true if RSU was used as super-witness
+
+    // Compute header hash for signing
+    Hash256 computeHeaderHash() const {
+        // Use real SHA3-256 over canonical encoding
+        std::vector<uint8_t> data;
+        data.reserve(1024);  // Pre-allocate reasonable size
+
+        // Serialize all header fields in canonical order
+        data.insert(data.end(), prev_hash.begin(), prev_hash.end());
+        data.insert(data.end(), data_hash.begin(), data_hash.end());
+        data.insert(data.end(), witness_set_commit.begin(), witness_set_commit.end());
+        data.insert(data.end(), diversity_cert.begin(), diversity_cert.end());
+
+        // Serialize creator public key
+        data.insert(data.end(), creator_pk.begin(), creator_pk.end());
+
+        // Serialize nonce (8 bytes, little-endian)
+        uint64_t nonce_val = static_cast<uint64_t>(nonce);
+        for (size_t i = 0; i < 8; ++i) {
+            data.push_back(static_cast<uint8_t>((nonce_val >> (i * 8)) & 0xFF));
+        }
+
+        // Serialize timestamp (8 bytes)
+        auto time_val = std::chrono::system_clock::to_time_t(time);
+        for (size_t i = 0; i < 8; ++i) {
+            data.push_back(static_cast<uint8_t>((time_val >> (i * 8)) & 0xFF));
+        }
+
+        // Hash with SHA3-256
+        return crypto::SHA3::hash(data);
+    }
+
+    // Get header size estimate
+    size_t estimateSize() const {
+        size_t base = sizeof(prev_hash) + sizeof(time) + sizeof(nonce);
+        base += creator_pk.size() + sizeof(creator_rep);
+        base += sizeof(data_pointer.hash) + sizeof(data_hash);
+        base += sizeof(witness_set_commit) + sizeof(diversity_cert);
+        base += proximity_transcripts.size() * 64;  // Rough estimate
+        base += creator_sig.size();
+        for (const auto& sig : witness_sigs) {
+            base += sig.size();
+        }
+        return base;
+    }
+
+    // Validate basic header structure
+    bool validateStructure() const {
+        if (witness_sigs.size() > MAX_WITNESS_COUNT) return false;
+        if (proximity_transcripts.size() != witness_sigs.size()) return false;
+        // If TEE commit is present, signature hashes should match witness count
+        if (has_tee_commit && tee_signature_hashes.size() != witness_sigs.size()) return false;
+        return true;
+    }
+};
+
+// Full block (header + metadata)
+struct Block {
+    BlockHeader header;
+    Hash256 block_hash;
+
+    // Validation metadata (not serialized)
+    Timestamp received_at;
+    std::string received_from;
+    std::string creator_id;  // Vehicle ID who created this block (for anchoring)
+    bool fully_validated;
+
+    Block() : fully_validated(false) {
+        received_at = std::chrono::system_clock::now();
+    }
+
+    // Compute block hash
+    Hash256 computeHash() const {
+        return header.computeHeaderHash();
+    }
+};
+
+// Witness selection candidate
+struct WitnessCandidate {
+    VehicleID id;
+    std::vector<uint8_t> public_key;  // FALCON-512 signature public key
+    std::vector<uint8_t> kem_public_key;  // ML-KEM-768 key exchange public key
+    Reputation reputation;
+    double distance_m;  // From ToF measurement
+    std::string oem;
+    Timestamp first_contact;
+    std::vector<VehicleID> neighbors;  // For witness-set-commit verification
+
+    // CRITICAL: Function to call witness's actual signer
+    // Each witness uses their own independent FALCON signer
+    std::function<std::vector<uint8_t>(const std::vector<uint8_t>&)> sign_function;
+
+    // TLS 1.3 handshake function (witness side)
+    // Parameters: (client_key_share, client_hello_data) -> server_hello_data
+    // Returns ServerHello with certificate and encrypted handshake
+    std::function<std::vector<uint8_t>(const std::vector<uint8_t>&, const std::vector<uint8_t>&)> tls_server_handshake;
+
+    // TLS 1.3 application data decryption (witness side)
+    // Takes encrypted request, returns decrypted data
+    std::function<std::vector<uint8_t>(const std::vector<uint8_t>&)> tls_decrypt_app_data;
+
+    bool isEligible(double min_rep = 0.3) const {
+        return reputation.R >= min_rep;
+    }
+};
+
+} // namespace meshchain
+
+#endif // MESHCHAIN_BLOCK_H
